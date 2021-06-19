@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.bridal.ui.homefragment.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/dashBoardFragment"
+        android:name="com.example.bridal.ui.dashboardfragment.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/myAddsFragment"
+        android:name="com.example.bridal.ui.myaddsfragment.MyAddsFragment"
+        android:label="@string/title_my_adds"
+        tools:layout="@layout/fragment_my_adds" />
+
+    <fragment
+        android:id="@+id/myAccountFragment"
+        android:name="com.example.bridal.ui.myaccountfragment.MyAccountFragment"
+        android:label="@string/title_my_account"
+        tools:layout="@layout/fragment_my_account" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.bridal.ui.splashfragment.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:popUpTo="@id/mobile_navigation" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.bridal.ui.loginfragment.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.bridal.ui.registerfragment.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/forgetPasswordFragment"
+        android:name="com.example.bridal.ui.forgetpasswordfragment.ForgetPasswordFragment"
+        android:label="fragment_forget_password"
+        tools:layout="@layout/fragment_forget_password" />
+    <fragment
+        android:id="@+id/settingsAccountFragment"
+        android:name="com.example.bridal.ui.settingsaccountfragment.SettingsAccountFragment"
+        android:label="fragment_settings_account"
+        tools:layout="@layout/fragment_settings_account" />
+    <fragment
+        android:id="@+id/addProductFragment"
+        android:name="com.example.bridal.ui.addproductfragment.AddProductFragment"
+        android:label="fragment_add_product"
+        tools:layout="@layout/fragment_add_product" />
+
+</navigation>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bridal</string>
+    <string name="or">أو</string>
+    <string name="sign_up">تسجيل الدخول</string>
+    <string name="fst_name">الاسم الاول</string>
+    <string name="scnd_name">الاسم الاخير</string>
+    <string name="ALRDRy">         لديك حساب بالفعل؟ </string>
+    <string name="confpass">تأكيد كلمه المرور</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="crt">أنشي حساب</string>
+    <string name="lang">أختر اللغه</string>
+    <string name="snscksucces">تم التسجيل بنجاح </string>
+    <string name="tm">تم التسجيل بنجاح الرقم السري</string>
+    <string name="plswt">من فضلك انتظر</string>
+    <string name="logsucc">تم تسجيل الدخول بنجاح </string>
+   <string name="frgno">أدخل اسم المستخدم والبريد الإلكتروني الخاصين بك وسنرسل لك بريدًا إلكترونيًا لإعادة تعيين كلمة المرور الخاصة بك</string>
+    <string name="sub">إرسال</string>
+
+    <string name="emailsnt">تم ارسال الايميل بنجاح</string>
+    <string name="errw">خطأ في التسجيل</string>
+    <string name="hmm">الصفحة الرئيسية</string>
+    <string name="lk">المفضله</string>
+    <string name="My_adds">اعلانات</string>
+    <string name="My_account">الحساب</string>
+    <string name="plsck">الرجاء الضغط مرة أخرى للخروج</string>
+    <string name="stt">لإعدادات</string>
+    <string name="action_settings">لإعدادات</string>
+
+    <string name="title_settings">لإعدادات</string>
+    <string name="lbl_edit">تعديل</string>
+    <string name="lbl_addresses">العنوان</string>
+    <string name="btn_lbl_logout">تسجيل الخروجج</string>
+
+    <string name="title_edit_profile">تعديل الملف الشخصي</string>
+
+    <!--TODO Step 3: Add the string resources to the strings.xml file-->
+    <!--START-->
+    <string name="action_add_product">اضف منتجات</string>
+    <string name="content_description">صوره</string>
+    <string name="title_activity_dashboard">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="allow">Allow Notifications ?</string>
+    <string name="en">English</string>
+    <string name="ar">Arabic</string>
+
+
+
+
+
+    <string name="signupher">سجل دخولك</string>
+    <string name="login">التسجيل        </string>
+    <string name="donot">ليس عندك حساب؟</string>
+    <string name="signup">Sign Up</string>
+    <string name="authface">التسجيل من حساب فيسبوك </string>
+    <string name="authgoo">التسجيل من حساب جوجل</string>
+    <string name="forget">نسيت كلمه المرور</string>
+    <string name="em">الايميل</string>
+    <string name="pass">كلمه المرور</string>
+    <string name="reg">التسجيل</string>
+    <string name="err_msg_firstname">من فضلك ادخل الاسم الاول</string>
+    <string name="err_msg_lastname">من فضلك ادخل الاسم الاخير</string>
+    <string name="err_msg_erremail">من فضلك ادخل حسابك </string>
+    <string name="err_msg_pass1">من فضلك ادخل كلمه المرور</string>
+    <string name="err_msg_confirmpass">من فضلك أكد كلمه المرور</string>
+    <string name="err_msg_notmatched">من فضلك أكد كلمه المرور</string>
+    <string name="cat">الفئه</string>
+    <string name="PRDti">عنوان المنتج</string>
+    <string name="prc">السعر </string>
+    <string name="dscr">وصف المنتج</string>
+    <string name="adim">إضافة الصور</string>
+    <string name="advid">إضافة مقاطع فيديو</string>
+    <string name="adloc">إضافة موقع</string>
+    <string name="optio">(اختياري)(</string>
+    <string name="dscrh"> اضافه وصف المنتج</string>
+    <string name="prch">اضافه السعر</string>
+    <string name="PRDtih">اضافه عنوان للمنتج</string>
+    <string name="sv">حفظ</string>
+
+    <string name="title_my_adds">My Adds</string>
+    <string name="title_my_account">My Account</string>
+
+    <!-- Home List-->
+    <string name="beauty_center">مركز تجميل وكوافير</string>
+    <string name="buffet_services">خدمات بوفية</string>
+    <string name="car_rental">ايجار سيارات</string>
+    <string name="cosmetic_dentistry">مركز تجميل اسنان</string>
+    <string name="domestic_flights">شهر عسل رحلات داخلية</string>
+    <string name="flowers">زهور</string>
+    <string name="gold_and_jewelry">ذهب ومجوهرات</string>
+    <string name="health_and_beauty">صحة وجمال</string>
+    <string name="honey_moon">شهر العسل</string>
+    <string name="hotels">فنادق</string>
+    <string name="watches_and_accessories">أكسسوارات وساعات</string>
+    <string name="wedding_group">فرق زفة</string>
+    <string name="wedding_halls">قاعات افراح</string>
+    <string name="wedding_suit">بدل زفاف</string>
+    <string name="weeding_dresses">فساتين زفاف</string>
+
+</resources>

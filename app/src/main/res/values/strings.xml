@@ -1,0 +1,109 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" translatable="false">Bridal</string>
+    <string name="title_activity_reallogin" translatable="false">reallogin</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label" translatable="false">First Fragment</string>
+    <string name="second_fragment_label" translatable="false">Second Fragment</string>
+    <string name="next" translatable="false">Next</string>
+    <string name="previous" translatable="false">Previous</string>
+    <string name="or">or</string>
+    <string name="sign_up">Sign up Here</string>
+    <string name="fst_name">First name</string>
+    <string name="scnd_name">Last name</string>
+    <string name="ALRDRy">Already have account?</string>
+    <string name="confpass">Confrirm password</string>
+    <string name="crt">Create an account</string>
+    <string name="lang">choose language</string>
+    <string name="tm">Your have Registered successfully . Your user id is</string>
+    <string name="snscksucces">your details are valid</string>
+    <string name="logsucc">you have login successfully</string>
+    <string name="frgno">Enter your username and email and we will send you  an email to reset your password</string>
+    <string name="plsck">please click back again to exit</string>
+    <string name="sub">Sumbit</string>
+    <string name="emailsnt">The email was sent succesfully</string>
+    <string name="errw">Error while registring the user</string>
+    <string name="hmm">Home</string>
+    <string name="lk">Liked</string>
+    <string name="My_adds">My adds</string>
+    <string name="My_account">My account</string>
+    <string name="stt">Settings</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="content_description">image</string>
+
+    <string name="title_settings">SETTINGS</string>
+    <string name="lbl_edit">Edit</string>
+    <string name="lbl_addresses">Addresses</string>
+    <string name="btn_lbl_logout">Logout</string>
+
+    <string name="title_edit_profile">EDIT PROFILE</string>
+
+    <!--TODO Step 3: Add the string resources to the strings.xml file-->
+    <!--START-->
+    <string name="action_add_product">Add Product</string>
+
+
+    <string name="plswt">Please Wait..</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="signupher">Sign Up Here</string>
+    <string name="login">Login</string>
+    <string name="donot">Don’t have account?</string>
+    <string name="signup">Sign Up</string>
+    <string name="authface">Sign in with Facebook</string>
+    <string name="authgoo">Sign in with Google</string>
+    <string name="forget">Forget Password?</string>
+    <string name="em">Email</string>
+    <string name="pass">Password</string>
+    <string name="reg">Register</string>
+    <string name="err_msg_firstname">Please enter your First name</string>
+    <string name="err_msg_lastname">Please enter your Last name</string>
+    <string name="err_msg_erremail">Please enter your Email</string>
+    <string name="err_msg_pass1">Please enter your password</string>
+    <string name="err_msg_confirmpass">Please enter confirm your password</string>
+    <string name="err_msg_notmatched">Please confirm your password</string>
+    <string name="title_activity_dashboard">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="allow">Allow Notifications ?</string>
+    <string name="en">English</string>
+    <string name="ar">Arabic</string>
+    <string name="cat">category</string>
+    <string name="PRDti">Product title</string>
+    <string name="PRDtih"> Add Product title</string>
+    <string name="prc">Price</string>
+    <string name="prch">Add Price</string>
+    <string name="dscrh">Add Product Description</string>
+    <string name="dscr">Product Description</string>
+    <string name="adim">Add images</string>
+    <string name="advid">Add videos</string>
+    <string name="adloc">Add location</string>
+    <string name="optio">(optional)</string>
+    <string name="sv">Save</string>
+    <string name="title_my_adds">My Adds</string>
+    <string name="title_my_account">My Account</string>
+
+
+    <!-- Home List-->
+    <string name="beauty_center">Beauty Center</string>
+    <string name="buffet_services">Buffet Services</string>
+    <string name="car_rental">Car Rental</string>
+    <string name="cosmetic_dentistry">Cosmetic Dentistry</string>
+    <string name="domestic_flights">Domestic Flights</string>
+    <string name="flowers">Flowers</string>
+    <string name="gold_and_jewelry">Gold and Jewelry</string>
+    <string name="health_and_beauty">Health and Beauty</string>
+    <string name="honey_moon">Honey Moon</string>
+    <string name="hotels">Hotels</string>
+    <string name="watches_and_accessories">Watches and Accessories</string>
+    <string name="wedding_group">Wedding Group</string>
+    <string name="wedding_halls">Wedding Halls</string>
+    <string name="wedding_suit">Wedding Suit</string>
+    <string name="weeding_dresses">Weeding Dresses</string>
+
+</resources>
