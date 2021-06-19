@@ -1,12 +1,19 @@
-package custom
+package com.example.bridal.util
 
 import android.app.Activity
+import android.app.Dialog
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.provider.MediaStore
+import android.view.View
 import android.webkit.MimeTypeMap
+import androidx.core.content.ContextCompat
+import com.example.bridal.R
+import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.dialog_progress.*
 
-object  constants {
+object  Constants {
 
     const  val users:String ="users"
     const val bridalpreference = "bridalpref"
@@ -18,6 +25,36 @@ object  constants {
     const val EXTRA_USER_DETAILS: String = "extra_user_details"
 
 
+
+    // fun snack bar show error and successful
+    fun showErrorSnackBar(message : String, errorMessage : Boolean, context: Context, view : View){
+
+        val snackBar = Snackbar.make( view , message, Snackbar.LENGTH_LONG)
+        val snackBarView = snackBar.view
+
+        if(errorMessage){
+            snackBarView.setBackgroundColor(ContextCompat.getColor( context , R.color.err))
+        }else{
+            snackBarView.setBackgroundColor(ContextCompat.getColor(context , R.color.page))
+        }
+        snackBar.show()
+    }
+
+    // fun hide progress bar
+    private lateinit var mProgressDialog : Dialog
+    fun showProgressDialog(text:String , context: Context){
+        mProgressDialog = Dialog(context)
+        mProgressDialog.setContentView(R.layout.dialog_progress)
+        mProgressDialog.textView5.text = text
+        mProgressDialog.setCancelable(false)
+        mProgressDialog.setCanceledOnTouchOutside(false)
+        mProgressDialog.show()
+    }
+
+    // fun hide progress bar
+    fun hideProgressDialog() {
+        mProgressDialog.dismiss()
+    }
 
     /**
     * A function for user profile image selection from phone storage.

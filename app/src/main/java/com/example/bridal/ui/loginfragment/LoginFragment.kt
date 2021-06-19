@@ -26,5 +26,13 @@ class LoginFragment : Fragment() {
         //connect with viewModel
         binding.lifecycleOwner  = this
         binding.loginFragment   = loginViewModel
+
+        loginViewModel.loadLocate(requireActivity())
+
+        // btn change language.
+        binding.btnChangeLanguage.setOnClickListener {
+            //call fun change language.
+            loginViewModel.showChangeLang(requireActivity(),this)
+        }
     }
 }

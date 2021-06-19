@@ -13,16 +13,16 @@ open class Baseactivity : AppCompatActivity() {
       private lateinit var mProgressDialog : Dialog
       private var doublebacktoext = false
 
-    fun showerr(message: String, errormessage : Boolean){
+    fun shower(message: String, errormessage : Boolean){
         val snack = Snackbar.make(findViewById(android.R.id.content) , message ,Snackbar.LENGTH_LONG)
-        val snackview = snack.view
+        val snackView = snack.view
         if (errormessage){
-            snackview.setBackgroundColor(ContextCompat.getColor(this@Baseactivity, R.color.err))
-        }else{snackview.setBackgroundColor(ContextCompat.getColor(this@Baseactivity, R.color.page))
+            snackView.setBackgroundColor(ContextCompat.getColor(this@Baseactivity, R.color.err))
+        }else{snackView.setBackgroundColor(ContextCompat.getColor(this@Baseactivity, R.color.page))
         }
         snack.show()
     }
-    fun shwprogressdialog(text:String){
+    fun showProgressDialog(text:String){
         mProgressDialog = Dialog(this)
         mProgressDialog.setContentView(R.layout.dialog_progress)
         mProgressDialog.textView5.text = text
@@ -30,10 +30,12 @@ open class Baseactivity : AppCompatActivity() {
         mProgressDialog.setCanceledOnTouchOutside(false)
         mProgressDialog.show()
     }
-    fun hidepprogreedialog() {
+    fun hideProgressDialog() {
         mProgressDialog.dismiss()
     }
-    fun doublebacktoex(){
+
+
+    fun doubleBackToex(){
         if (doublebacktoext){
             super.onBackPressed()
             return

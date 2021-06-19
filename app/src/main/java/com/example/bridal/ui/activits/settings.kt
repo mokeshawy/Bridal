@@ -60,10 +60,10 @@ class settings : Baseactivity(),View.OnClickListener{
 
                     FirebaseAuth.getInstance().signOut()
 
-                    val intent = Intent(this, reallogin::class.java)
-                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                    startActivity(intent)
-                    finish()
+//                    val intent = Intent(this, reallogin::class.java)
+//                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+//                    startActivity(intent)
+//                    finish()
                 }
             }
         }

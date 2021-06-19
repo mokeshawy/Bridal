@@ -6,14 +6,13 @@ import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.bridal.R
 import com.example.bridal.databinding.ActivityMainBinding
-import custom.constants
+import com.example.bridal.util.Constants
 
 class MainActivity : Baseactivity(){
 
@@ -64,7 +63,7 @@ class MainActivity : Baseactivity(){
                 else -> binding.navigationBottom.visibility = View.GONE
             }
         }
-        val sharedPreferences = getSharedPreferences(constants.bridalpreference, Context.MODE_PRIVATE)
-        val username = sharedPreferences.getString(constants.logged_username," ")!!
+        val sharedPreferences = getSharedPreferences(Constants.bridalpreference, Context.MODE_PRIVATE)
+        val username = sharedPreferences.getString(Constants.logged_username," ")!!
     }
 }
