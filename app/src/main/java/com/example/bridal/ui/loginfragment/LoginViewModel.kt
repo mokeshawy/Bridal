@@ -1,5 +1,6 @@
 package com.example.bridal.ui.loginfragment
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import androidx.appcompat.app.AlertDialog
@@ -101,13 +102,21 @@ class LoginViewModel : ViewModel() {
                     if(firebaseAuth.currentUser?.isEmailVerified!!){
                         // get data for user login from database.
                         userReference.child(firebaseAuth.currentUser!!.uid).addValueEventListener( object : ValueEventListener{
+                            @SuppressLint("CommitPrefEdits")
                             override fun onDataChange(snapshot: DataSnapshot) {
 
                                 val user = snapshot.getValue(UserModel::class.java)!!
-                                val bundle = Bundle()
-                                // send object for user login to home fragment using bundle.
-                                bundle.putSerializable(Constants.USERS_BUNDLE_KEY,user)
-                                Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_homeFragment,bundle)
+                                Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_homeFragment)
+
+                                // share the object for user login by sharedPreference.
+                                val myPreference = context.getSharedPreferences(Constants.USERS_SHARED_KEY,Context.MODE_PRIVATE)
+                                val editor =myPreference!!.edit()
+                                editor.putString(Constants.FIRST_NAME_KEY,user.firstName)
+                                editor.putString(Constants.LAST_NAME_KEY,user.lastName)
+                                editor.putString(Constants.USER_EMAIL_KEY,user.email)
+                                editor.putString(Constants.USER_MOBILE_KEY,user.mobile.toString())
+                                editor.putString(Constants.USER_PROFILE_IMAGE,user.image)
+                                editor.apply()
                             }
                             override fun onCancelled(error: DatabaseError) {
                                 Toast.makeText(context , error.message , Toast.LENGTH_SHORT).show()

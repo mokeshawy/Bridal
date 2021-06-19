@@ -12,7 +12,6 @@ import com.example.bridal.model.HomeListModel
 class HomeViewModel : ViewModel() {
 
 
-
     // function for list category.
     fun homeListItem( listView : RecyclerView , context: Context){
         val list = mutableListOf<HomeListModel>()

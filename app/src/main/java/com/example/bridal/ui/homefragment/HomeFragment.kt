@@ -14,7 +14,6 @@ class HomeFragment : Fragment() {
     override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View? {
         binding = FragmentHomeBinding.inflate(inflater)
              return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -32,7 +31,7 @@ class HomeFragment : Fragment() {
         homeViewModel.homeListItem(binding.listView, requireActivity())
     }
 
-    // fun setup mene.
+    // fun setup menu.
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.home_menu,menu)
         super.onCreateOptionsMenu(menu, inflater)

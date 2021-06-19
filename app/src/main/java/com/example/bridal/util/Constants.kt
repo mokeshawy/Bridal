@@ -30,7 +30,7 @@ object  Constants {
     const val USER_COMPLETE_PROFILE : String = "profileCompleted"
 
     // bundle key
-    const val USERS_BUNDLE_KEY = "userKey"
+    const val USERS_SHARED_KEY = "userKey"
 
     const  val users:String ="users"
     const val bridalpreference = "bridalpref"
