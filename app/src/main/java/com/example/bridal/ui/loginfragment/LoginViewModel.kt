@@ -6,12 +6,12 @@ import androidx.appcompat.app.AlertDialog
 import android.content.res.Configuration
 import android.text.TextUtils
 import android.view.View
-import androidx.core.app.ActivityCompat
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.navigation.Navigation
 import com.example.bridal.R
 import com.example.bridal.util.Constants
-import kotlinx.android.synthetic.main.activity_reallogin.*
+import com.google.firebase.auth.FirebaseAuth
 import java.util.*
 
 class LoginViewModel : ViewModel() {
@@ -19,6 +19,8 @@ class LoginViewModel : ViewModel() {
 
     var etUserEmail     = MutableLiveData<String>("")
     var etUserPassword  = MutableLiveData<String>("")
+
+    private val firebaseAuth = FirebaseAuth.getInstance()
 
      fun showChangeLang(context: Context , loginFragment: LoginFragment) {
         val listItems = arrayOf("عربي", "English")
@@ -69,6 +71,10 @@ class LoginViewModel : ViewModel() {
                 Constants.showErrorSnackBar(context.resources.getString((R.string.err_msg_pass1)), false , context, view)
                 false
             }
+            etUserPassword.value!!.length < 6 -> {
+                Constants.showErrorSnackBar(context.resources.getString((R.string.err_msg_length_Password)), false , context, view)
+                false
+            }
             else -> {
                 true
             }
@@ -79,8 +85,13 @@ class LoginViewModel : ViewModel() {
     fun userLogin( context: Context , view: View){
         // check validate input.
         if(validateLoginDetails(context , view)){
-
-
+            firebaseAuth.signInWithEmailAndPassword( etUserEmail.value!! , etUserPassword.value!!).addOnCompleteListener {
+                if(it.isSuccessful){
+                    if(firebaseAuth.currentUser?.isEmailVerified!!){
+                        Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_homeFragment)
+                    }
+                }
+            }
         }
     }
 

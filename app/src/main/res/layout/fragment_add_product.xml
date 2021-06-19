@@ -1,14 +1,233 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.addproductfragment.AddProductFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.addproductfragment.AddProductFragment"
+    android:fillViewport="true">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF">
 
-</FrameLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="37dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="124dp"
+                android:layout_marginBottom="9dp"
+                android:clickable="true"
+                app:srcCompat="@drawable/add" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName5"
+                android:layout_width="223dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView8"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="77dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="@string/prch" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="78dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="193dp"
+                android:text="@string/prc"
+                android:textColor="@color/black"/>
+
+            <ImageView
+                android:id="@+id/iv_header_bg2"
+                android:layout_width="57dp"
+                android:layout_height="52dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="47dp"
+                android:layout_marginBottom="173dp"
+                android:layout_toStartOf="@+id/iv_header_bg3"
+                android:contentDescription="@string/content_description"
+                android:scaleType="fitXY"
+                android:src="@drawable/im1" />
+
+            <ImageView
+                android:id="@+id/iv_header_bg3"
+                android:layout_width="60dp"
+                android:layout_height="49dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="33dp"
+                android:layout_marginBottom="176dp"
+                android:layout_toStartOf="@+id/iv_header_bg"
+                android:contentDescription="@string/content_description"
+                android:scaleType="fitXY"
+                android:src="@drawable/im2" />
+
+            <ImageView
+                android:id="@+id/iv_header_bg"
+                android:layout_width="63dp"
+                android:layout_height="51dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="138dp"
+                android:layout_marginBottom="175dp"
+                android:contentDescription="@string/content_description"
+                android:scaleType="fitXY"
+                android:src="@drawable/im3" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="148dp"
+                android:layout_height="37dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="68dp"
+                android:text="@string/cat"
+                android:textColor="@color/white"
+                android:backgroundTint="#ECCCA3"
+                />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="348dp"
+                android:text="@string/adim"
+                android:textColor="@color/back"/>
+
+            <EditText
+                android:id="@+id/editTextTextPersonName4"
+                android:layout_width="222dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView8"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="3dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="@string/PRDtih"
+
+                android:textColorHint="@color/grey" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="78dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="119dp"
+                android:text="@string/PRDti"
+                android:textColor="@color/black"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="56dp"
+                android:layout_marginBottom="171dp"
+                android:backgroundTint="#ECCCA3"
+                android:clickable="true"
+                app:srcCompat="@drawable/add" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="2dp"
+                android:layout_marginBottom="325dp"
+                android:text="@string/dscr"
+                android:textColor="@color/back" />
+
+            <EditText
+                android:id="@+id/editTextTextMultiLine"
+                android:layout_width="259dp"
+                android:layout_height="55dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="268dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="@string/dscrh"
+                android:inputType="textMultiLine" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="130dp"
+                android:text="@string/adloc"
+                android:textColor="@color/back" />
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapView"
+                android:layout_width="309dp"
+                android:layout_height="21dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="94dp" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="13dp"
+                android:layout_marginBottom="68dp"
+                android:text="@string/advid"
+                android:textColor="@color/back" />
+
+            <VideoView
+                android:id="@+id/videoView"
+                android:layout_width="81dp"
+                android:layout_height="32dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="33dp"
+                android:layout_marginBottom="12dp" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="114dp"
+                android:layout_height="37dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="21dp"
+                android:layout_marginEnd="20dp"
+                android:text="@string/sv"
+                android:textColor="@color/white"
+                android:backgroundTint="#ECCCA3"/>
+
+            <VideoView
+                android:id="@+id/videoView2"
+                android:layout_width="73dp"
+                android:layout_height="33dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="128dp"
+                android:layout_marginTop="559dp" />
+        </RelativeLayout>
+
+</ScrollView>

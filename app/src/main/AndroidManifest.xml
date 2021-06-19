@@ -11,11 +11,6 @@
         android:roundIcon="@mipmap/apy_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Bridal">
-        <activity android:name=".ui.activits.AddProductActivity">
-        </activity>
-        <activity
-            android:name=".ui.activits.settings"
-            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activits.MainActivity"
             android:label="@string/title_activity_dashboard" >
@@ -24,18 +19,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".ui.activits.frgtbassword"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activits.Baseactivity" />
-        <activity
-            android:name=".ui.activits.register"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.activits.reallogin"
-            android:screenOrientation="portrait" >
-
         </activity>
     </application>
 

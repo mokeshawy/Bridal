@@ -3,6 +3,7 @@ package com.example.bridal.ui.activits
 import android.content.Context
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -14,7 +15,7 @@ import com.example.bridal.R
 import com.example.bridal.databinding.ActivityMainBinding
 import com.example.bridal.util.Constants
 
-class MainActivity : Baseactivity(){
+class MainActivity : AppCompatActivity(){
 
     lateinit var binding : ActivityMainBinding
     lateinit var navHostFragment    : NavHostFragment
@@ -46,8 +47,8 @@ class MainActivity : Baseactivity(){
         // Operation work for hide and show actionbar on fragment.
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when(destination.id){
-
-                R.id.splashFragment -> supportActionBar!!.hide()
+                R.id.settingsAccountFragment    -> supportActionBar!!.hide()
+                R.id.splashFragment             -> supportActionBar!!.hide()
                 else -> supportActionBar!!.show()
             }
         }

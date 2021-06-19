@@ -11,9 +11,23 @@ import android.webkit.MimeTypeMap
 import androidx.core.content.ContextCompat
 import com.example.bridal.R
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.dialog_progress.*
 
 object  Constants {
+
+    // for "users" reference
+    const val USERS : String = "users"
+
+    // Child for user Reference
+    const val USER_ID           : String = "userId"
+    const val FIRST_NAME_KEY    : String  = "firstName"
+    const val LAST_NAME_KEY     : String  = "lastName"
+    const val USER_EMAIL_KEY    : String  = "email"
+    const val USER_IMAGE_KEY    : String  = "image"
+    const val USER_MOBILE_KEY   : String  = "mobile"
+    const val USER_GENDER_KEY   : String  = "gender"
+    const val USER_COMPLETE_PROFILE : String = "profileCompleted"
 
     const  val users:String ="users"
     const val bridalpreference = "bridalpref"
@@ -54,6 +68,21 @@ object  Constants {
     // fun hide progress bar
     fun hideProgressDialog() {
         mProgressDialog.dismiss()
+    }
+
+
+    // getUserID function
+    fun getCurrentUser() : String{
+        // An Instance of currentUser using FirebaseAuth
+        val currentUser = FirebaseAuth.getInstance().currentUser
+
+        // A variable to assign the currentUserId if it is nut null or else it will be blank
+        var currentUserID = ""
+        if(currentUserID != null){
+
+            currentUserID = currentUser.uid
+        }
+        return currentUserID
     }
 
     /**

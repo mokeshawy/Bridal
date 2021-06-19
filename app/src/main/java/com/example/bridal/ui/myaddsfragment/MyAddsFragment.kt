@@ -1,13 +1,10 @@
 package com.example.bridal.ui.myaddsfragment
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import com.example.bridal.R
 import com.example.bridal.databinding.FragmentMyAddsBinding
-import com.example.bridal.ui.activits.AddProductActivity
-import com.example.bridal.ui.activits.settings
 
 class MyAddsFragment : Fragment() {
 
@@ -33,7 +30,7 @@ class MyAddsFragment : Fragment() {
 
         when(id) {
             R.id.addpro -> {
-                startActivity(Intent(activity, AddProductActivity::class.java))
+
                 return true
             }
         }

@@ -7,7 +7,6 @@ import com.example.bridal.R
 import com.example.bridal.adapter.HomeAdapter
 import com.example.bridal.databinding.FragmentHomeBinding
 import com.example.bridal.model.HomeListModel
-import com.example.bridal.ui.activits.settings
 
 class HomeFragment : Fragment() {
 
@@ -39,7 +38,7 @@ class HomeFragment : Fragment() {
         val id = item.itemId
         when (id) {
             R.id.action_setting -> {
-                startActivity(Intent(activity, settings::class.java))
+                //startActivity(Intent(activity, settings::class.java))
                 return true
             }
         }

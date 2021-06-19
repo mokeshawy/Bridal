@@ -9,20 +9,12 @@
             type="com.example.bridal.ui.loginfragment.LoginViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.loginfragment.LoginFragment"
-        android:background="@color/back">
-
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fillViewport="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            tools:context=".ui.loginfragment.LoginFragment"
+            android:background="@color/back"
+            android:fillViewport="true">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -95,6 +87,7 @@
                     android:drawableEnd="@drawable/emailo"
                     android:ems="10"
                     android:hint="@string/em"
+                    android:text="@={loginFragment.etUserEmail}"
                     android:textColorHint="@color/grey"
                     app:layout_constraintBottom_toTopOf="@+id/et_password"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -113,6 +106,7 @@
                     android:drawableTint="@color/page"
                     android:ems="10"
                     android:hint="@string/pass"
+                    android:text="@={loginFragment.etUserPassword}"
                     android:inputType="textEmailAddress"
                     android:maxLines="20"
                     android:paddingEnd="12dp"
@@ -241,5 +235,4 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

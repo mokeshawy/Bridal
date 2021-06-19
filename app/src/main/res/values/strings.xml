@@ -62,6 +62,7 @@
     <string name="err_msg_lastname">Please enter your Last name</string>
     <string name="err_msg_erremail">Please enter your Email</string>
     <string name="err_msg_pass1">Please enter your password</string>
+    <string name="err_msg_length_Password">The password is not less than 6 number</string>
     <string name="err_msg_confirmpass">Please enter confirm your password</string>
     <string name="err_msg_notmatched">Please confirm your password</string>
     <string name="title_activity_dashboard">MainActivity</string>

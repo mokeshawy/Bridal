@@ -5,15 +5,32 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.example.bridal.R
+import com.example.bridal.databinding.FragmentForgetPasswordBinding
 
 class ForgetPasswordFragment : Fragment() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    lateinit var binding : FragmentForgetPasswordBinding
+    private val forgetPasswordViewModel : ForgetPasswordViewModel by viewModels()
+
+    override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_forget_password, container, false)
+        binding = FragmentForgetPasswordBinding.inflate(inflater)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // connect with viewModel
+        binding.lifecycleOwner = this
+        binding.forgetPasswordFragment = forgetPasswordViewModel
+
+
+        // btn submit for send email change password
+        binding.btnSubmit.setOnClickListener {
+            forgetPasswordViewModel.forgetPassword(requireActivity(),view)
+        }
     }
 }

@@ -67,6 +67,7 @@
     <string name="err_msg_lastname">من فضلك ادخل الاسم الاخير</string>
     <string name="err_msg_erremail">من فضلك ادخل حسابك </string>
     <string name="err_msg_pass1">من فضلك ادخل كلمه المرور</string>
+    <string name="err_msg_length_Password">كلمة المرور اقل من 6 ارقام</string>
     <string name="err_msg_confirmpass">من فضلك أكد كلمه المرور</string>
     <string name="err_msg_notmatched">من فضلك أكد كلمه المرور</string>
     <string name="cat">الفئه</string>

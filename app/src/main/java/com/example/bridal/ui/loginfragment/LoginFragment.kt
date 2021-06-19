@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.bridal.R
 import com.example.bridal.databinding.FragmentLoginBinding
 
@@ -34,5 +35,21 @@ class LoginFragment : Fragment() {
             //call fun change language.
             loginViewModel.showChangeLang(requireActivity(),this)
         }
+
+        // btn login.
+        binding.btnLogin.setOnClickListener {
+            loginViewModel.userLogin(requireActivity(),view)
+        }
+
+        // tv btn go register page.
+        binding.tvRegister.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+        }
+
+        // tv btn go forget password.
+        binding.tvForgetPassword.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_forgetPasswordFragment)
+        }
+
     }
 }
