@@ -9,7 +9,13 @@
         android:id="@+id/homeFragment"
         android:name="com.example.bridal.ui.homefragment.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_settingsAccountFragment"
+            app:destination="@id/settingsAccountFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/dashBoardFragment"

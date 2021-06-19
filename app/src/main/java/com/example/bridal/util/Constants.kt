@@ -29,6 +29,9 @@ object  Constants {
     const val USER_GENDER_KEY   : String  = "gender"
     const val USER_COMPLETE_PROFILE : String = "profileCompleted"
 
+    // bundle key
+    const val USERS_BUNDLE_KEY = "userKey"
+
     const  val users:String ="users"
     const val bridalpreference = "bridalpref"
     const val logged_username = "logged_in_username"

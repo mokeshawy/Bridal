@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="homeFragment"
+            type="com.example.bridal.ui.homefragment.HomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

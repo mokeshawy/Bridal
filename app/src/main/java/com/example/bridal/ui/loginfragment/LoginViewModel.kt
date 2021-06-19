@@ -4,14 +4,21 @@ import android.app.Activity
 import android.content.Context
 import androidx.appcompat.app.AlertDialog
 import android.content.res.Configuration
+import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import com.example.bridal.R
+import com.example.bridal.model.UserModel
 import com.example.bridal.util.Constants
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import java.util.*
 
 class LoginViewModel : ViewModel() {
@@ -20,8 +27,12 @@ class LoginViewModel : ViewModel() {
     var etUserEmail     = MutableLiveData<String>("")
     var etUserPassword  = MutableLiveData<String>("")
 
-    private val firebaseAuth = FirebaseAuth.getInstance()
+    // firebase instance.
+    private val firebaseAuth        = FirebaseAuth.getInstance()
+    private val firebaseDatabase    = FirebaseDatabase.getInstance()
+    private val userReference       = firebaseDatabase.getReference(Constants.USERS)
 
+    // fun change language.
      fun showChangeLang(context: Context , loginFragment: LoginFragment) {
         val listItems = arrayOf("عربي", "English")
         val mBuilder = AlertDialog.Builder(context)
@@ -88,11 +99,23 @@ class LoginViewModel : ViewModel() {
             firebaseAuth.signInWithEmailAndPassword( etUserEmail.value!! , etUserPassword.value!!).addOnCompleteListener {
                 if(it.isSuccessful){
                     if(firebaseAuth.currentUser?.isEmailVerified!!){
-                        Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_homeFragment)
+                        // get data for user login from database.
+                        userReference.child(firebaseAuth.currentUser!!.uid).addValueEventListener( object : ValueEventListener{
+                            override fun onDataChange(snapshot: DataSnapshot) {
+
+                                val user = snapshot.getValue(UserModel::class.java)!!
+                                val bundle = Bundle()
+                                // send object for user login to home fragment using bundle.
+                                bundle.putSerializable(Constants.USERS_BUNDLE_KEY,user)
+                                Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_homeFragment,bundle)
+                            }
+                            override fun onCancelled(error: DatabaseError) {
+                                Toast.makeText(context , error.message , Toast.LENGTH_SHORT).show()
+                            }
+                        })
                     }
                 }
             }
         }
     }
-
 }
