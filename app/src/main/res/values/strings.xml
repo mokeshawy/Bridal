@@ -65,7 +65,7 @@
     <string name="err_msg_length_Password">The password is not less than 6 number</string>
     <string name="err_msg_confirmpass">Please enter confirm your password</string>
     <string name="err_msg_notmatched">Please confirm your password</string>
-    <string name="title_activity_dashboard">MainActivity</string>
+    <string name="title_activity_main">Bridal</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
@@ -106,5 +106,25 @@
     <string name="wedding_halls">Wedding Halls</string>
     <string name="wedding_suit">Wedding Suit</string>
     <string name="weeding_dresses">Weeding Dresses</string>
+
+
+    <!-- category array-->
+    <string-array name="category">
+        <item name="beauty_center">Beauty Center</item>
+        <item name="buffet_services">Buffet Services</item>
+        <item name="car_rental">Car Rental</item>
+        <item name="cosmetic_dentistry">Cosmetic Dentistry</item>
+        <item name="domestic_flights">Domestic Flights</item>
+        <item name="flowers">Flowers</item>
+        <item name="gold_and_jewelry">Gold and Jewelry</item>
+        <item name="health_and_beauty">Health and Beauty</item>
+        <item name="honey_moon">Honey Moon</item>
+        <item name="hotels">Hotels</item>
+        <item name="watches_and_accessories">Watches and Accessories</item>
+        <item name="wedding_group">Wedding Group</item>
+        <item name="wedding_halls">Wedding Halls</item>
+        <item name="wedding_suit">Wedding Suit</item>
+        <item name="weeding_dresses">Weeding Dresses</item>
+    </string-array>
 
 </resources>

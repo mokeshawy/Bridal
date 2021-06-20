@@ -114,8 +114,9 @@ class LoginViewModel : ViewModel() {
                                 editor.putString(Constants.FIRST_NAME_KEY,user.firstName)
                                 editor.putString(Constants.LAST_NAME_KEY,user.lastName)
                                 editor.putString(Constants.USER_EMAIL_KEY,user.email)
-                                editor.putString(Constants.USER_MOBILE_KEY,user.mobile.toString())
                                 editor.putString(Constants.USER_PROFILE_IMAGE,user.image)
+                                editor.putString(Constants.USER_MOBILE_KEY,user.mobile.toString())
+                                editor.putString(Constants.USER_GENDER_KEY,user.gender)
                                 editor.apply()
                             }
                             override fun onCancelled(error: DatabaseError) {

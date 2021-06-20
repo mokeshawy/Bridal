@@ -3,6 +3,7 @@ package com.example.bridal.ui.myaddsfragment
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.bridal.R
 import com.example.bridal.databinding.FragmentMyAddsBinding
 
@@ -26,11 +27,10 @@ class MyAddsFragment : Fragment() {
         super.onCreateOptionsMenu(menu, inflater)
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val id = item.itemId
 
-        when(id) {
+        when(item.itemId) {
             R.id.addpro -> {
-
+                findNavController().navigate(R.id.action_myAddsFragment_to_addProductFragment)
                 return true
             }
         }

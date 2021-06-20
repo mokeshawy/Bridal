@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/splashFragment">
+    app:startDestination="@+id/homeFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -27,7 +27,13 @@
         android:id="@+id/myAddsFragment"
         android:name="com.example.bridal.ui.myaddsfragment.MyAddsFragment"
         android:label="@string/title_my_adds"
-        tools:layout="@layout/fragment_my_adds" />
+        tools:layout="@layout/fragment_my_adds" >
+        <action
+            android:id="@+id/action_myAddsFragment_to_addProductFragment"
+            app:destination="@id/addProductFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:popUpTo="@id/myAddsFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/myAccountFragment"

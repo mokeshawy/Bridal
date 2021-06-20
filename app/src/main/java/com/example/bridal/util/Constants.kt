@@ -42,6 +42,8 @@ object  Constants {
     const val EXTRA_USER_DETAILS: String = "extra_user_details"
 
 
+    // category reference
+    const val PRODUCT_REFERENCE = "category"
 
     // fun snack bar show error and successful
     fun showErrorSnackBar(message : String, errorMessage : Boolean, context: Context, view : View){

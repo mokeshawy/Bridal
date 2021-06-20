@@ -39,7 +39,7 @@
     <!--START-->
     <string name="action_add_product">اضف منتجات</string>
     <string name="content_description">صوره</string>
-    <string name="title_activity_dashboard">MainActivity</string>
+    <string name="title_activity_main">Bridal</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
@@ -102,5 +102,25 @@
     <string name="wedding_halls">قاعات افراح</string>
     <string name="wedding_suit">بدل زفاف</string>
     <string name="weeding_dresses">فساتين زفاف</string>
+
+
+ <!-- category array-->
+   <string-array name="category">
+     <item name="beauty_center">مركز تجميل وكوافير</item>
+     <item name="buffet_services">خدمات بوفية</item>
+     <item name="car_rental">ايجار سيارات</item>
+     <item name="cosmetic_dentistry">مركز تجميل اسنان</item>
+     <item name="domestic_flights">شهر عسل رحلات داخلية</item>
+     <item name="flowers">زهور</item>
+     <item name="gold_and_jewelry">ذهب ومجوهرات</item>
+     <item name="health_and_beauty">صحة وجمال</item>
+     <item name="honey_moon">شهر العسل</item>
+     <item name="hotels">فنادق</item>
+     <item name="watches_and_accessories">أكسسوارات وساعات</item>
+     <item name="wedding_group">فرق زفة</item>
+     <item name="wedding_halls">قاعات افراح</item>
+     <item name="wedding_suit">بدل زفاف</item>
+     <item name="weeding_dresses">فساتين زفاف</item>
+   </string-array>
 
 </resources>

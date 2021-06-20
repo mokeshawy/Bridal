@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Bridal">
         <activity
             android:name=".ui.activits.MainActivity"
-            android:label="@string/title_activity_dashboard" >
+            android:label="@string/title_activity_main" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

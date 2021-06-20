@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.addproductfragment.AddProductFragment"
-    android:fillViewport="true">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="addProductFragment"
+            type="com.example.bridal.ui.addproductfragment.AddProductViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.addproductfragment.AddProductFragment"
+        android:fillViewport="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -16,7 +24,7 @@
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/floatingActionButton2"
                 android:layout_width="wrap_content"
-                android:layout_height="37dp"
+                android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginEnd="124dp"
@@ -25,9 +33,10 @@
                 app:srcCompat="@drawable/add" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName5"
+                android:id="@+id/et_add_product_price"
                 android:layout_width="223dp"
                 android:layout_height="wrap_content"
+                android:text="@={addProductFragment.etProductPrice}"
                 android:layout_below="@+id/textView8"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="5dp"
@@ -45,7 +54,7 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="193dp"
                 android:text="@string/prc"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black" />
 
             <ImageView
                 android:id="@+id/iv_header_bg2"
@@ -83,18 +92,28 @@
                 android:scaleType="fitXY"
                 android:src="@drawable/im3" />
 
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="148dp"
-                android:layout_height="37dp"
+            <!--            <Button-->
+            <!--                android:id="@+id/button5"-->
+            <!--                android:layout_width="148dp"-->
+            <!--                android:layout_height="37dp"-->
+            <!--                android:layout_alignParentStart="true"-->
+            <!--                android:layout_alignParentTop="true"-->
+            <!--                android:layout_marginStart="6dp"-->
+            <!--                android:layout_marginTop="68dp"-->
+            <!--                android:text="@string/cat"-->
+            <!--                android:textColor="@color/white"-->
+            <!--                android:backgroundTint="#ECCCA3"-->
+            <!--                />-->
+
+            <Spinner
+                android:id="@+id/spinner_category"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:entries="@array/category"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="6dp"
-                android:layout_marginTop="68dp"
-                android:text="@string/cat"
-                android:textColor="@color/white"
-                android:backgroundTint="#ECCCA3"
-                />
+                android:layout_marginTop="50dp"/>
 
             <TextView
                 android:id="@+id/textView3"
@@ -105,12 +124,13 @@
                 android:layout_marginStart="11dp"
                 android:layout_marginTop="348dp"
                 android:text="@string/adim"
-                android:textColor="@color/back"/>
+                android:textColor="@color/back" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName4"
+                android:id="@+id/et_product_title"
                 android:layout_width="222dp"
                 android:layout_height="wrap_content"
+                android:text="@={addProductFragment.etProductTitle}"
                 android:layout_below="@+id/textView8"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="6dp"
@@ -118,7 +138,6 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:hint="@string/PRDtih"
-
                 android:textColorHint="@color/grey" />
 
             <TextView
@@ -130,7 +149,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="119dp"
                 android:text="@string/PRDti"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/floatingActionButton"
@@ -156,9 +175,10 @@
                 android:textColor="@color/back" />
 
             <EditText
-                android:id="@+id/editTextTextMultiLine"
+                android:id="@+id/et_product_description"
                 android:layout_width="259dp"
                 android:layout_height="55dp"
+                android:text="@={addProductFragment.etProductDescription}"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="4dp"
@@ -209,7 +229,7 @@
                 android:layout_marginBottom="12dp" />
 
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/btn_save_product"
                 android:layout_width="114dp"
                 android:layout_height="37dp"
                 android:layout_alignParentTop="true"
@@ -218,7 +238,7 @@
                 android:layout_marginEnd="20dp"
                 android:text="@string/sv"
                 android:textColor="@color/white"
-                android:backgroundTint="#ECCCA3"/>
+                android:backgroundTint="#ECCCA3" />
 
             <VideoView
                 android:id="@+id/videoView2"
@@ -230,4 +250,5 @@
                 android:layout_marginTop="559dp" />
         </RelativeLayout>
 
-</ScrollView>
+    </ScrollView>
+</layout>
