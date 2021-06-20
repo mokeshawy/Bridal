@@ -86,6 +86,12 @@
     <string name="title_my_adds">My Adds</string>
     <string name="title_my_account">My Account</string>
 
+    <string name="title_login">تسجيل الدخول</string>
+    <string name="title_register">التسجيل</string>
+    <string name="title_forgetPassword">استعادة كلمة المرور</string>
+    <string name="title_product">المنتجات</string>
+    <string name="title_add_product">اضافة منتج</string>
+
     <!-- Home List-->
     <string name="beauty_center">مركز تجميل وكوافير</string>
     <string name="buffet_services">خدمات بوفية</string>
@@ -122,5 +128,8 @@
      <item name="wedding_suit">بدل زفاف</item>
      <item name="weeding_dresses">فساتين زفاف</item>
    </string-array>
+
+
+
 
 </resources>

@@ -32,6 +32,7 @@ class AddProductFragment : Fragment() {
 
         binding.spinnerCategory.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected( adapterView : AdapterView<*>?, view: View?, position: Int, id: Long ) {
+
                 val categoryName = adapterView?.getItemAtPosition(position).toString()
                 binding.btnSaveProduct.setOnClickListener {
                     addProductViewModel.addProductItem(categoryName)

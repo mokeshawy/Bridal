@@ -108,6 +108,13 @@
     <string name="weeding_dresses">Weeding Dresses</string>
 
 
+    <string name="title_login">Login</string>
+    <string name="title_register">Register</string>
+    <string name="title_forgetPassword">Forget Password</string>
+    <string name="title_product">Product</string>
+    <string name="title_add_product">Add Product</string>
+
+
     <!-- category array-->
     <string-array name="category">
         <item name="beauty_center">Beauty Center</item>

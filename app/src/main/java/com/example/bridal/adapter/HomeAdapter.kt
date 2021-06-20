@@ -4,17 +4,19 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bridal.databinding.HomeItemListBinding
+import com.example.bridal.interfaceforclickadapter.OnClickHomeAdapter
 import com.example.bridal.model.HomeListModel
+import com.example.bridal.model.ProductModel
 import com.example.bridal.ui.glideLoader
 
-class HomeAdapter(private var mHomeList: List<HomeListModel> ) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
+class HomeAdapter(private var mHomeList: List<HomeListModel> , var onClickHomeAdapter: OnClickHomeAdapter ) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
 
     class ViewHolder(var binding : HomeItemListBinding) : RecyclerView.ViewHolder(binding.root) {
 
         // initialize onClickUsersAdapter from interface
-//        fun initialize(viewHolder: ViewHolder, dataSet: UsersModel, action : OnClickUsersAdapter, isChecked : Boolean){
-//            action.onClickUsersAdapter(viewHolder , dataSet , adapterPosition , isChecked)
-//        }
+        fun initialize(viewHolder: ViewHolder, mHomeList: HomeListModel , action : OnClickHomeAdapter){
+            action.onClickHomListItem(viewHolder , mHomeList , adapterPosition )
+        }
 
     }
     // Create new views (invoked by the layout manager)
@@ -32,8 +34,8 @@ class HomeAdapter(private var mHomeList: List<HomeListModel> ) : RecyclerView.Ad
 
         viewHolder.binding.title.text = mHomeList[position].title
         glideLoader(viewHolder.itemView.context).loadUserPicture(mHomeList[position].image,viewHolder.binding.icon)
-//
-//        viewHolder.initialize( viewHolder , mUsers[position] , onClickAdapter , true)
+
+        viewHolder.initialize( viewHolder , mHomeList[position] , onClickHomeAdapter)
 
     }
 
