@@ -4,6 +4,7 @@ import android.content.Context
 import android.text.TextUtils
 import android.view.View
 import android.widget.CheckBox
+import android.widget.ProgressBar
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
@@ -74,13 +75,12 @@ class RegisterViewModel : ViewModel() {
     var userReference       = firebaseDatabase.getReference(Constants.USERS)
 
     // fun register user
-    fun registerUser(context: Context , view : View ){
+    fun registerUser(context: Context , view : View , progressBar: ProgressBar){
 
         // check validate function if the entries are valid or no
         if(validateInput(context , view )){
 
-            // show the progressDialog
-            Constants.showProgressDialog(context.resources.getString(R.string.plswt) , context)
+            progressBar.visibility = View.VISIBLE
 
             // Get the text from editText and trim space
             val email       = etEmail.value.toString().trim { it <= ' ' }
@@ -106,18 +106,15 @@ class RegisterViewModel : ViewModel() {
                     // Insert value from userModel to real time data base
                     userReference.child(Constants.getCurrentUser()).setValue(user)
 
-                    // Hide the progressDialog
-                    Constants.hideProgressDialog()
-
+                    progressBar.visibility = View.GONE
                     // Show snack bar for register success
                     Constants.showErrorSnackBar("Register Done",false,context,view)
 
                     //After success register transfer to logIn page
                     Navigation.findNavController(view).navigate(R.id.action_registerFragment_to_loginFragment)
                 }else{
-                    // Hide the progressDialog
-                    Constants.hideProgressDialog()
                     Constants.showErrorSnackBar(task.exception!!.message.toString(), true , context, view)
+                    progressBar.visibility = View.GONE
                 }
             }
         }

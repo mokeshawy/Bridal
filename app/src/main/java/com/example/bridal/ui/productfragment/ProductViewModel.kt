@@ -1,5 +1,8 @@
 package com.example.bridal.ui.productfragment
 
+import android.view.View
+import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.bridal.model.ProductModel
@@ -17,7 +20,7 @@ class ProductViewModel : ViewModel() {
     var firebaseDatabase = FirebaseDatabase.getInstance()
     var productReference = firebaseDatabase.getReference(Constants.PRODUCT_REFERENCE)
     // fun read data for product from database.
-    fun readProduct(categoryName : String){
+    fun readProduct(categoryName : String , tv_not_found : TextView , progressBar: ProgressBar){
 
         productArrayList = ArrayList()
 
@@ -30,12 +33,18 @@ class ProductViewModel : ViewModel() {
                     }
                 }
                 productListLiveData.value = productArrayList
+                if(productArrayList.size > 0 ){
+                    tv_not_found.visibility = View.GONE
+                    progressBar.visibility = View.GONE
+                }else{
+                    tv_not_found.visibility = View.VISIBLE
+                    progressBar.visibility = View.GONE
+                }
             }
 
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }
-
         })
     }
 }

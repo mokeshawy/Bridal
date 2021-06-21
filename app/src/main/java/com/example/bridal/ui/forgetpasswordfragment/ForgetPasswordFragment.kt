@@ -28,9 +28,12 @@ class ForgetPasswordFragment : Fragment() {
         binding.forgetPasswordFragment = forgetPasswordViewModel
 
 
+        // hide progress bar.
+        binding.loadingView.visibility = View.GONE
+
         // btn submit for send email change password
         binding.btnSubmit.setOnClickListener {
-            forgetPasswordViewModel.forgetPassword(requireActivity(),view)
+            forgetPasswordViewModel.forgetPassword(requireActivity(),view , binding.loadingView)
         }
     }
 }

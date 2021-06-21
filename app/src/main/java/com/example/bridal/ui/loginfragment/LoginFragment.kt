@@ -30,6 +30,9 @@ class LoginFragment : Fragment() {
 
         loginViewModel.loadLocate(requireActivity())
 
+        // hide progress bar.
+        binding.loadingView.visibility = View.GONE
+
         // btn change language.
         binding.btnChangeLanguage.setOnClickListener {
             //call fun change language.
@@ -38,7 +41,7 @@ class LoginFragment : Fragment() {
 
         // btn login.
         binding.btnLogin.setOnClickListener {
-            loginViewModel.userLogin(requireActivity(),view)
+            loginViewModel.userLogin(requireActivity(),view,binding.loadingView)
         }
 
         // tv btn go register page.

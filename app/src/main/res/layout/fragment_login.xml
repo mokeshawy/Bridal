@@ -89,11 +89,11 @@
                     app:layout_constraintTop_toBottomOf="@+id/et_email_address"
                     app:passwordToggleEnabled="true" />
 
+
                 <TextView
                     android:id="@+id/tv_forget_password"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
                     android:text="@string/forget"
                     android:textColor="#1976D3"
                     android:textSize="13sp"
@@ -101,7 +101,6 @@
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="@+id/et_password"
                     app:layout_constraintTop_toBottomOf="@+id/et_password" />
-
 
                 <Button
                     android:id="@+id/btn_login"
@@ -183,10 +182,22 @@
                     android:textSize="15sp"
                     app:layout_constraintBottom_toBottomOf="@+id/tv_dont_have_account"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.093"
+                    app:layout_constraintHorizontal_bias="0.05"
                     app:layout_constraintStart_toEndOf="@+id/tv_dont_have_account"
                     app:layout_constraintTop_toTopOf="@+id/tv_dont_have_account"
                     app:layout_constraintVertical_bias="0.0" />
+
+
+
+                <ProgressBar
+                    android:id="@+id/loading_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminateTint="@color/clicked"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>

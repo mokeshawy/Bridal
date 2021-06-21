@@ -37,7 +37,9 @@ class HomeFragment : Fragment() , OnClickHomeAdapter{
         // call function home list for category.
         homeViewModel.homeListItem(requireActivity())
         homeViewModel.homeListAdapter.observe(viewLifecycleOwner, Observer {
+            binding.loadingView.visibility = View.VISIBLE
             binding.rvCategoryList.adapter = HomeAdapter(it,this)
+            binding.loadingView.visibility = View.GONE
         })
     }
 

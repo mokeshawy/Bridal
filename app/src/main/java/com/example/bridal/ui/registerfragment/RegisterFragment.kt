@@ -26,8 +26,11 @@ class RegisterFragment : Fragment() {
         binding.lifecycleOwner      = this
         binding.registerFragment    = registerViewModel
 
+        // hide progress bar.
+        binding.loadingView.visibility = View.GONE
+
         binding.btnSubmit.setOnClickListener {
-            registerViewModel.registerUser(requireActivity(),view)
+            registerViewModel.registerUser(requireActivity(),view,binding.loadingView)
         }
     }
 }

@@ -29,11 +29,16 @@ class ProductFragment : Fragment() {
         binding.lifecycleOwner  = this
         binding.productFragment = productViewModel
 
+        // get category name using bundle from home fragment.
         val categoryName = arguments?.getString(Constants.PRODUCT_ITEM_KEY)
 
-        productViewModel.readProduct(categoryName.toString())
+        // call read product function.
+        productViewModel.readProduct(categoryName.toString(),binding.tvProductNotFound,binding.loadingView)
         productViewModel.productListLiveData.observe(viewLifecycleOwner, Observer {
+            binding.loadingView.visibility = View.VISIBLE
             binding.recyclerView.adapter = ProductAdapter(it)
+            binding.loadingView.visibility = View.GONE
+
         })
 
     }

@@ -8,6 +8,7 @@ import android.content.res.Configuration
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -94,9 +95,10 @@ class LoginViewModel : ViewModel() {
     }
 
     // fun user login.
-    fun userLogin( context: Context , view: View){
+    fun userLogin( context: Context , view: View , progressBar : ProgressBar){
         // check validate input.
         if(validateLoginDetails(context , view)){
+            progressBar.visibility = View.VISIBLE
             firebaseAuth.signInWithEmailAndPassword( etUserEmail.value!! , etUserPassword.value!!).addOnCompleteListener {
                 if(it.isSuccessful){
                     if(firebaseAuth.currentUser?.isEmailVerified!!){
@@ -121,8 +123,10 @@ class LoginViewModel : ViewModel() {
                             }
                             override fun onCancelled(error: DatabaseError) {
                                 Toast.makeText(context , error.message , Toast.LENGTH_SHORT).show()
+                                progressBar.visibility = View.GONE
                             }
                         })
+                        progressBar.visibility = View.GONE
                     }
                 }
             }

@@ -113,6 +113,7 @@
     <string name="title_forgetPassword">Forget Password</string>
     <string name="title_product">Product</string>
     <string name="title_add_product">Add Product</string>
+    <string name="title_product_not_foun">Product not found</string>
 
 
     <!-- category array-->

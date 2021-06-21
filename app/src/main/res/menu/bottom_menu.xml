@@ -7,6 +7,13 @@
         android:iconTintMode="src_atop"
         android:icon="@drawable/ic_vector_home"
         app:showAsAction="always" />
+
+    <item
+        android:id="@+id/myAddsFragment"
+        android:title="@string/My_adds"
+        android:icon="@drawable/ic_vector_my_adds"
+        app:showAsAction="always" />
+
     <item
 
         android:id="@+id/dashBoardFragment"
@@ -14,11 +21,7 @@
         android:icon="@drawable/ic_vector_favorite"
         app:showAsAction="always"
         android:iconTintMode="multiply" />
-    <item
-        android:id="@+id/myAddsFragment"
-        android:title="@string/My_adds"
-        android:icon="@drawable/ic_vector_my_adds"
-        app:showAsAction="always" />
+
     <item
         android:id="@+id/myAccountFragment"
         android:title="@string/My_account"
