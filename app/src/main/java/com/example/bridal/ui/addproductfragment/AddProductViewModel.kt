@@ -55,14 +55,8 @@ class AddProductViewModel : ViewModel(){
             storageTow.putFile(imageUriTow).addOnCompleteListener { imageTow ->
                 if(imageTow.isSuccessful){
                     storageTow.downloadUrl.addOnSuccessListener { imageUrlTow ->
-                        if(imageTow.isSuccessful){
-                            map[Constants.PRODUCT_IMAGE_TOW]    = imageUrlTow.toString()
-                            productReference.child(pushKey.toString()).updateChildren(map)
-                        }else{
-                            map[Constants.PRODUCT_IMAGE_TOW]    = Constants.SOURCE_IMAGE_TOW
-                            productReference.child(pushKey.toString()).updateChildren(map)
-                        }
-
+                        map[Constants.PRODUCT_IMAGE_TOW]    = imageUrlTow.toString()
+                        productReference.child(pushKey.toString()).updateChildren(map)
                     }
                 }
             }
