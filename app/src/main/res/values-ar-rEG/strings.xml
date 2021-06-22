@@ -112,6 +112,7 @@
 
  <!-- category array-->
    <string-array name="category">
+       <item name="no_selected">اختر الفئة</item>
      <item name="beauty_center">مركز تجميل وكوافير</item>
      <item name="buffet_services">خدمات بوفية</item>
      <item name="car_rental">ايجار سيارات</item>
@@ -130,6 +131,17 @@
    </string-array>
 
 
+    <string name="title_product_not_foun">لا يوجد منتجات</string>
+    <string name="title_new_product">اضافة منتج جديد</string>
+    <string name="btn_upload_video">رفع</string>
+    <string name="title_upload_video">رفع فيديو</string>
+    <string name="title_select_image">اختيار الصور</string>
+    <string name="title_add_location">أضف الموقع</string>
+
+    <string name="err_validate_select_category">من فضلك اختر الفئة</string>
+    <string name="err_validate_product_title">من فضلك اختار مسمى المنتج</string>
+    <string name="err_validate_product_price">من فضلك حدد سعر المنتج</string>
+    <string name="err_validate_product_description">من فضلك اضف شرح للمنتج</string>
 
 
 </resources>

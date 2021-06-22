@@ -41,7 +41,6 @@ class ProductViewModel : ViewModel() {
                     progressBar.visibility = View.GONE
                 }
             }
-
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }

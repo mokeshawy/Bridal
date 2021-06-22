@@ -22,4 +22,12 @@
     <style name="Theme.Bridal.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.Bridal.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="mySpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="background">@color/clicked</item>
+        <item name="android:itemPadding">15dp</item>
+    </style>
 </resources>

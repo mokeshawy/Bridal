@@ -37,7 +37,30 @@ object  Constants {
 
     // product reference
     const val PRODUCT_REFERENCE = "product"
+    // child of product.
+    const val PRODUCT_USER_ID       = "userId"
+    const val PRODUCT_CATEGORY_NAME = "categoryName"
+    const val PRODUCT_TITLE         = "productTitle"
+    const val PRODUCT_PRICE         = "productPrice"
+    const val PRODUCT_IMAGE_ONE     = "productImageOne"
+    const val PRODUCT_IMAGE_TOW     = "productImageTow"
+    const val PRODUCT_IMAGE_THREE   = "productImageThree"
+    const val PRODUCT_VIDEO         = "productVideo"
+    const val PRODUCT_DESCRIPTION   = "productDescription"
+    const val PRODUCT_LATITUDE      = "latitude"
+    const val PRODUCT_LONGITUDE     = "longitude"
 
+
+    // request number for image.
+    const val IMAGE_NUM_ONE_KEY     = 111
+    const val IMAGE_NUM_TOW_KEY     = 222
+    const val IMAGE_NUM_THREE_KEY   = 333
+
+
+    // const image in firebase.
+    const val SOURCE_IMAGE_ONE      = "https://firebasestorage.googleapis.com/v0/b/bridal-f3ec8.appspot.com/o/Photo%2Fimage_one.png?alt=media&token=ad4aa617-3021-4c6d-9344-7c7bd3f1e6ac"
+    const val SOURCE_IMAGE_TOW      = "https://firebasestorage.googleapis.com/v0/b/bridal-f3ec8.appspot.com/o/Photo%2Fimage_three.png?alt=media&token=fd9132db-656a-44de-aa05-91fa196b157e"
+    const val SOURCE_IMAGE_THREE    = "https://firebasestorage.googleapis.com/v0/b/bridal-f3ec8.appspot.com/o/Photo%2Fimage_tow.png?alt=media&token=9bf21e65-a19c-42be-9cc1-f6ad694875db"
 
 
 
@@ -76,7 +99,6 @@ object  Constants {
     fun getCurrentUser() : String{
         // An Instance of currentUser using FirebaseAuth
         val currentUser = FirebaseAuth.getInstance().currentUser
-
         // A variable to assign the currentUserId if it is nut null or else it will be blank
         var currentUserID = ""
         if(currentUserID != null){

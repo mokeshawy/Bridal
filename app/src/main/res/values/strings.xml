@@ -108,16 +108,10 @@
     <string name="weeding_dresses">Weeding Dresses</string>
 
 
-    <string name="title_login">Login</string>
-    <string name="title_register">Register</string>
-    <string name="title_forgetPassword">Forget Password</string>
-    <string name="title_product">Product</string>
-    <string name="title_add_product">Add Product</string>
-    <string name="title_product_not_foun">Product not found</string>
-
 
     <!-- category array-->
     <string-array name="category">
+        <item name="no_selected">Select Category</item>
         <item name="beauty_center">Beauty Center</item>
         <item name="buffet_services">Buffet Services</item>
         <item name="car_rental">Car Rental</item>
@@ -134,5 +128,23 @@
         <item name="wedding_suit">Wedding Suit</item>
         <item name="weeding_dresses">Weeding Dresses</item>
     </string-array>
+
+    <string name="title_login">Login</string>
+    <string name="title_register">Register</string>
+    <string name="title_forgetPassword">Forget Password</string>
+    <string name="title_product">Product</string>
+    <string name="title_add_product">Add Product</string>
+
+    <string name="title_product_not_foun">Product not found</string>
+    <string name="title_new_product">Add New Product</string>
+    <string name="btn_upload_video">Upload</string>
+    <string name="title_upload_video">Upload Video</string>
+    <string name="title_select_image">Select Image</string>
+    <string name="title_add_location">Add Location</string>
+
+    <string name="err_validate_select_category">Please Select Category</string>
+    <string name="err_validate_product_title">Please add title of product</string>
+    <string name="err_validate_product_price">Please add price of product</string>
+    <string name="err_validate_product_description">Please add description of product</string>
 
 </resources>

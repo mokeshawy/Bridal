@@ -2,253 +2,241 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
     <data>
         <variable
             name="addProductFragment"
             type="com.example.bridal.ui.addproductfragment.AddProductViewModel" />
     </data>
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.addproductfragment.AddProductFragment"
         android:fillViewport="true">
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FFFFFF">
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:cardBackgroundColor="@color/clicked"
+                app:cardElevation="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.492"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/title_new_product"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="italic" />
+            </androidx.cardview.widget.CardView>
 
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/floatingActionButton2"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginEnd="124dp"
-                android:layout_marginBottom="9dp"
-                android:clickable="true"
-                app:srcCompat="@drawable/add" />
+                android:layout_marginTop="52dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView">
 
-            <EditText
-                android:id="@+id/et_add_product_price"
-                android:layout_width="223dp"
-                android:layout_height="wrap_content"
-                android:text="@={addProductFragment.etProductPrice}"
-                android:layout_below="@+id/textView8"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="77dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="@string/prch" />
+                <Spinner
+                    android:id="@+id/spinner_category"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="left"
+                    android:entries="@array/category"
+                    android:theme="@style/mySpinnerItemStyle" />
 
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="78dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="193dp"
-                android:text="@string/prc"
-                android:textColor="@color/black" />
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
 
-            <ImageView
-                android:id="@+id/iv_header_bg2"
-                android:layout_width="57dp"
-                android:layout_height="52dp"
-                android:layout_alignParentBottom="true"
-                android:layout_marginEnd="47dp"
-                android:layout_marginBottom="173dp"
-                android:layout_toStartOf="@+id/iv_header_bg3"
-                android:contentDescription="@string/content_description"
-                android:scaleType="fitXY"
-                android:src="@drawable/im1" />
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_product_title"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="190dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:hint="@string/PRDtih">
 
-            <ImageView
-                android:id="@+id/iv_header_bg3"
-                android:layout_width="60dp"
-                android:layout_height="49dp"
-                android:layout_alignParentBottom="true"
-                android:layout_marginEnd="33dp"
-                android:layout_marginBottom="176dp"
-                android:layout_toStartOf="@+id/iv_header_bg"
-                android:contentDescription="@string/content_description"
-                android:scaleType="fitXY"
-                android:src="@drawable/im2" />
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_product_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:padding="@dimen/et_padding"
+                            android:text="@={addProductFragment.etProductTitle}"
+                            android:textSize="@dimen/et_textSize" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
-            <ImageView
-                android:id="@+id/iv_header_bg"
-                android:layout_width="63dp"
-                android:layout_height="51dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginEnd="138dp"
-                android:layout_marginBottom="175dp"
-                android:contentDescription="@string/content_description"
-                android:scaleType="fitXY"
-                android:src="@drawable/im3" />
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_product_price"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="190dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="30dp"
+                        android:hint="@string/prch"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/til_product_title">
 
-            <!--            <Button-->
-            <!--                android:id="@+id/button5"-->
-            <!--                android:layout_width="148dp"-->
-            <!--                android:layout_height="37dp"-->
-            <!--                android:layout_alignParentStart="true"-->
-            <!--                android:layout_alignParentTop="true"-->
-            <!--                android:layout_marginStart="6dp"-->
-            <!--                android:layout_marginTop="68dp"-->
-            <!--                android:text="@string/cat"-->
-            <!--                android:textColor="@color/white"-->
-            <!--                android:backgroundTint="#ECCCA3"-->
-            <!--                />-->
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_add_product_price"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:padding="@dimen/et_padding"
+                            android:text="@={addProductFragment.etProductPrice}"
+                            android:textSize="@dimen/et_textSize" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
 
-            <Spinner
-                android:id="@+id/spinner_category"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:entries="@array/category"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="6dp"
-                android:layout_marginTop="50dp"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_product_description"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="390dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="@string/dscrh"
+                    app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+                    app:layout_constraintHorizontal_bias="0.37"
+                    app:layout_constraintStart_toStartOf="@+id/linearLayout"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="11dp"
-                android:layout_marginTop="348dp"
-                android:text="@string/adim"
-                android:textColor="@color/back" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_product_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableTint="@color/clicked"
+                        android:inputType="textMultiLine"
+                        android:minLines="3"
+                        android:padding="@dimen/et_padding"
+                        android:text="@={addProductFragment.etProductDescription}"
+                        android:textSize="@dimen/et_textSize" />
 
-            <EditText
-                android:id="@+id/et_product_title"
-                android:layout_width="222dp"
-                android:layout_height="wrap_content"
-                android:text="@={addProductFragment.etProductTitle}"
-                android:layout_below="@+id/textView8"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="6dp"
-                android:layout_marginTop="3dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="@string/PRDtih"
-                android:textColorHint="@color/grey" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="78dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="119dp"
-                android:text="@string/PRDti"
-                android:textColor="@color/black" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/title_select_image" />
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/floatingActionButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginEnd="56dp"
-                android:layout_marginBottom="171dp"
-                android:backgroundTint="#ECCCA3"
-                android:clickable="true"
-                app:srcCompat="@drawable/add" />
+                <LinearLayout
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="2dp"
-                android:layout_marginBottom="325dp"
-                android:text="@string/dscr"
-                android:textColor="@color/back" />
+                    <ImageView
+                        android:id="@+id/iv_image_one"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/image_one" />
 
-            <EditText
-                android:id="@+id/et_product_description"
-                android:layout_width="259dp"
-                android:layout_height="55dp"
-                android:text="@={addProductFragment.etProductDescription}"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="4dp"
-                android:layout_marginBottom="268dp"
-                android:ems="10"
-                android:gravity="start|top"
-                android:hint="@string/dscrh"
-                android:inputType="textMultiLine" />
+                    <ImageView
+                        android:id="@+id/iv_image_tow"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/image_tow" />
 
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="8dp"
-                android:layout_marginBottom="130dp"
-                android:text="@string/adloc"
-                android:textColor="@color/back" />
+                    <ImageView
+                        android:id="@+id/iv_image_three"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/image_three" />
+                </LinearLayout>
 
-            <com.google.android.gms.maps.MapView
-                android:id="@+id/mapView"
-                android:layout_width="309dp"
-                android:layout_height="21dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="10dp"
-                android:layout_marginBottom="94dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="13dp"
-                android:layout_marginBottom="68dp"
-                android:text="@string/advid"
-                android:textColor="@color/back" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/title_upload_video" />
 
-            <VideoView
-                android:id="@+id/videoView"
-                android:layout_width="81dp"
-                android:layout_height="32dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="33dp"
-                android:layout_marginBottom="12dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="70dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/title_add_location" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/btn_upload_video"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="10dp"
+                        android:backgroundTint="@color/clicked"
+                        android:clickable="true"
+                        app:srcCompat="@drawable/ic_vector_add" />
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/btn_add_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="100dp"
+                        android:backgroundTint="@color/clicked"
+                        android:clickable="true"
+                        app:srcCompat="@drawable/ic_vector_add" />
+
+                </LinearLayout>
+            </LinearLayout>
 
             <Button
                 android:id="@+id/btn_save_product"
-                android:layout_width="114dp"
-                android:layout_height="37dp"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="21dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginTop="36dp"
+                android:backgroundTint="@color/clicked"
                 android:text="@string/sv"
                 android:textColor="@color/white"
-                android:backgroundTint="#ECCCA3" />
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout4"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout4"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout4"/>
 
-            <VideoView
-                android:id="@+id/videoView2"
-                android:layout_width="73dp"
-                android:layout_height="33dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="128dp"
-                android:layout_marginTop="559dp" />
-        </RelativeLayout>
-
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>

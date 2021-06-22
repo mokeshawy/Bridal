@@ -76,7 +76,7 @@ class HomeViewModel : ViewModel() {
     }
 
     // fun for entry to product from category list.
-    fun goProductPage( context: Context , view : View , homeListModel: HomeListModel){
+    private fun goProductPage( context: Context , view : View , homeListModel: HomeListModel){
         var bundle = bundleOf( Constants.PRODUCT_ITEM_KEY to homeListModel.title)
         Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_productFragment,bundle)
     }
