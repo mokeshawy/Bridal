@@ -39,6 +39,7 @@ object  Constants {
     const val PRODUCT_REFERENCE = "product"
     // child of product.
     const val PRODUCT_USER_ID       = "userId"
+    const val PRODUCT_ID            = "productId"
     const val PRODUCT_CATEGORY_NAME = "categoryName"
     const val PRODUCT_TITLE         = "productTitle"
     const val PRODUCT_PRICE         = "productPrice"
@@ -55,6 +56,9 @@ object  Constants {
     const val IMAGE_NUM_ONE_KEY     = 111
     const val IMAGE_NUM_TOW_KEY     = 222
     const val IMAGE_NUM_THREE_KEY   = 333
+
+    // request number key.
+    const val VIDEO_KEY   = 444
 
 
     // const image in firebase.

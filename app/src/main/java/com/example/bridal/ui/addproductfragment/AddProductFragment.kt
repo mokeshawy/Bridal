@@ -1,5 +1,6 @@
 package com.example.bridal.ui.addproductfragment
 
+import android.app.ProgressDialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -25,6 +26,7 @@ class AddProductFragment : Fragment() {
     lateinit var imageUriOne        : Uri
     lateinit var imageUriTow        : Uri
     lateinit var imageUriThree      : Uri
+    lateinit var videoUri           : Uri
 
     override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View? {
         // Inflate the layout for this fragment
@@ -60,6 +62,10 @@ class AddProductFragment : Fragment() {
             pickImageNumThree()
         }
 
+        // select video.
+        binding.btnUploadVideo.setOnClickListener {
+            pickVideo()
+        }
 
         // select category.
         binding.spinnerCategory.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -71,7 +77,7 @@ class AddProductFragment : Fragment() {
                     if(position == 0){
                         Constants.showErrorSnackBar(resources.getString((R.string.err_validate_select_category)), true , requireActivity() , view)
                     }else{
-                        addProductViewModel.addProductItem(requireActivity(),view,categoryName,imageUriOne,imageUriTow,imageUriThree)
+                        addProductViewModel.addProductItem(requireActivity(),view,categoryName,imageUriOne,imageUriTow,imageUriThree,videoUri)
                     }
                 }
             }
@@ -114,6 +120,14 @@ class AddProductFragment : Fragment() {
         }
     }
 
+    // fun select video.
+    private fun pickVideo(){
+        val intent = Intent(Intent.ACTION_PICK)
+        intent.type = "video/*"
+        startActivityForResult(intent,Constants.VIDEO_KEY)
+    }
+
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -128,6 +142,9 @@ class AddProductFragment : Fragment() {
         if(requestCode == Constants.IMAGE_NUM_THREE_KEY && resultCode == AppCompatActivity.RESULT_OK){
             imageUriThree = data?.data!!
             binding.ivImageThree.setImageURI(imageUriThree)
+        }
+        if( requestCode == Constants.VIDEO_KEY && resultCode == AppCompatActivity.RESULT_OK){
+            videoUri = data?.data!!
         }
     }
 }

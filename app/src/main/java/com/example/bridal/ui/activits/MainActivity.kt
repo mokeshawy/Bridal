@@ -42,7 +42,8 @@ class MainActivity : AppCompatActivity(){
             R.id.registerFragment,
             R.id.forgetPasswordFragment,
             R.id.addProductFragment,
-            R.id.productFragment))
+            R.id.productFragment,
+            R.id.completeProfileFragment))
        setupActionBarWithNavController(navController, appBarConfiguration)
 
 

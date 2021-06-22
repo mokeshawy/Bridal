@@ -108,7 +108,6 @@
     <string name="weeding_dresses">Weeding Dresses</string>
 
 
-
     <!-- category array-->
     <string-array name="category">
         <item name="no_selected">Select Category</item>
@@ -146,5 +145,6 @@
     <string name="err_validate_product_title">Please add title of product</string>
     <string name="err_validate_product_price">Please add price of product</string>
     <string name="err_validate_product_description">Please add description of product</string>
+    <string name="title_complete_profile">Complete Your Profile</string>
 
 </resources>

@@ -26,7 +26,7 @@ class RegisterViewModel : ViewModel() {
 
 
     // fun validate data entry from user register
-    fun validateInput(context: Context, view : View) : Boolean {
+    private fun validateInput(context: Context, view : View) : Boolean {
 
         return when {
             TextUtils.isEmpty(etFirstName.value.toString().trim { it <=' ' }) ->{

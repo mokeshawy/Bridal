@@ -108,7 +108,6 @@ class LoginViewModel : ViewModel() {
                             override fun onDataChange(snapshot: DataSnapshot) {
 
                                 val user = snapshot.getValue(UserModel::class.java)!!
-                                Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_homeFragment)
 
                                 // share the object for user login by sharedPreference.
                                 val myPreference = context.getSharedPreferences(Constants.USERS_SHARED_KEY,Context.MODE_PRIVATE)
@@ -120,6 +119,11 @@ class LoginViewModel : ViewModel() {
                                 editor.putString(Constants.USER_MOBILE_KEY,user.mobile.toString())
                                 editor.putString(Constants.USER_GENDER_KEY,user.gender)
                                 editor.apply()
+                                if(user.profileCompleted == 0){
+                                    Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_completeProfileFragment)
+                                }else{
+                                    Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_homeFragment)
+                                }
                             }
                             override fun onCancelled(error: DatabaseError) {
                                 Toast.makeText(context , error.message , Toast.LENGTH_SHORT).show()

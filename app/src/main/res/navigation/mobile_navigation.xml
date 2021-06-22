@@ -76,6 +76,11 @@
             app:destination="@id/homeFragment"
             app:enterAnim="@android:anim/fade_in"
             app:popUpTo="@id/mobile_navigation" />
+        <action
+            android:id="@+id/action_loginFragment_to_completeProfileFragment"
+            app:destination="@id/completeProfileFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:popUpTo="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -113,5 +118,10 @@
         android:name="com.example.bridal.ui.productfragment.ProductFragment"
         android:label="@string/title_product"
         tools:layout="@layout/fragment_product" />
+    <fragment
+        android:id="@+id/completeProfileFragment"
+        android:name="com.example.bridal.ui.completeprofilefragment.CompleteProfileFragment"
+        android:label="@string/title_complete_profile"
+        tools:layout="@layout/fragment_complete_profile" />
 
 </navigation>
