@@ -122,9 +122,13 @@ class AddProductFragment : Fragment() {
 
     // fun select video.
     private fun pickVideo(){
-        val intent = Intent(Intent.ACTION_PICK)
-        intent.type = "video/*"
-        startActivityForResult(intent,Constants.VIDEO_KEY)
+        if(ContextCompat.checkSelfPermission(requireActivity(),android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(requireActivity(), arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE),1)
+        }else{
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.type = "video/*"
+            startActivityForResult(intent,Constants.VIDEO_KEY)
+        }
     }
 
 

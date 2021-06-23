@@ -122,7 +122,11 @@ class LoginViewModel : ViewModel() {
                                 if(user.profileCompleted == 0){
                                     Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_completeProfileFragment)
                                 }else{
-                                    Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_homeFragment)
+                                    try{
+                                        Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_homeFragment)
+                                    }catch (e:Exception){
+
+                                    }
                                 }
                             }
                             override fun onCancelled(error: DatabaseError) {

@@ -1,10 +1,224 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.completeprofilefragment.CompleteProfileFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+        <variable
+            name="completeProfileFragment"
+            type="com.example.bridal.ui.completeprofilefragment.CompleteProfileViewModel" />
+    </data>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.completeprofilefragment.CompleteProfileFragment"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/brido">
+
+                <TextView
+                    android:id="@+id/tv_titleId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="200dp"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/toolbar_title_paddingStart"
+                    android:paddingEnd="0dp"
+                    android:text="@string/title_complete_profile"
+                    android:textColor="@color/clicked"
+                    android:textSize="@dimen/toolbar_title_text_size"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_user_photoId"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:elevation="5dp"
+                    android:padding="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/default_image_profile"
+                    app:civ_border_color="@color/clicked"
+                    app:civ_border_width="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_titleId" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_first_nameId"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="16dp"
+                    android:hint="@string/fst_name"
+                    android:textColorHint="@color/grey"
+                    app:hintTextColor="@color/clicked"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_user_photoId">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_first_nameId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/back"
+                        android:drawableEnd="@drawable/ic_vector_person"
+                        android:drawableTint="@color/clicked"
+                        android:inputType="text"
+                        android:padding="@dimen/et_padding"
+                        android:text="@={completeProfileFragment.etFirstName}"
+                        android:textSize="@dimen/et_textSize" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_last_nameId"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="16dp"
+                    android:hint="@string/scnd_name"
+                    android:textColorHint="@color/grey"
+                    app:hintTextColor="@color/clicked"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/til_first_nameId">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_last_nameId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/back"
+                        android:drawableTint="@color/clicked"
+                        android:inputType="text"
+                        android:padding="@dimen/et_padding"
+                        android:text="@={completeProfileFragment.etLastName}"
+                        android:textSize="@dimen/et_textSize" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_emailId"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="16dp"
+                    android:hint="@string/em"
+                    android:textColorHint="@color/grey"
+                    app:hintTextColor="@color/clicked"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/til_last_nameId">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_emailId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/back"
+                        android:drawableEnd="@drawable/emailo"
+                        android:drawableTint="@color/clicked"
+                        android:inputType="textEmailAddress"
+                        android:padding="@dimen/et_padding"
+                        android:text="@={completeProfileFragment.etEmail}"
+                        android:textSize="@dimen/et_textSize" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_mobile_numberId"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="16dp"
+                    android:hint="@string/et_hint_mobile_number"
+                    android:textColorHint="@color/grey"
+                    app:hintTextColor="@color/clicked"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/til_emailId">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_mobile_numberId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/back"
+                        android:drawableEnd="@drawable/ic_vector_phone"
+                        android:drawableTint="@color/clicked"
+                        android:inputType="number"
+                        android:padding="@dimen/et_padding"
+                        android:text="@={completeProfileFragment.etMobileNumber}"
+                        android:textSize="@dimen/et_textSize" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <RadioGroup
+                    android:id="@+id/rg_genderId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/til_mobile_numberId">
+
+                    <RadioButton
+                        android:id="@+id/rb_maleId"
+                        android:layout_width="@dimen/profile_radio_button_width"
+                        android:layout_height="@dimen/profile_radio_button_height"
+                        android:layout_marginStart="@dimen/profile_radio_button_marginStart"
+                        android:layout_marginEnd="@dimen/profile_radio_button_marginStartEnd"
+                        android:background="@drawable/drawable_gender_tab_selector"
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="@string/rb_lbl_male"
+                        android:textColor="@drawable/drawable_gender_tab_text_color_selector" />
+
+                    <RadioButton
+                        android:id="@+id/rb_femaleId"
+                        android:layout_width="@dimen/profile_radio_button_width"
+                        android:layout_height="@dimen/profile_radio_button_height"
+                        android:layout_marginEnd="@dimen/profile_radio_button_marginStartEnd"
+                        android:background="@drawable/drawable_gender_tab_selector"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="@string/rb_lbl_female"
+                        android:textColor="@drawable/drawable_gender_tab_text_color_selector" />
+                </RadioGroup>
+
+                <Button
+                    android:id="@+id/btn_submitId"
+                    android:layout_width="200dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/button_background"
+                    android:gravity="center"
+                    android:textColor="@color/clicked"
+                    android:paddingBottom="@dimen/btn_padding"
+                    android:text="@string/fui_button_text_save"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/rg_genderId"
+                    app:layout_constraintStart_toStartOf="@+id/rg_genderId"
+                    app:layout_constraintTop_toBottomOf="@+id/rg_genderId" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+</layout>

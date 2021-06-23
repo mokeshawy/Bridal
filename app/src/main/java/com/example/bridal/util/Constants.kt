@@ -65,8 +65,15 @@ object  Constants {
     const val SOURCE_IMAGE_ONE      = "https://firebasestorage.googleapis.com/v0/b/bridal-f3ec8.appspot.com/o/Photo%2Fimage_one.png?alt=media&token=ad4aa617-3021-4c6d-9344-7c7bd3f1e6ac"
     const val SOURCE_IMAGE_TOW      = "https://firebasestorage.googleapis.com/v0/b/bridal-f3ec8.appspot.com/o/Photo%2Fimage_three.png?alt=media&token=fd9132db-656a-44de-aa05-91fa196b157e"
     const val SOURCE_IMAGE_THREE    = "https://firebasestorage.googleapis.com/v0/b/bridal-f3ec8.appspot.com/o/Photo%2Fimage_tow.png?alt=media&token=9bf21e65-a19c-42be-9cc1-f6ad694875db"
+    const val SOURCE_IMAGE_PROFILE  = "https://firebasestorage.googleapis.com/v0/b/bridal-f3ec8.appspot.com/o/Photo%2Fdefualt_image_profile.png?alt=media&token=a7e4096c-775a-456d-9e54-2ab470b7cac0"
 
+    // user complete profile.
+    const val USER_COMPLETE_PROFILE_IMAGE = "profile_image"
+    const val IMAGE_PROFILE_KEY   = 555
 
+    // gender.
+    const val GENDER_MALE = "male"
+    const val GENDER_FEMALE = "female"
 
     // fun snack bar show error and successful
     fun showErrorSnackBar(message : String, errorMessage : Boolean, context: Context, view : View){

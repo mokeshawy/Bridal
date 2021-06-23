@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity(){
             when(destination.id){
                 R.id.settingsAccountFragment    -> supportActionBar!!.hide()
                 R.id.splashFragment             -> supportActionBar!!.hide()
+                R.id.completeProfileFragment    -> supportActionBar!!.hide()
                 else -> supportActionBar!!.show()
             }
         }

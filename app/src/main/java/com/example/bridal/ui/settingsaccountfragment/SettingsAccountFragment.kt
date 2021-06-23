@@ -31,8 +31,7 @@ class SettingsAccountFragment : Fragment() {
         binding.lifecycleOwner = this
         binding.settingsAccountFragment = settingsAccountViewModel
 
-        val myPreference = activity?.getSharedPreferences(Constants.USERS_SHARED_KEY,Context.MODE_PRIVATE)
-
+        val myPreference    = activity?.getSharedPreferences(Constants.USERS_SHARED_KEY,Context.MODE_PRIVATE)
         binding.tvName.text = myPreference!!.getString(Constants.FIRST_NAME_KEY,"")
     }
 }

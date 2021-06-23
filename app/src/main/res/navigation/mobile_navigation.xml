@@ -107,7 +107,13 @@
     <fragment
         android:id="@+id/settingsAccountFragment"
         android:name="com.example.bridal.ui.settingsaccountfragment.SettingsAccountFragment"
-        tools:layout="@layout/fragment_settings_account" />
+        tools:layout="@layout/fragment_settings_account" >
+        <action
+            android:id="@+id/action_settingsAccountFragment_to_completeProfileFragment"
+            app:destination="@id/completeProfileFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:popUpTo="@id/settingsAccountFragment" />
+    </fragment>
     <fragment
         android:id="@+id/addProductFragment"
         android:name="com.example.bridal.ui.addproductfragment.AddProductFragment"
@@ -122,6 +128,12 @@
         android:id="@+id/completeProfileFragment"
         android:name="com.example.bridal.ui.completeprofilefragment.CompleteProfileFragment"
         android:label="@string/title_complete_profile"
-        tools:layout="@layout/fragment_complete_profile" />
+        tools:layout="@layout/fragment_complete_profile" >
+        <action
+            android:id="@+id/action_completeProfileFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:popUpTo="@id/mobile_navigation" />
+    </fragment>
 
 </navigation>
