@@ -1,6 +1,5 @@
 package com.example.bridal.ui.addproductfragment
 
-import android.app.ProgressDialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -45,7 +44,9 @@ class AddProductFragment : Fragment() {
         imageUriOne     = Constants.SOURCE_IMAGE_ONE.toUri()
         imageUriTow     = Constants.SOURCE_IMAGE_TOW.toUri()
         imageUriThree   = Constants.SOURCE_IMAGE_THREE.toUri()
+        videoUri = Constants.SOURCE_IMAGE_THREE.toUri()
 
+        binding.loadingView.visibility = View.GONE
 
         // select image one.
         binding.ivImageOne.setOnClickListener {
@@ -67,6 +68,8 @@ class AddProductFragment : Fragment() {
             pickVideo()
         }
 
+        addProductViewModel.addShowMoreImage(requireActivity(),binding.llUserPremiumRequire,binding.llUserPremiumDone)
+
         // select category.
         binding.spinnerCategory.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected( adapterView : AdapterView<*>?, viewItem: View?, position: Int, id: Long ) {
@@ -77,7 +80,14 @@ class AddProductFragment : Fragment() {
                     if(position == 0){
                         Constants.showErrorSnackBar(resources.getString((R.string.err_validate_select_category)), true , requireActivity() , view)
                     }else{
-                        addProductViewModel.addProductItem(requireActivity(),view,categoryName,imageUriOne,imageUriTow,imageUriThree,videoUri)
+                        addProductViewModel.addProductItem(requireActivity(),
+                            view,
+                            categoryName,
+                            imageUriOne,
+                            imageUriTow,
+                            imageUriThree,
+                            videoUri,
+                            binding.loadingView)
                     }
                 }
             }

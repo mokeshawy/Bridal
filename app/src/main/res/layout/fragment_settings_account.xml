@@ -67,7 +67,7 @@
                     android:layout_margin="@dimen/settings_user_picture_margin"
                     android:contentDescription="@string/content_description"
                     android:scaleType="fitXY"
-                    android:src="@drawable/ic_user_placeholder" />
+                    android:src="@drawable/default_image_profile" />
             </FrameLayout>
 
             <com.google.android.material.textview.MaterialTextView

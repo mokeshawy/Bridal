@@ -28,6 +28,7 @@ object  Constants {
     const val USER_MOBILE_KEY   : String  = "mobile"
     const val USER_GENDER_KEY   : String  = "gender"
     const val USER_COMPLETE_PROFILE : String = "profileCompleted"
+    const val USER_PREMIUM_COMPLETE : String = "userPremium"
 
     // shared preference key
     const val USERS_SHARED_KEY = "userKey"

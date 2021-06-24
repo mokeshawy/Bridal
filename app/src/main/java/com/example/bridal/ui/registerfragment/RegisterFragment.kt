@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.bridal.R
 import com.example.bridal.databinding.FragmentRegisterBinding
 
@@ -29,8 +30,14 @@ class RegisterFragment : Fragment() {
         // hide progress bar.
         binding.loadingView.visibility = View.GONE
 
+        // btn submit for register new user.
         binding.btnSubmit.setOnClickListener {
             registerViewModel.registerUser(requireActivity(),view,binding.loadingView)
+        }
+
+        // btn back to login page.
+        binding.tvGoLogin.setOnClickListener {
+            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
         }
     }
 }

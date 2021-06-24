@@ -116,8 +116,9 @@ class LoginViewModel : ViewModel() {
                                 editor.putString(Constants.LAST_NAME_KEY,user.lastName)
                                 editor.putString(Constants.USER_EMAIL_KEY,user.email)
                                 editor.putString(Constants.USER_PROFILE_IMAGE,user.image)
-                                editor.putString(Constants.USER_MOBILE_KEY,user.mobile.toString())
+                                editor.putString(Constants.USER_MOBILE_KEY,user.mobile)
                                 editor.putString(Constants.USER_GENDER_KEY,user.gender)
+                                editor.putInt(Constants.USER_PREMIUM_COMPLETE,user.userPremium)
                                 editor.apply()
                                 if(user.profileCompleted == 0){
                                     Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_completeProfileFragment)

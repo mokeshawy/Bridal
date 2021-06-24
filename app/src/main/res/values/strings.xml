@@ -150,5 +150,6 @@
     <string name="et_hint_mobile_number">Mobile Number</string>
     <string name="rb_lbl_male">Male</string>
     <string name="rb_lbl_female">Female</string>
+    <string name="title_select_more_image">Select more image</string>
 
 </resources>
