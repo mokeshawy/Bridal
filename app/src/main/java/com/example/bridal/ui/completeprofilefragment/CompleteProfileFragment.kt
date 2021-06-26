@@ -39,6 +39,8 @@ class CompleteProfileFragment : Fragment() {
         // source for default image profile
         profileUri = Constants.SOURCE_IMAGE_PROFILE.toUri()
 
+        binding.loadingView.visibility = View.GONE
+
         // make change email notAllowed
         binding.etEmailId.isEnabled = false
         // call function for show user details in input.
@@ -47,7 +49,10 @@ class CompleteProfileFragment : Fragment() {
 
         //btn save details for complete profile and edit profile.
         binding.btnSubmitId.setOnClickListener {
-            completeProfileViewModel.completeAndEditProfile(requireActivity(),view,profileUri,binding.rbMaleId)
+            completeProfileViewModel.completeAndEditProfile(requireActivity(),
+                view,
+                binding.loadingView,
+                profileUri,binding.rbMaleId)
         }
 
         // select image.

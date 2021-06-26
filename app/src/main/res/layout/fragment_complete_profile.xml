@@ -39,23 +39,27 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/iv_user_photoId"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_gravity="center"
-                    android:clickable="true"
-                    android:elevation="5dp"
-                    android:padding="10dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/default_image_profile"
-                    app:civ_border_color="@color/clicked"
-                    app:civ_border_width="1dp"
+                <FrameLayout
+                    android:id="@+id/fl_user_image"
+                    android:layout_width="@dimen/settings_user_image_size"
+                    android:layout_height="@dimen/settings_user_image_size"
+                    android:background="@drawable/border_background"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/settings_user_image_marginTop"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_titleId" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_titleId">
+
+                    <ImageView
+                        android:id="@+id/iv_user_photoId"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/settings_user_picture_margin"
+                        android:contentDescription="@string/content_description"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/default_image_profile" />
+                </FrameLayout>
+
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_first_nameId"
@@ -71,7 +75,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/iv_user_photoId">
+                    app:layout_constraintTop_toBottomOf="@+id/fl_user_image">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_first_nameId"

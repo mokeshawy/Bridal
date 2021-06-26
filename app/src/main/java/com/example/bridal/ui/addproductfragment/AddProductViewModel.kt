@@ -6,12 +6,17 @@ import android.net.Uri
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.bridal.R
 import com.example.bridal.model.ProductModel
+import com.example.bridal.model.UserModel
 import com.example.bridal.util.Constants
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 
@@ -109,7 +114,8 @@ class AddProductViewModel : ViewModel(){
         }
     }
 
-    fun addShowMoreImage(context : Context
+    // fun show select more image. when go user update profile to premium option will go unlock select more image.
+    fun addShowMoreImageAndVedio(context : Context
                          ,ll_user_premium_require : LinearLayout,
                          ll_user_premium_done : LinearLayout ){
 
@@ -117,11 +123,11 @@ class AddProductViewModel : ViewModel(){
         val userPremium = myPreference.getInt(Constants.USER_PREMIUM_COMPLETE,0)
 
         if(userPremium == 0){
-            ll_user_premium_require.visibility = View.VISIBLE
-            ll_user_premium_done.visibility = View.GONE
+            ll_user_premium_require.visibility  = View.VISIBLE
+            ll_user_premium_done.visibility     = View.GONE
         }else{
-            ll_user_premium_require.visibility = View.GONE
-            ll_user_premium_done.visibility = View.VISIBLE
+            ll_user_premium_done.visibility     = View.VISIBLE
+            ll_user_premium_require.visibility  = View.GONE
         }
     }
 }

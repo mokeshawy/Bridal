@@ -43,14 +43,14 @@ class MainActivity : AppCompatActivity(){
             R.id.forgetPasswordFragment,
             R.id.addProductFragment,
             R.id.productFragment,
-            R.id.completeProfileFragment))
+            R.id.completeProfileFragment,
+            R.id.settingsAccountFragment))
        setupActionBarWithNavController(navController, appBarConfiguration)
 
 
         // Operation work for hide and show actionbar on fragment.
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when(destination.id){
-                R.id.settingsAccountFragment    -> supportActionBar!!.hide()
                 R.id.splashFragment             -> supportActionBar!!.hide()
                 R.id.completeProfileFragment    -> supportActionBar!!.hide()
                 else -> supportActionBar!!.show()

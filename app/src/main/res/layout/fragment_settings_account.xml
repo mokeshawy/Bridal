@@ -44,7 +44,6 @@
                         android:gravity="center"
                         android:paddingStart="@dimen/toolbar_title_paddingStart"
                         android:paddingEnd="0dp"
-                        android:text="@string/title_settings"
                         android:textColor="#ffff"
                         android:textSize="@dimen/toolbar_title_text_size"
                         android:textStyle="bold" />
@@ -56,6 +55,7 @@
                 android:id="@+id/fl_user_image"
                 android:layout_width="@dimen/settings_user_image_size"
                 android:layout_height="@dimen/settings_user_image_size"
+                android:background="@drawable/border_background"
                 android:layout_below="@id/fl_header_bg"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/settings_user_image_marginTop">
@@ -96,10 +96,10 @@
                 android:layout_marginTop="@dimen/settings_name_marginTop"
                 android:textColor="@color/black"
                 android:textSize="@dimen/settings_name_textSize"
-                tools:text="Denis Panjuta" />
+                tools:text="Mohamed Keshawy" />
 
-            <RadioGroup
-                android:id="@+id/tv_gender"
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_name"
@@ -107,38 +107,10 @@
                 android:layout_marginTop="@dimen/settings_info_marginTop"
                 android:textColor="@color/back"
                 android:textSize="@dimen/settings_info_textSize"
-                android:orientation="horizontal"
-
-                >
-
-                <RadioButton
-                    android:id="@+id/radioMale"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/en"
-                    android:buttonTint="@color/page" />
-
-                <RadioButton
-                    android:id="@+id/radioFemale"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/ar"
-                    android:buttonTint="@color/page" />
-            </RadioGroup>
+                tools:text="mokeshaw@gmail.com" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_gender"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/settings_info_marginTop"
-                android:textColor="@color/back"
-                android:textSize="@dimen/settings_info_textSize"
-                tools:text="denis.panjuta@gmail.com" />
-
-            <com.google.android.material.radiobutton.MaterialRadioButton
-                android:id="@+id/tv_mobile_number"
+                android:id="@+id/tv_phone_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_email"
@@ -146,47 +118,73 @@
                 android:layout_marginTop="@dimen/settings_info_marginTop"
                 android:textColor="@color/back"
                 android:textSize="@dimen/settings_info_textSize"
-                tools:text="@string/allow"
-                android:checked="true"
-                android:textColorHint="@color/back"
-                android:buttonTint="@color/page" />
+                tools:text="00201007169654" />
 
             <LinearLayout
-                android:id="@+id/ll_address"
+                android:id="@+id/ll_check_box"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tv_mobile_number"
-                android:layout_margin="@dimen/settings_address_margin"
-                android:background="@drawable/item_grey_border_background"
-                android:foreground="?attr/selectableItemBackground"
                 android:orientation="horizontal"
-                android:padding="@dimen/settings_address_padding">
+                android:gravity="center"
+                android:layout_below="@id/tv_phone_number">
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/settings_lbl_addresses_margin"
-                    android:layout_weight="1"
-                    android:text="@string/lbl_addresses"
-                    android:textColor="@color/back"
-                    android:textSize="@dimen/settings_lbl_addresses_textSize" />
-
-                <ImageView
+                <CheckBox
+                    android:id="@+id/rb_allow_notification"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:contentDescription="@string/content_description"
-                    android:src="@drawable/ic_vector_chevron_right" />
+                    android:layout_below="@id/tv_phone_number"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/settings_info_marginTop"
+                    android:textColor="@color/back"
+                    android:textColorHint="@color/back"
+                    android:buttonTint="@color/page" />
 
+                <TextView
+                    android:id="@+id/tv_notification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/settings_info_marginTop"
+                    android:textSize="@dimen/settings_info_textSize"/>
             </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/tv_change_language"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_check_box"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/settings_info_marginTop"
+                android:textColor="@color/back"
+                android:textSize="@dimen/settings_info_textSize"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/radio_arabic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/en"
+                    android:buttonTint="@color/page" />
+
+                <RadioButton
+                    android:id="@+id/radio_english"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ar"
+                    android:buttonTint="@color/page" />
+            </RadioGroup>
+
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_logout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/ll_address"
+                android:layout_below="@id/tv_change_language"
                 android:layout_gravity="center"
                 android:layout_marginStart="@dimen/settings_button_marginStartEnd"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="70dp"
                 android:layout_marginEnd="@dimen/settings_button_marginStartEnd"
                 android:layout_marginBottom="@dimen/settings_button_marginTopBottom"
                 android:background="@drawable/butbackground"
@@ -197,8 +195,6 @@
                 android:text="@string/btn_lbl_logout"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/btn_textSize" />
-
         </RelativeLayout>
-
     </ScrollView>
 </layout>

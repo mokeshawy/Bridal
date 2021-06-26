@@ -205,7 +205,6 @@
                             android:layout_height="80dp"
                             android:layout_margin="10dp"
                             android:src="@drawable/image_three" />
-
                     </LinearLayout>
 
                     <LinearLayout
@@ -235,7 +234,7 @@
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:layout_margin="10dp"
-                            android:src="@drawable/ic_vector_lock" />
+                            android:src="@drawable/ic_vector_lock"/>
 
                     </LinearLayout>
                 </LinearLayout>

@@ -3,6 +3,7 @@ package com.example.bridal.ui.completeprofilefragment
 import android.content.Context
 import android.net.Uri
 import android.view.View
+import android.widget.ProgressBar
 import android.widget.RadioButton
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -32,8 +33,12 @@ class CompleteProfileViewModel : ViewModel() {
         etEmail.value       = myPreference.getString(Constants.USER_EMAIL_KEY,"")
     }
 
-    fun completeAndEditProfile(context: Context, view : View, profileUri : Uri, radioButton : RadioButton){
-
+    fun completeAndEditProfile(context: Context,
+                               view : View,
+                               progressBar: ProgressBar,
+                               profileUri : Uri,
+                               radioButton : RadioButton){
+        progressBar.visibility = View.VISIBLE
         val map = HashMap<String , Any>()
 
         val gender = if(radioButton.isChecked){
@@ -59,16 +64,20 @@ class CompleteProfileViewModel : ViewModel() {
         map[Constants.USER_COMPLETE_PROFILE] = 1
 
         userReference.child(Constants.getCurrentUser()).updateChildren(map)
+        progressBar.visibility = View.GONE
 
         Navigation.findNavController(view).navigate(R.id.action_completeProfileFragment_to_loginFragment)
         val profileStorage : StorageReference = profileStorageRef.child("Photo/"+Constants.USER_COMPLETE_PROFILE_IMAGE+System.currentTimeMillis())
         profileStorage.putFile(profileUri).addOnCompleteListener { imageUpload ->
+            progressBar.visibility = View.VISIBLE
             if(imageUpload.isSuccessful){
                 profileStorage.downloadUrl.addOnSuccessListener { imageUrl ->
                     map[Constants.USER_IMAGE_KEY] = imageUrl.toString()
                     userReference.child(Constants.getCurrentUser()).updateChildren(map)
+                    progressBar.visibility = View.GONE
                 }
             }
         }
+
     }
 }

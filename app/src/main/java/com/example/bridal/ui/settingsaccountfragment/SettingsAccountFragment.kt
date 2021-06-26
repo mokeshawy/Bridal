@@ -8,9 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import com.example.bridal.R
 import com.example.bridal.databinding.FragmentSettingsAccountBinding
 import com.example.bridal.model.UserModel
+import com.example.bridal.ui.glideLoader
 import com.example.bridal.util.Constants
 
 class SettingsAccountFragment : Fragment() {
@@ -31,7 +33,32 @@ class SettingsAccountFragment : Fragment() {
         binding.lifecycleOwner = this
         binding.settingsAccountFragment = settingsAccountViewModel
 
-        val myPreference    = activity?.getSharedPreferences(Constants.USERS_SHARED_KEY,Context.MODE_PRIVATE)
-        binding.tvName.text = myPreference!!.getString(Constants.FIRST_NAME_KEY,"")
+        // call function for show data for user.
+        settingsAccountViewModel.showDataForUser(requireActivity(),binding.ivUserPhoto)
+
+        // call function for observer.
+        observer()
+
+        // show text for allow notification.
+        binding.tvNotification.text = resources.getString(R.string.allow)
+
+        binding.tvEdit.setOnClickListener {
+
+        }
+    }
+
+    // fun for observer.
+    private fun observer(){
+        settingsAccountViewModel.tvName.observe(viewLifecycleOwner, Observer {
+            binding.tvName.text = it
+        })
+
+        settingsAccountViewModel.tvEmail.observe(viewLifecycleOwner, Observer {
+            binding.tvEmail.text = it
+        })
+
+        settingsAccountViewModel.tvPhoneNumber.observe(viewLifecycleOwner, Observer {
+            binding.tvPhoneNumber.text = it
+        })
     }
 }

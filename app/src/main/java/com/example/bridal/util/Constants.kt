@@ -28,7 +28,7 @@ object  Constants {
     const val USER_MOBILE_KEY   : String  = "mobile"
     const val USER_GENDER_KEY   : String  = "gender"
     const val USER_COMPLETE_PROFILE : String = "profileCompleted"
-    const val USER_PREMIUM_COMPLETE : String = "userPremium"
+    const val USER_PREMIUM_COMPLETE  = "userPremium"
 
     // shared preference key
     const val USERS_SHARED_KEY = "userKey"
@@ -75,6 +75,10 @@ object  Constants {
     // gender.
     const val GENDER_MALE = "male"
     const val GENDER_FEMALE = "female"
+
+    // const user edit profile.
+    const val USER_EDIT_PROFILE = "edit_profile"
+
 
     // fun snack bar show error and successful
     fun showErrorSnackBar(message : String, errorMessage : Boolean, context: Context, view : View){

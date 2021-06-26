@@ -32,7 +32,7 @@
 
     <string name="content_description">image</string>
 
-    <string name="title_settings">SETTINGS</string>
+    <string name="title_settings">Setting</string>
     <string name="lbl_edit">Edit</string>
     <string name="lbl_addresses">Addresses</string>
     <string name="btn_lbl_logout">Logout</string>
@@ -151,5 +151,6 @@
     <string name="rb_lbl_male">Male</string>
     <string name="rb_lbl_female">Female</string>
     <string name="title_select_more_image">Select more image</string>
+    <string name="title_setting_page">Setting</string>
 
 </resources>

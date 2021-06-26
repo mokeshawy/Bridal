@@ -44,7 +44,7 @@ class AddProductFragment : Fragment() {
         imageUriOne     = Constants.SOURCE_IMAGE_ONE.toUri()
         imageUriTow     = Constants.SOURCE_IMAGE_TOW.toUri()
         imageUriThree   = Constants.SOURCE_IMAGE_THREE.toUri()
-        videoUri = Constants.SOURCE_IMAGE_THREE.toUri()
+        videoUri        = Constants.SOURCE_IMAGE_THREE.toUri()
 
         binding.loadingView.visibility = View.GONE
 
@@ -68,7 +68,8 @@ class AddProductFragment : Fragment() {
             pickVideo()
         }
 
-        addProductViewModel.addShowMoreImage(requireActivity(),binding.llUserPremiumRequire,binding.llUserPremiumDone)
+        // call fun show select more image. when go user update profile to premium option will go unlock select more image.
+        addProductViewModel.addShowMoreImageAndVedio(requireActivity(),binding.llUserPremiumRequire,binding.llUserPremiumDone)
 
         // select category.
         binding.spinnerCategory.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -146,6 +147,7 @@ class AddProductFragment : Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if(requestCode == Constants.IMAGE_NUM_ONE_KEY && resultCode == AppCompatActivity.RESULT_OK){
+
             imageUriOne = data?.data!!
             binding.ivImageOne.setImageURI(imageUriOne)
         }

@@ -33,7 +33,6 @@
     <string name="lbl_addresses">العنوان</string>
     <string name="btn_lbl_logout">تسجيل الخروجج</string>
 
-    <string name="title_edit_profile">تعديل الملف الشخصي</string>
 
     <!--TODO Step 3: Add the string resources to the strings.xml file-->
     <!--START-->
@@ -142,6 +141,14 @@
     <string name="err_validate_product_title">من فضلك اختار مسمى المنتج</string>
     <string name="err_validate_product_price">من فضلك حدد سعر المنتج</string>
     <string name="err_validate_product_description">من فضلك اضف شرح للمنتج</string>
+
+    <string name="title_complete_profile">اكمل الملف الشخصي</string>
+    <string name="title_edit_profile">تعديل الملف الشخصي</string>
+    <string name="et_hint_mobile_number">رقم الهاتف</string>
+    <string name="rb_lbl_male">ذكر</string>
+    <string name="rb_lbl_female">أنثى</string>
+    <string name="title_select_more_image">اختر المزيد من الصور</string>
+    <string name="title_setting_page">الضبط</string>
 
 
 </resources>

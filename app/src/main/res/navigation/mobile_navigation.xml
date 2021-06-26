@@ -107,6 +107,7 @@
     <fragment
         android:id="@+id/settingsAccountFragment"
         android:name="com.example.bridal.ui.settingsaccountfragment.SettingsAccountFragment"
+        android:label="@string/title_setting_page"
         tools:layout="@layout/fragment_settings_account" >
         <action
             android:id="@+id/action_settingsAccountFragment_to_completeProfileFragment"
