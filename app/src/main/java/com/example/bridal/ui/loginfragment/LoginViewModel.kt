@@ -118,6 +118,7 @@ class LoginViewModel : ViewModel() {
                                 editor.putString(Constants.USER_PROFILE_IMAGE,user.image)
                                 editor.putString(Constants.USER_MOBILE_KEY,user.mobile)
                                 editor.putString(Constants.USER_GENDER_KEY,user.gender)
+                                editor.putInt(Constants.USER_COMPLETE_PROFILE,user.profileCompleted)
                                 editor.putInt(Constants.USER_PREMIUM_COMPLETE,user.userPremium)
                                 editor.apply()
                                 if(user.profileCompleted == 0){

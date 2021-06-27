@@ -22,7 +22,7 @@
     <string name="errw">خطأ في التسجيل</string>
     <string name="hmm">الصفحة الرئيسية</string>
     <string name="lk">المفضله</string>
-    <string name="My_adds">اعلانات</string>
+    <string name="My_adds">اعلاناتى</string>
     <string name="My_account">الحساب</string>
     <string name="plsck">الرجاء الضغط مرة أخرى للخروج</string>
     <string name="stt">لإعدادات</string>
@@ -31,7 +31,7 @@
     <string name="title_settings">لإعدادات</string>
     <string name="lbl_edit">تعديل</string>
     <string name="lbl_addresses">العنوان</string>
-    <string name="btn_lbl_logout">تسجيل الخروجج</string>
+    <string name="btn_lbl_logout">خروج</string>
 
 
     <!--TODO Step 3: Add the string resources to the strings.xml file-->
@@ -39,21 +39,20 @@
     <string name="action_add_product">اضف منتجات</string>
     <string name="content_description">صوره</string>
     <string name="title_activity_main">Bridal</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_home">الرئيسية</string>
     <string name="title_notifications">Notifications</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="allow">Allow Notifications ?</string>
-    <string name="en">English</string>
-    <string name="ar">Arabic</string>
+    <string name="allow">تشغيل الاشعارات؟</string>
+    <string name="en">الانجليزية</string>
+    <string name="ar">العربية</string>
 
 
 
 
 
     <string name="signupher">سجل دخولك</string>
-    <string name="login">التسجيل        </string>
+    <string name="login">التسجيل</string>
     <string name="donot">ليس عندك حساب؟</string>
     <string name="signup">Sign Up</string>
     <string name="authface">التسجيل من حساب فيسبوك </string>
@@ -82,8 +81,8 @@
     <string name="PRDtih">اضافه عنوان للمنتج</string>
     <string name="sv">حفظ</string>
 
-    <string name="title_my_adds">My Adds</string>
-    <string name="title_my_account">My Account</string>
+    <string name="title_my_adds">اعلاناتى</string>
+    <string name="title_my_account">الملف الشخصي</string>
 
     <string name="title_login">تسجيل الدخول</string>
     <string name="title_register">التسجيل</string>
@@ -149,6 +148,8 @@
     <string name="rb_lbl_female">أنثى</string>
     <string name="title_select_more_image">اختر المزيد من الصور</string>
     <string name="title_setting_page">الضبط</string>
+
+    <string name="title_btn_change_language">تغيير</string>
 
 
 </resources>

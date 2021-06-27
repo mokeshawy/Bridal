@@ -70,22 +70,47 @@
                     android:src="@drawable/default_image_profile" />
             </FrameLayout>
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_edit"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_below="@id/fl_header_bg"
-                android:layout_alignParentEnd="true"
-                android:layout_margin="16dp"
-                android:background="@drawable/item_grey_border_background"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
-                android:paddingStart="@dimen/settings_edit_label_marginStartEnd"
-                android:paddingTop="@dimen/settings_edit_label_marginTopBottom"
-                android:paddingEnd="@dimen/settings_edit_label_marginStartEnd"
-                android:paddingBottom="@dimen/settings_edit_label_marginTopBottom"
-                android:text="@string/lbl_edit"
-                android:textColor="@color/back"
-                android:textSize="@dimen/settings_edit_label_textSize" />
+                android:layout_margin="5dp"
+                android:layout_alignParentEnd="true">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/item_grey_border_background"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:paddingStart="@dimen/settings_edit_label_marginStartEnd"
+                    android:paddingTop="@dimen/settings_edit_label_marginTopBottom"
+                    android:paddingEnd="@dimen/settings_edit_label_marginStartEnd"
+                    android:paddingBottom="@dimen/settings_edit_label_marginTopBottom"
+                    android:text="@string/lbl_edit"
+                    android:textColor="@color/clicked"
+                    android:textSize="@dimen/settings_edit_label_textSize"
+                    android:backgroundTint="@color/back"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/item_grey_border_background"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:paddingStart="@dimen/settings_edit_label_marginStartEnd"
+                    android:paddingTop="@dimen/settings_edit_label_marginTopBottom"
+                    android:paddingEnd="@dimen/settings_edit_label_marginStartEnd"
+                    android:paddingBottom="@dimen/settings_edit_label_marginTopBottom"
+                    android:text="@string/btn_lbl_logout"
+                    android:textColor="@color/clicked"
+                    android:textSize="@dimen/settings_edit_label_textSize"
+                    android:backgroundTint="@color/back"/>
+            </LinearLayout>
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_name"
@@ -96,7 +121,7 @@
                 android:layout_marginTop="@dimen/settings_name_marginTop"
                 android:textColor="@color/black"
                 android:textSize="@dimen/settings_name_textSize"
-                tools:text="Mohamed Keshawy" />
+                tools:text="Mohamed Keshawy"/>
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_email"
@@ -130,14 +155,14 @@
 
                 <CheckBox
                     android:id="@+id/rb_allow_notification"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_below="@id/tv_phone_number"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="@dimen/settings_info_marginTop"
                     android:textColor="@color/back"
                     android:textColorHint="@color/back"
-                    android:buttonTint="@color/page" />
+                    android:buttonTint="@color/page"/>
 
                 <TextView
                     android:id="@+id/tv_notification"
@@ -146,13 +171,14 @@
                     android:textColor="@color/black"
                     android:layout_gravity="center"
                     android:layout_marginTop="@dimen/settings_info_marginTop"
-                    android:textSize="@dimen/settings_info_textSize"/>
+                    android:textSize="@dimen/settings_info_textSize"
+                    android:text="@string/allow"/>
             </LinearLayout>
 
             <RadioGroup
-                android:id="@+id/tv_change_language"
+                android:id="@+id/rb_change_language"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_below="@id/ll_check_box"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/settings_info_marginTop"
@@ -161,40 +187,28 @@
                 android:orientation="horizontal" >
 
                 <RadioButton
-                    android:id="@+id/radio_arabic"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="@string/en"
-                    android:buttonTint="@color/page" />
-
-                <RadioButton
                     android:id="@+id/radio_english"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="@string/en"
+                    android:buttonTint="@color/page"/>
+                <RadioButton
+                    android:id="@+id/radio_arabic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="@string/ar"
-                    android:buttonTint="@color/page" />
+                    android:buttonTint="@color/page"/>
+
             </RadioGroup>
 
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_logout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_change_language"
-                android:layout_gravity="center"
-                android:layout_marginStart="@dimen/settings_button_marginStartEnd"
-                android:layout_marginTop="70dp"
-                android:layout_marginEnd="@dimen/settings_button_marginStartEnd"
-                android:layout_marginBottom="@dimen/settings_button_marginTopBottom"
-                android:background="@drawable/butbackground"
-                android:foreground="?attr/selectableItemBackground"
-                android:gravity="center"
-                android:paddingTop="@dimen/btn_padding"
-                android:paddingBottom="@dimen/btn_padding"
-                android:text="@string/btn_lbl_logout"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/btn_textSize" />
+            <Button
+                android:id="@+id/btn_change_language"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:text="@string/title_btn_change_language"
+                android:textSize="13sp"
+                android:layout_marginStart="165dp"
+                android:layout_below="@id/rb_change_language"/>
         </RelativeLayout>
     </ScrollView>
 </layout>

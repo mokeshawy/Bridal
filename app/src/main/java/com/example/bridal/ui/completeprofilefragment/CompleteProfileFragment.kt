@@ -16,6 +16,7 @@ import androidx.core.net.toUri
 import androidx.fragment.app.viewModels
 import com.example.bridal.R
 import com.example.bridal.databinding.FragmentCompleteProfileBinding
+import com.example.bridal.ui.glideLoader
 import com.example.bridal.util.Constants
 
 class CompleteProfileFragment : Fragment() {
@@ -35,6 +36,11 @@ class CompleteProfileFragment : Fragment() {
         // connect whit viewModel
         binding.lifecycleOwner = this
         binding.completeProfileFragment = completeProfileViewModel
+
+        //shared preference for user details.
+        val myPreference    = activity?.getSharedPreferences(Constants.USERS_SHARED_KEY,Context.MODE_PRIVATE)
+        // get user complete profile key fro, shared preference.
+        val completeProfile = myPreference!!.getInt(Constants.USER_COMPLETE_PROFILE,0)
 
         // source for default image profile
         profileUri = Constants.SOURCE_IMAGE_PROFILE.toUri()
@@ -60,19 +66,27 @@ class CompleteProfileFragment : Fragment() {
             pickProfileImage()
         }
 
-        // get user complete profile key fro, shared preference.
-        val myPreference = activity?.getSharedPreferences(Constants.USERS_SHARED_KEY,Context.MODE_PRIVATE)
-        val completeProfile = myPreference!!.getString(Constants.USER_COMPLETE_PROFILE,"")
 
 
-        if(completeProfile!!.toInt() == 0){
-            binding.tvTitleId.text = resources.getString(R.string.title_complete_profile)
+
+        if(completeProfile!! == 0){
+            (requireActivity() as AppCompatActivity).supportActionBar?.title = resources.getString(R.string.title_complete_profile)
             binding.etFirstNameId.isEnabled = false
             binding.etLastNameId.isEnabled  = false
 
         }else{
-            binding.tvTitleId.text = resources.getString(R.string.title_complete_profile)
-
+            (requireActivity() as AppCompatActivity).supportActionBar?.title = resources.getString(R.string.title_edit_profile)
+            glideLoader(requireActivity()).loadUserPicture(myPreference!!.getString(Constants.USER_PROFILE_IMAGE,"").toString(),binding.ivUserPhotoId)
+            binding.etFirstNameId.isEnabled = true
+            binding.etLastNameId.isEnabled  = true
+            if(myPreference!!.getString(Constants.USER_MOBILE_KEY,"") !=null){
+                completeProfileViewModel.etMobileNumber.value = myPreference!!.getString(Constants.USER_MOBILE_KEY,"")
+            }
+            if(myPreference!!.getString(Constants.USER_GENDER_KEY,"") == Constants.GENDER_MALE){
+                binding.rbMaleId.isChecked = true
+            }else{
+                binding.rbFemaleId.isChecked = false
+            }
         }
     }
 

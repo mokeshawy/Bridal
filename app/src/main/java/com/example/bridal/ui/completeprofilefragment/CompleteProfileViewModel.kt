@@ -38,6 +38,8 @@ class CompleteProfileViewModel : ViewModel() {
                                progressBar: ProgressBar,
                                profileUri : Uri,
                                radioButton : RadioButton){
+        val myPreference = context.getSharedPreferences(Constants.USERS_SHARED_KEY,Context.MODE_PRIVATE)
+        val completeProfile = myPreference!!.getInt(Constants.USER_COMPLETE_PROFILE,0)
         progressBar.visibility = View.VISIBLE
         val map = HashMap<String , Any>()
 
@@ -58,8 +60,12 @@ class CompleteProfileViewModel : ViewModel() {
         if(gender.isNotEmpty()){
             map[Constants.USER_GENDER_KEY] = gender
         }
-        //when user no select new image will save default image.
-        map[Constants.USER_IMAGE_KEY] = Constants.SOURCE_IMAGE_PROFILE
+        if(completeProfile == 1){
+            map[Constants.USER_IMAGE_KEY] = myPreference!!.getString(Constants.USER_PROFILE_IMAGE,"").toString()
+        }else{
+            //when user no select new image will save default image.
+            map[Constants.USER_IMAGE_KEY] = Constants.SOURCE_IMAGE_PROFILE
+        }
 
         map[Constants.USER_COMPLETE_PROFILE] = 1
 

@@ -25,7 +25,7 @@
     <fragment
         android:id="@+id/dashBoardFragment"
         android:name="com.example.bridal.ui.dashboardfragment.DashboardFragment"
-        android:label="@string/title_dashboard"
+        android:label="@string/lk"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment

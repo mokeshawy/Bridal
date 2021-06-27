@@ -23,32 +23,18 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/brido">
 
-                <TextView
-                    android:id="@+id/tv_titleId"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="200dp"
-                    android:gravity="center"
-                    android:paddingStart="@dimen/toolbar_title_paddingStart"
-                    android:paddingEnd="0dp"
-                    android:text="@string/title_complete_profile"
-                    android:textColor="@color/clicked"
-                    android:textSize="@dimen/toolbar_title_text_size"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
 
                 <FrameLayout
                     android:id="@+id/fl_user_image"
                     android:layout_width="@dimen/settings_user_image_size"
                     android:layout_height="@dimen/settings_user_image_size"
-                    android:background="@drawable/border_background"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/settings_user_image_marginTop"
+                    android:layout_marginTop="200dp"
+                    android:background="@drawable/border_background"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_titleId">
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
                         android:id="@+id/iv_user_photoId"
@@ -59,7 +45,6 @@
                         android:scaleType="fitXY"
                         android:src="@drawable/default_image_profile" />
                 </FrameLayout>
-
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_first_nameId"
@@ -169,8 +154,8 @@
                         android:drawableTint="@color/clicked"
                         android:inputType="number"
                         android:padding="@dimen/et_padding"
-                        android:text="@={completeProfileFragment.etMobileNumber}"
-                        android:textSize="@dimen/et_textSize" />
+                        android:textSize="@dimen/et_textSize"
+                        android:text="@={completeProfileFragment.etMobileNumber}"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <RadioGroup
@@ -211,17 +196,19 @@
                 <Button
                     android:id="@+id/btn_submitId"
                     android:layout_width="200dp"
-                    android:layout_height="45dp"
+                    android:layout_height="40dp"
                     android:layout_marginTop="4dp"
                     android:background="@drawable/button_background"
                     android:gravity="center"
-                    android:textColor="@color/clicked"
                     android:paddingBottom="@dimen/btn_padding"
                     android:text="@string/fui_button_text_save"
+                    android:textColor="@color/clicked"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/rg_genderId"
+                    app:layout_constraintHorizontal_bias="0.497"
                     app:layout_constraintStart_toStartOf="@+id/rg_genderId"
-                    app:layout_constraintTop_toBottomOf="@+id/rg_genderId" />
+                    app:layout_constraintTop_toBottomOf="@+id/rg_genderId"
+                    app:layout_constraintVertical_bias="0.13" />
 
                 <ProgressBar
                     android:id="@+id/loading_view"

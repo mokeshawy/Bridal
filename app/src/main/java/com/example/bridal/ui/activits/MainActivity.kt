@@ -52,7 +52,6 @@ class MainActivity : AppCompatActivity(){
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when(destination.id){
                 R.id.splashFragment             -> supportActionBar!!.hide()
-                R.id.completeProfileFragment    -> supportActionBar!!.hide()
                 else -> supportActionBar!!.show()
             }
         }
