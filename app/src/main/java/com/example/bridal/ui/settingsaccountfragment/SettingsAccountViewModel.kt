@@ -18,7 +18,7 @@ class SettingsAccountViewModel : ViewModel() {
 
 
     fun showDataForUser(context: Context , iv_profile : ImageView){
-        val myPreference = context.getSharedPreferences(Constants.USERS_SHARED_KEY,Context.MODE_PRIVATE)
+        val myPreference    = context.getSharedPreferences(Constants.USERS_SHARED_KEY,Context.MODE_PRIVATE)
         tvName.value        =   "${myPreference!!.getString(Constants.FIRST_NAME_KEY,"")} "+
                                 "${myPreference!!.getString(Constants.LAST_NAME_KEY,"")}"
 

@@ -154,4 +154,11 @@
 
     <string name="title_btn_change_language">Change</string>
 
+    <string name="title_logout_dialog">Are you want logout?</string>
+    <string name="title_description_logout_dialog">Click "yes" go logout.</string>
+    <string name="title_dialog_yes">yes</string>
+    <string name="title_dialog_no">no</string>
+    <string name="title_no_add_product">you do not add any product</string>
+    <string name="title_product_details">Details</string>
+
 </resources>

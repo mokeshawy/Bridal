@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity(){
 
         // operation work for fragment from navigation component.
         navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-        navController = navHostFragment.navController
+        navController   = navHostFragment.navController
         // setUp navigation bottom.
         findViewById<BottomNavigationView>(R.id.navigation_bottom).setupWithNavController(navController)
 
@@ -44,7 +44,8 @@ class MainActivity : AppCompatActivity(){
             R.id.addProductFragment,
             R.id.productFragment,
             R.id.completeProfileFragment,
-            R.id.settingsAccountFragment))
+            R.id.settingsAccountFragment,
+            R.id.productDetailsFragment))
        setupActionBarWithNavController(navController, appBarConfiguration)
 
 
@@ -52,6 +53,7 @@ class MainActivity : AppCompatActivity(){
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when(destination.id){
                 R.id.splashFragment             -> supportActionBar!!.hide()
+                R.id.viewFullImageFragment      -> supportActionBar!!.hide()
                 else -> supportActionBar!!.show()
             }
         }

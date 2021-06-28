@@ -100,4 +100,9 @@ dependencies {
     // circleimageview
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
+    // circleindicator
+    implementation 'me.relex:circleindicator:2.1.6'
+
+    //Carouselview
+    implementation 'com.synnapps:carouselview:0.1.5'
 }

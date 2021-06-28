@@ -5,7 +5,8 @@ import java.io.Serializable
 data class ProductModel(
 
     var userId              : String = "",
-    var productI            : String = "",
+    var userName            : String = "",
+    var productId           : String = "",
     var categoryName        : String = "",
     var productTitle        : String = "",
     var productPrice        : String = "",

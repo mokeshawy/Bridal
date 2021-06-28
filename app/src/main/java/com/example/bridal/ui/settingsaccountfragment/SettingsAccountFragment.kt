@@ -1,6 +1,7 @@
 package com.example.bridal.ui.settingsaccountfragment
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -16,6 +17,7 @@ import com.example.bridal.databinding.FragmentSettingsAccountBinding
 import com.example.bridal.model.UserModel
 import com.example.bridal.ui.glideLoader
 import com.example.bridal.util.Constants
+import com.google.firebase.auth.FirebaseAuth
 
 class SettingsAccountFragment : Fragment() {
 
@@ -62,6 +64,20 @@ class SettingsAccountFragment : Fragment() {
                    activity?.recreate()
                }
            }
+        }
+
+        // user logout.
+        binding.tvLogout.setOnClickListener {
+            val  alert = AlertDialog.Builder(requireActivity())
+            alert.setTitle(resources.getString(R.string.title_logout_dialog))
+            alert.setMessage(resources.getString(R.string.title_description_logout_dialog))
+            alert.setPositiveButton(resources.getString(R.string.title_dialog_yes)){diaog,which->
+                FirebaseAuth.getInstance().signOut()
+                findNavController().navigate(R.id.action_settingsAccountFragment_to_loginFragment)
+            }
+            alert.setNegativeButton(resources.getString(R.string.title_dialog_no),null)
+            alert.create().show()
+
         }
     }
 

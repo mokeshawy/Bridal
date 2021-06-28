@@ -69,7 +69,7 @@ class AddProductFragment : Fragment() {
         }
 
         // call fun show select more image. when go user update profile to premium option will go unlock select more image.
-        addProductViewModel.addShowMoreImageAndVedio(requireActivity(),binding.llUserPremiumRequire,binding.llUserPremiumDone)
+        addProductViewModel.addShowMoreImageAndVideo(requireActivity(),binding.llUserPremiumRequire,binding.llUserPremiumDone)
 
         // select category.
         binding.spinnerCategory.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{

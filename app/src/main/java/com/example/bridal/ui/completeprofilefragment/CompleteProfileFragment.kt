@@ -69,12 +69,13 @@ class CompleteProfileFragment : Fragment() {
 
 
 
+        // when user not complete profile will go complete profile page
         if(completeProfile!! == 0){
             (requireActivity() as AppCompatActivity).supportActionBar?.title = resources.getString(R.string.title_complete_profile)
             binding.etFirstNameId.isEnabled = false
             binding.etLastNameId.isEnabled  = false
 
-        }else{
+        }else{ // when user complete profile will go edit profile page.
             (requireActivity() as AppCompatActivity).supportActionBar?.title = resources.getString(R.string.title_edit_profile)
             glideLoader(requireActivity()).loadUserPicture(myPreference!!.getString(Constants.USER_PROFILE_IMAGE,"").toString(),binding.ivUserPhotoId)
             binding.etFirstNameId.isEnabled = true

@@ -1,18 +1,15 @@
 package com.example.bridal.util
 
-import android.app.Activity
+
 import android.app.Dialog
 import android.content.Context
-import android.content.Intent
-import android.net.Uri
-import android.provider.MediaStore
 import android.view.View
-import android.webkit.MimeTypeMap
 import androidx.core.content.ContextCompat
 import com.example.bridal.R
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.dialog_progress.*
+
 
 object  Constants {
 
@@ -36,10 +33,14 @@ object  Constants {
     // bundle key
     const val PRODUCT_ITEM_KEY = "productKey"
 
+    // extra bundle key
+    const val EXTRA_PRODUCT_ITEM_KEY = "extraProductKey"
+
     // product reference
     const val PRODUCT_REFERENCE = "product"
     // child of product.
     const val PRODUCT_USER_ID       = "userId"
+    const val PRODUCT_USER_NAME     = "userName"
     const val PRODUCT_ID            = "productId"
     const val PRODUCT_CATEGORY_NAME = "categoryName"
     const val PRODUCT_TITLE         = "productTitle"
@@ -73,7 +74,7 @@ object  Constants {
     const val IMAGE_PROFILE_KEY   = 555
 
     // gender.
-    const val GENDER_MALE = "male"
+    const val GENDER_MALE   = "male"
     const val GENDER_FEMALE = "female"
 
     // const user edit profile.
@@ -123,14 +124,6 @@ object  Constants {
         }
         return currentUserID
     }
-
-
-
-
-
-
-
-
 
 
 

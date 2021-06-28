@@ -50,12 +50,15 @@ class AddProductViewModel : ViewModel(){
         }else if(etProductDescription.value!!.trim().isEmpty()){
             Constants.showErrorSnackBar(context.resources.getString((R.string.err_validate_product_description)), true , context , view)
         }else{
+            val myPreference = context.getSharedPreferences(Constants.USERS_SHARED_KEY,Context.MODE_PRIVATE)
+            var userName     =      "${myPreference!!.getString(Constants.FIRST_NAME_KEY,"")}"+
+                                    "${myPreference!!.getString(Constants.LAST_NAME_KEY,"")}"
             progressBar.visibility = View.VISIBLE
             val pushKey = productReference.push().key
             val map = HashMap<String , Any>()
 
             map[Constants.PRODUCT_USER_ID]          = Constants.getCurrentUser()
-            map[Constants.PRODUCT_ID]               = pushKey.toString()
+            map[Constants.PRODUCT_USER_NAME]        = userName
             map[Constants.PRODUCT_CATEGORY_NAME]    = categoryName
             map[Constants.PRODUCT_TITLE]            = etProductTitle.value!!
             map[Constants.PRODUCT_PRICE]            = etProductPrice.value!!
@@ -115,7 +118,7 @@ class AddProductViewModel : ViewModel(){
     }
 
     // fun show select more image. when go user update profile to premium option will go unlock select more image.
-    fun addShowMoreImageAndVedio(context : Context
+    fun addShowMoreImageAndVideo(context : Context
                          ,ll_user_premium_require : LinearLayout,
                          ll_user_premium_done : LinearLayout ){
 
