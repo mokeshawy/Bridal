@@ -61,7 +61,9 @@ class HomeFragment : Fragment() , OnClickHomeAdapter{
         return super.onOptionsItemSelected(item)
     }
 
-    override fun onClickHomListItem( viewHolder: HomeAdapter.ViewHolder, homeListModel: HomeListModel,position: Int ) {
+    override fun onClickHomListItem( viewHolder: HomeAdapter.ViewHolder,
+                                     homeListModel: HomeListModel,
+                                     position: Int ) {
 
         // entry to product from category list.
         viewHolder.itemView.setOnClickListener {

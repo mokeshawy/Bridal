@@ -13,55 +13,76 @@
         android:layout_margin="5dp"
         app:cardCornerRadius="10dp">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="120dp"
-            android:padding="16dp"
-            android:orientation="horizontal"
-            android:background="@drawable/hom_items_background"
-            tools:ignore="ExtraText">
-
-            <ImageView
-                android:layout_height="75dp"
-                android:layout_width="75dp"
-                android:id="@+id/icon"
-                android:src="@drawable/bridicon" />
-
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:layout_marginLeft="10dp">
+                android:id="@+id/linearLayout5"
+                android:layout_width="wrap_content"
+                android:layout_height="140dp"
+                android:background="@drawable/hom_items_background"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="ExtraText">
 
-                <TextView
-                    android:id="@+id/tv_product_title"
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:textSize="20sp"
-                    android:layout_margin="5dp"
-                    android:textStyle="bold"
-                    android:textColor="#000"
-                    android:text="Product Title" />
+                <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:src="@drawable/bridicon" />
 
-                <TextView
-                    android:id="@+id/tv_product_price"
-                    android:layout_height="wrap_content"
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:textColor="#a9a9a9"
-                    android:text="Price" />
-
-                <TextView
-                    android:id="@+id/tv_product_description"
                     android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:textColor="#a9a9a9"
-                    android:text="Description" />
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_product_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="Product Title"
+                        android:textColor="#000"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_product_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Price"
+                        android:textColor="#a9a9a9"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_product_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Description"
+                        android:textColor="#a9a9a9"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <ToggleButton
+                    android:id="@+id/btn_favorite_product"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/favorite_selector"
+                    android:textOff=""
+                    android:textOn="" />
             </LinearLayout>
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </layout>

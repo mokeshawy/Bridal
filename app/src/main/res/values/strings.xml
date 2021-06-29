@@ -180,5 +180,6 @@
 
     <string name="title_delete">Are you sure delete this</string>
     <string name="title_message_for_delete">Click "yes" for delete it</string>
+    <string name="title_add_to_favorite">Add to favorite</string>
 
 </resources>

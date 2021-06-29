@@ -1,6 +1,7 @@
 package com.example.bridal.ui.productfragment
 
 import android.os.Bundle
+import android.util.SparseBooleanArray
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -55,6 +56,25 @@ class ProductFragment : Fragment() , OnClickProductAdapter{
             var bundle = Bundle()
             bundle.putSerializable(Constants.EXTRA_PRODUCT_ITEM_KEY,product)
             findNavController().navigate(R.id.action_productFragment_to_productDetailsFragment,bundle)
+        }
+
+        productViewModel.checkSelect(requireActivity(),product.userId , viewHolder.binding.btnFavoriteProduct)
+
+        val checkBoxArray = SparseBooleanArray()
+        // add favorite and un favorite product.
+        viewHolder.binding.apply {
+            btnFavoriteProduct.isChecked = checkBoxArray.get(position,false)
+            btnFavoriteProduct.setOnClickListener {
+                if(!checkBoxArray.get(position,false)){
+                    btnFavoriteProduct.isChecked = true
+                    checkBoxArray.get(position,true)
+                    productViewModel.addProductToFavorite(requireActivity(),product)
+                }else{
+                    btnFavoriteProduct.isChecked = false
+                    checkBoxArray.get(position,false)
+                    productViewModel.unFavoriteProduct(requireActivity(),product.userId)
+                }
+            }
         }
     }
 }

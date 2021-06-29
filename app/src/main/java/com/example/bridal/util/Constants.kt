@@ -84,6 +84,9 @@ object  Constants {
     // const user edit profile.
     const val USER_EDIT_PROFILE = "edit_profile"
 
+    // Room Database table name
+    const val DATA_BASE_NAME = "Bridal"
+
 
     // fun snack bar show error and successful
     fun showErrorSnackBar(message : String, errorMessage : Boolean, context: Context, view : View){

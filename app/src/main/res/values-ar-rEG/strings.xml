@@ -178,6 +178,6 @@
     <string name="title_delete">هل تريد حذف هذا المنتج</string>
     <string name="title_message_for_delete">اضغط على موافق لحذف هذا المنتج.</string>
 
-
+    <string name="title_add_to_favorite">أضف الى المضلة</string>
 
 </resources>
