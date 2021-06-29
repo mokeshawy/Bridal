@@ -90,12 +90,12 @@
     <string name="title_product">المنتجات</string>
     <string name="title_add_product">اضافة منتج</string>
 
-    <!-- Home List-->
+    <!-- Home List title-->
     <string name="beauty_center">مركز تجميل وكوافير</string>
     <string name="buffet_services">خدمات بوفية</string>
     <string name="car_rental">ايجار سيارات</string>
     <string name="cosmetic_dentistry">مركز تجميل اسنان</string>
-    <string name="domestic_flights">شهر عسل رحلات داخلية</string>
+    <string name="domestic_flights">رحلات داخلية</string>
     <string name="flowers">زهور</string>
     <string name="gold_and_jewelry">ذهب ومجوهرات</string>
     <string name="health_and_beauty">صحة وجمال</string>
@@ -106,6 +106,23 @@
     <string name="wedding_halls">قاعات افراح</string>
     <string name="wedding_suit">بدل زفاف</string>
     <string name="weeding_dresses">فساتين زفاف</string>
+
+    <!-- Home List description-->
+    <string name="beauty_center_description">أنت الأجمل بلا منافس</string>
+    <string name="buffet_services_description">تذوق طعم الفرحة</string>
+    <string name="car_rental_description">بداية طريقك لحياة جديدة</string>
+    <string name="cosmetic_dentistry_description">لإبتسامة مشرقة بالفرحة</string>
+    <string name="domestic_flights_description">تنقل بكل تفاصيل الهدوء</string>
+    <string name="flowers_description">زين مناسبتك بأبهي الزهور</string>
+    <string name="gold_and_jewelry_description">الرقي و الجمال بين يديك</string>
+    <string name="health_and_beauty_description">الاسترخاء لبداية عمر جميل</string>
+    <string name="honey_moon_description">ارسم أجمل ذكريات لا تنسي</string>
+    <string name="hotels_description"> ليالي ساحرة بأرقي الأماكن</string>
+    <string name="watches_and_accessories_description">التألق بذوق رفيع</string>
+    <string name="wedding_group_description">أنغامك علي هواك</string>
+    <string name="wedding_halls_description">العمر ليلية.. اختر لها المكان الأجمل</string>
+    <string name="wedding_suit_description"> لأبهي طلة بليلة العمر</string>
+    <string name="weeding_dresses_description">كوني أميرة في ليلة زفافك</string>
 
 
  <!-- category array-->
@@ -150,6 +167,17 @@
     <string name="title_setting_page">الضبط</string>
 
     <string name="title_btn_change_language">تغيير</string>
+
+    <string name="title_logout_dialog">هل تريد تسجيل الخروج ؟</string>
+    <string name="title_description_logout_dialog">اضغط على موافق لتسجيل الخروج.</string>
+    <string name="title_dialog_yes">نعم</string>
+    <string name="title_dialog_no">لا</string>
+    <string name="title_no_add_product">لم يتم اضافة اى منتج</string>
+    <string name="title_product_details">معلومات المنتج</string>
+
+    <string name="title_delete">هل تريد حذف هذا المنتج</string>
+    <string name="title_message_for_delete">اضغط على موافق لحذف هذا المنتج.</string>
+
 
 
 </resources>

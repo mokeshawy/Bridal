@@ -87,7 +87,7 @@
     <string name="title_my_account">My Account</string>
 
 
-    <!-- Home List-->
+    <!-- Home List title -->
     <string name="beauty_center">Beauty Center</string>
     <string name="buffet_services">Buffet Services</string>
     <string name="car_rental">Car Rental</string>
@@ -104,6 +104,22 @@
     <string name="wedding_suit">Wedding Suit</string>
     <string name="weeding_dresses">Weeding Dresses</string>
 
+    <!-- Home List description-->
+    <string name="beauty_center_description">You are the most beautiful without competition</string>
+    <string name="buffet_services_description">Taste the joy</string>
+    <string name="car_rental_description">The beginning of your path to a new life</string>
+    <string name="cosmetic_dentistry_description">Smile radiant with happiness </string>
+    <string name="domestic_flights_description">Move with all the details of calm</string>
+    <string name="flowers_description">Decorate your occasion with the most beautiful flowers</string>
+    <string name="gold_and_jewelry_description">Elegance and beauty in your hands</string>
+    <string name="health_and_beauty_description">Relaxing for the beginning of a beautiful life</string>
+    <string name="honey_moon_description">Draw the most beautiful and unforgettable memories</string>
+    <string name="hotels_description">Enchanting nights in the finest places</string>
+    <string name="watches_and_accessories_description">Sparkle with elegance</string>
+    <string name="wedding_group_description">Angham Ali Hawak</string>
+    <string name="wedding_halls_description">Life is nocturnal..choose the most beautiful place for her</string>
+    <string name="wedding_suit_description">For Abhi, the look of the night of a lifetime</string>
+    <string name="weeding_dresses_description">Be a princess on your wedding night</string>
 
     <!-- category array-->
     <string-array name="category">
@@ -160,5 +176,9 @@
     <string name="title_dialog_no">no</string>
     <string name="title_no_add_product">you do not add any product</string>
     <string name="title_product_details">Details</string>
+
+
+    <string name="title_delete">Are you sure delete this</string>
+    <string name="title_message_for_delete">Click "yes" for delete it</string>
 
 </resources>

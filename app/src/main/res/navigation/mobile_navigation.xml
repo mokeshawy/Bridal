@@ -154,7 +154,7 @@
     </fragment>
     <fragment
         android:id="@+id/productDetailsFragment"
-        android:name="com.example.bridal.productdetails.ProductDetailsFragment"
+        android:name="com.example.bridal.ui.productdetails.ProductDetailsFragment"
         android:label="@string/title_product_details"
         tools:layout="@layout/fragment_product_details" >
         <action
@@ -165,7 +165,7 @@
     </fragment>
     <fragment
         android:id="@+id/viewFullImageFragment"
-        android:name="com.example.bridal.ViewFullImageFragment"
+        android:name="com.example.bridal.ui.viewFullImageFragment.ViewFullImageFragment"
         tools:layout="@layout/fragment_view_full_image" />
 
 </navigation>

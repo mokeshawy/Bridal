@@ -36,6 +36,10 @@ object  Constants {
     // extra bundle key
     const val EXTRA_PRODUCT_ITEM_KEY = "extraProductKey"
 
+    // bundle key for image.
+    const val IMAGE_FROM_MY_ADD_DETAILS = "imageMyAddDetails"
+    const val IMAGE_FROM_HOME_DETAILS   = "imageHomeDetails"
+
     // product reference
     const val PRODUCT_REFERENCE = "product"
     // child of product.

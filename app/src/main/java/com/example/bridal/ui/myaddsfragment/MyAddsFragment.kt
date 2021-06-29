@@ -70,7 +70,7 @@ class MyAddsFragment : Fragment() , OnClickProductForUserAdapter{
 
         // delete Product.
         viewHolder.binding.ibDeleteProduct.setOnClickListener {
-            myAddsViewModel.deleteProduct(productModel.productId)
+            myAddsViewModel.deleteProduct(requireActivity(),productModel.productId)
         }
     }
 }

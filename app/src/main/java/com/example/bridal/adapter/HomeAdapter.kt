@@ -32,8 +32,12 @@ class HomeAdapter(private var mHomeList: List<HomeListModel> , var onClickHomeAd
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
 
-        viewHolder.binding.title.text = mHomeList[position].title
-        glideLoader(viewHolder.itemView.context).loadUserPicture(mHomeList[position].image,viewHolder.binding.icon)
+        viewHolder.binding.apply {
+            title.text          = mHomeList[position].title
+            description.text    = mHomeList[position].description
+            glideLoader(viewHolder.itemView.context).loadUserPicture(mHomeList[position].image,icon)
+        }
+
 
         viewHolder.initialize( viewHolder , mHomeList[position] , onClickHomeAdapter)
 

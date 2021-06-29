@@ -1,4 +1,4 @@
-package com.example.bridal
+package com.example.bridal.ui.viewFullImageFragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.bridal.databinding.FragmentViewFullImageBinding
 import com.example.bridal.ui.glideLoader
+import com.example.bridal.util.Constants
 
 class ViewFullImageFragment : Fragment() {
 
@@ -20,14 +21,15 @@ class ViewFullImageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        if( arguments?.containsKey("image1") == true){
-            val image = arguments?.getString("image1")
+        // show full photo from details product form my add page.
+        if( arguments?.containsKey(Constants.IMAGE_FROM_MY_ADD_DETAILS) == true){
+            val image = arguments?.getString(Constants.IMAGE_FROM_MY_ADD_DETAILS)
             glideLoader(requireActivity()).loadUserPicture(image.toString(),binding.fullImage)
         }
-
-
-        if(arguments?.containsKey("image") == true){
-            val image = arguments?.getString("image")
+        
+        // show full image for product from product details for home page.
+        if(arguments?.containsKey(Constants.IMAGE_FROM_HOME_DETAILS) == true){
+            val image = arguments?.getString(Constants.IMAGE_FROM_HOME_DETAILS)
             glideLoader(requireActivity()).loadUserPicture(image.toString(),binding.fullImage)
         }
     }
