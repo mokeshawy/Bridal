@@ -33,7 +33,7 @@ class ProductViewModel : ViewModel() {
         productReference.orderByChild(categoryName).addValueEventListener( object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 for (ds in snapshot.children){
-                    var product = ds.getValue(ProductModel::class.java)!!
+                    val product = ds.getValue(ProductModel::class.java)!!
                     if(product.categoryName == categoryName){
                         productArrayList.add(product)
                     }
@@ -41,10 +41,10 @@ class ProductViewModel : ViewModel() {
                 productListLiveData.value = productArrayList
                 if(productArrayList.size > 0 ){
                     tv_not_found.visibility = View.GONE
-                    progressBar.visibility = View.GONE
+                    progressBar.visibility  = View.GONE
                 }else{
                     tv_not_found.visibility = View.VISIBLE
-                    progressBar.visibility = View.GONE
+                    progressBar.visibility  = View.GONE
                 }
             }
             override fun onCancelled(error: DatabaseError) {
@@ -58,44 +58,34 @@ class ProductViewModel : ViewModel() {
         CoroutineScope(Dispatchers.IO).launch {
             val database = DatabaseModule.provideDatabase(context)
             CoroutineScope(Dispatchers.Main).launch{
-                database.bridalDao().insertProduct(
-                    ProductModel( productModel.userId,
-                        productModel.userName,
-                        productModel.productId,
-                        productModel.categoryName,
-                        productModel.productTitle,
-                        productModel.productPrice,
-                        productModel.productImageOne,
-                        productModel.productImageTow,
-                        productModel.ProductImageThree,
-                        productModel.productVideo,
-                        productModel.productDescription,
-                        productModel.latitude,
-                        productModel.longitude,
-                )
-                )
+                val pushKey = database.bridalDao().selectByPushKey(productModel.pushKey)
+                if(pushKey.size == 1){
+
+                }else{
+                    database.bridalDao().insertProduct(productModel)
+                }
             }
         }
     }
 
     // fun un favorite from database.
-    fun unFavoriteProduct(context: Context , userId : String){
+    fun unFavoriteProduct(context: Context , pushKey : String){
         CoroutineScope(Dispatchers.IO).launch {
             val database = DatabaseModule.provideDatabase(context)
             CoroutineScope(Dispatchers.Main).launch {
-                database.bridalDao().deleteProduct(userId)
+                database.bridalDao().deleteProduct(pushKey)
             }
         }
     }
 
     // fun check select of favorite button.
-    fun checkSelect(context: Context , userId: String , toggleButton: ToggleButton){
+    fun checkSelect(context: Context , pushKey : String , toggleButton: ToggleButton){
         CoroutineScope(Dispatchers.IO).launch{
             val database = DatabaseModule.provideDatabase(context)
             CoroutineScope(Dispatchers.Main).launch{
                 val result = database.bridalDao().selectAll()
                 for (product in result){
-                    if( product.userId == userId){
+                    if( product.pushKey == pushKey){
                         toggleButton.isChecked = true
                     }
                 }

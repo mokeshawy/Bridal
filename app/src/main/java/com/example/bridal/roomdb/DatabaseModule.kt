@@ -2,7 +2,6 @@ package com.example.bridal.roomdb
 
 import android.content.Context
 import androidx.room.Room
-import androidx.room.RoomDatabase
 import com.example.bridal.util.Constants
 
 object DatabaseModule {

@@ -40,41 +40,42 @@ class ProductFragment : Fragment() , OnClickProductAdapter{
         // call read product function.
         productViewModel.readProduct(categoryName.toString(),binding.tvProductNotFound,binding.loadingView)
         productViewModel.productListLiveData.observe(viewLifecycleOwner, Observer {
-            binding.loadingView.visibility = View.VISIBLE
-            binding.recyclerView.adapter = ProductAdapter(it,this)
-            binding.loadingView.visibility = View.GONE
+            binding.loadingView.visibility  = View.VISIBLE
+            binding.recyclerView.adapter    = ProductAdapter(it,this)
+            binding.loadingView.visibility  = View.GONE
 
         })
-
     }
 
     override fun onClickProduct( viewHolder: ProductAdapter.ViewHolder,
                                  product: ProductModel,
                                  position: Int ) {
 
-        viewHolder.itemView.setOnClickListener {
-            var bundle = Bundle()
-            bundle.putSerializable(Constants.EXTRA_PRODUCT_ITEM_KEY,product)
-            findNavController().navigate(R.id.action_productFragment_to_productDetailsFragment,bundle)
-        }
 
-        productViewModel.checkSelect(requireActivity(),product.userId , viewHolder.binding.btnFavoriteProduct)
+        productViewModel.checkSelect(requireActivity(),product.pushKey , viewHolder.binding.btnFavoriteProduct)
 
         val checkBoxArray = SparseBooleanArray()
+        viewHolder.binding.btnFavoriteProduct.isChecked = checkBoxArray.get( position , false)
+
         // add favorite and un favorite product.
-        viewHolder.binding.apply {
-            btnFavoriteProduct.isChecked = checkBoxArray.get(position,false)
-            btnFavoriteProduct.setOnClickListener {
-                if(!checkBoxArray.get(position,false)){
-                    btnFavoriteProduct.isChecked = true
-                    checkBoxArray.get(position,true)
-                    productViewModel.addProductToFavorite(requireActivity(),product)
-                }else{
-                    btnFavoriteProduct.isChecked = false
-                    checkBoxArray.get(position,false)
-                    productViewModel.unFavoriteProduct(requireActivity(),product.userId)
-                }
+        viewHolder.binding.btnFavoriteProduct.setOnClickListener {
+            if(!checkBoxArray.get( position , false)){
+                viewHolder.binding.btnFavoriteProduct.isChecked = true
+                checkBoxArray.put(position , true)
+                // call function for add job from database to favorite
+                productViewModel.addProductToFavorite(requireActivity(),product)
+            }else{
+                viewHolder.binding.btnFavoriteProduct.isChecked = false
+                checkBoxArray.put(position , false)
+                // call function unFavorite from database.
+                productViewModel.unFavoriteProduct(requireActivity(),product.productId)
             }
+        }
+
+        viewHolder.itemView.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putSerializable(Constants.EXTRA_PRODUCT_ITEM_KEY,product)
+            findNavController().navigate(R.id.action_productFragment_to_productDetailsFragment,bundle)
         }
     }
 }

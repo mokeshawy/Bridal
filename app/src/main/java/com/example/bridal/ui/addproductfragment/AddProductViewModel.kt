@@ -51,7 +51,7 @@ class AddProductViewModel : ViewModel(){
             Constants.showErrorSnackBar(context.resources.getString((R.string.err_validate_product_description)), true , context , view)
         }else{
             val myPreference = context.getSharedPreferences(Constants.USERS_SHARED_KEY,Context.MODE_PRIVATE)
-            var userName     =      "${myPreference!!.getString(Constants.FIRST_NAME_KEY,"")}"+
+            val userName     =      "${myPreference!!.getString(Constants.FIRST_NAME_KEY,"")}"+
                                     "${myPreference!!.getString(Constants.LAST_NAME_KEY,"")}"
             progressBar.visibility = View.VISIBLE
             val pushKey = productReference.push().key
@@ -68,6 +68,8 @@ class AddProductViewModel : ViewModel(){
             map[Constants.PRODUCT_DESCRIPTION]      = etProductDescription.value!!
             map[Constants.PRODUCT_LATITUDE]         = ""
             map[Constants.PRODUCT_LONGITUDE]        = ""
+            map[Constants.PRODUCT_PUSH_KEY]         = pushKey.toString()
+            map[Constants.PRODUCT_RATE]             = 1
             productReference.child(pushKey.toString()).setValue(map)
 
             // upload image num one.
@@ -122,8 +124,8 @@ class AddProductViewModel : ViewModel(){
                          ,ll_user_premium_require : LinearLayout,
                          ll_user_premium_done : LinearLayout ){
 
-        val myPreference = context.getSharedPreferences(Constants.USERS_SHARED_KEY,Context.MODE_PRIVATE)
-        val userPremium = myPreference.getInt(Constants.USER_PREMIUM_COMPLETE,0)
+        val myPreference    = context.getSharedPreferences(Constants.USERS_SHARED_KEY,Context.MODE_PRIVATE)
+        val userPremium     = myPreference.getInt(Constants.USER_PREMIUM_COMPLETE,0)
 
         if(userPremium == 0){
             ll_user_premium_require.visibility  = View.VISIBLE

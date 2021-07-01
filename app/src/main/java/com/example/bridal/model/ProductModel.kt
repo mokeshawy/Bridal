@@ -32,7 +32,11 @@ data class ProductModel(
     @ColumnInfo( name = "latitude")
     var latitude            : String = "",
     @ColumnInfo( name = "longitude")
-    var longitude           : String = ""
+    var longitude           : String = "",
+    @ColumnInfo(name = "pushKey")
+    var pushKey             : String = "",
+    @ColumnInfo(name = "rate")
+    var rate                :Int = 1
 
 ) : Serializable
 {

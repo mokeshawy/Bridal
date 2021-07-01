@@ -42,6 +42,7 @@ object  Constants {
 
     // product reference
     const val PRODUCT_REFERENCE = "product"
+
     // child of product.
     const val PRODUCT_USER_ID       = "userId"
     const val PRODUCT_USER_NAME     = "userName"
@@ -56,6 +57,8 @@ object  Constants {
     const val PRODUCT_DESCRIPTION   = "productDescription"
     const val PRODUCT_LATITUDE      = "latitude"
     const val PRODUCT_LONGITUDE     = "longitude"
+    const val PRODUCT_PUSH_KEY      = "pushKey"
+    const val PRODUCT_RATE          = "rate"
 
 
     // request number for image.
@@ -86,6 +89,7 @@ object  Constants {
 
     // Room Database table name
     const val DATA_BASE_NAME = "Bridal"
+
 
 
     // fun snack bar show error and successful
