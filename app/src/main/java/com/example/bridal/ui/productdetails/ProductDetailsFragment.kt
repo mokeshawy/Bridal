@@ -45,6 +45,9 @@ class ProductDetailsFragment : Fragment() {
                 tvProductAdded.text         = mMyAddProduct!!.userName
                 tvProductDescription.text   = mMyAddProduct!!.productDescription
 
+                // hide chat button.
+                ivGoToChat.visibility = View.GONE
+
                 // operation work for carouseView.
                 val image = arrayOf(mMyAddProduct!!.productImageOne,
                     mMyAddProduct!!.productImageTow,
@@ -89,6 +92,17 @@ class ProductDetailsFragment : Fragment() {
                     // go show full image.
                     val bundle = bundleOf(Constants.IMAGE_FROM_HOME_DETAILS to image[position])
                     findNavController().navigate(R.id.action_productDetailsFragment_to_viewFullImageFragment,bundle)
+                }
+
+                if(mMyAddProduct!!.userId == Constants.getCurrentUser()){
+                    ivGoToChat.visibility = View.GONE
+                }else{
+                    // go to chat.
+                    ivGoToChat.setOnClickListener {
+                        val bundle = Bundle()
+                        bundle.putSerializable(Constants.PRODUCT_CHAT_OBJECT , mMyAddProduct)
+                        findNavController().navigate(R.id.action_productDetailsFragment_to_chatFragment,bundle)
+                    }
                 }
             }
         }

@@ -161,6 +161,13 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
                             android:textColor="@color/back" />
+
+                        <ImageView
+                            android:id="@+id/iv_go_to_chat"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_chat_icon"
+                            android:layout_marginLeft="10dp"/>
                     </LinearLayout>
 
                     <LinearLayout

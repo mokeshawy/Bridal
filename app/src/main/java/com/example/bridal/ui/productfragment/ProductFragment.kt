@@ -68,7 +68,7 @@ class ProductFragment : Fragment() , OnClickProductAdapter{
                 viewHolder.binding.btnFavoriteProduct.isChecked = false
                 checkBoxArray.put(position , false)
                 // call function unFavorite from database.
-                productViewModel.unFavoriteProduct(requireActivity(),product.productId)
+                productViewModel.unFavoriteProduct(requireActivity(),product.pushKey)
             }
         }
 

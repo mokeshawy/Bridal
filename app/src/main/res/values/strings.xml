@@ -84,7 +84,7 @@
     <string name="optio">(optional)</string>
     <string name="sv">Save</string>
     <string name="title_my_adds">My Adds</string>
-    <string name="title_my_account">My Account</string>
+    <string name="title_my_message">My Message</string>
 
 
     <!-- Home List title -->
@@ -181,5 +181,7 @@
     <string name="title_delete">Are you sure delete this</string>
     <string name="title_message_for_delete">Click "yes" for delete it</string>
     <string name="title_add_to_favorite">Add to favorite</string>
+    <string name="title_no_favorite">No favorite</string>
+    <string name="title_message_not_found">No message</string>
 
 </resources>

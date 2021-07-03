@@ -15,4 +15,7 @@
     <color name="err">#530101</color>
 
 
+    <color name="colorItemLeft">#D9D8D8</color>
+    <color name="colorItemRight">#2A2A2C</color>
+
 </resources>

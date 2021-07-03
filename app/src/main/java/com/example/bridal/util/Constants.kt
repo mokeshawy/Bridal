@@ -8,7 +8,6 @@ import androidx.core.content.ContextCompat
 import com.example.bridal.R
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.dialog_progress.*
 
 
 object  Constants {
@@ -17,15 +16,16 @@ object  Constants {
     const val USERS : String = "users"
 
     // Child for user Reference
-    const val USER_ID           : String = "userId"
-    const val FIRST_NAME_KEY    : String  = "firstName"
-    const val LAST_NAME_KEY     : String  = "lastName"
-    const val USER_EMAIL_KEY    : String  = "email"
-    const val USER_IMAGE_KEY    : String  = "image"
-    const val USER_MOBILE_KEY   : String  = "mobile"
-    const val USER_GENDER_KEY   : String  = "gender"
+    const val USER_ID           : String    = "userId"
+    const val FIRST_NAME_KEY    : String    = "firstName"
+    const val LAST_NAME_KEY     : String    = "lastName"
+    const val USER_EMAIL_KEY    : String    = "email"
+    const val USER_IMAGE_KEY    : String    = "image"
+    const val USER_MOBILE_KEY   : String    = "mobile"
+    const val USER_GENDER_KEY   : String    = "gender"
     const val USER_COMPLETE_PROFILE : String = "profileCompleted"
     const val USER_PREMIUM_COMPLETE  = "userPremium"
+
 
     // shared preference key
     const val USERS_SHARED_KEY = "userKey"
@@ -40,6 +40,11 @@ object  Constants {
     const val IMAGE_FROM_MY_ADD_DETAILS = "imageMyAddDetails"
     const val IMAGE_FROM_HOME_DETAILS   = "imageHomeDetails"
 
+    // bundle for send UserObject
+    const val PRODUCT_CHAT_OBJECT    = "productObject"
+
+    // bundle user key.
+    const val USER_MODEL_KEY = ""
     // product reference
     const val PRODUCT_REFERENCE = "product"
 
@@ -59,6 +64,15 @@ object  Constants {
     const val PRODUCT_LONGITUDE     = "longitude"
     const val PRODUCT_PUSH_KEY      = "pushKey"
     const val PRODUCT_RATE          = "rate"
+
+
+    // Chat Reference
+    const val CHAT_REFERENCE = "Chat"
+
+    // Child chat reference
+    const val CHAT_SENDER_ID     = "senderId"
+    const val CHAT_RECEIVER_ID   = "receiverId"
+    const val CHAT_MESSAGE       = "message"
 
 
     // request number for image.
@@ -84,13 +98,15 @@ object  Constants {
     const val GENDER_MALE   = "male"
     const val GENDER_FEMALE = "female"
 
-    // const user edit profile.
-    const val USER_EDIT_PROFILE = "edit_profile"
 
     // Room Database table name
     const val DATA_BASE_NAME = "Bridal"
 
 
+    const val BASE_URL = "https://fcm.googleapis.com"
+    const val SERVER_KEY = "AAAAK-YrOaw:APA91bGFxpYR6PfoxSR5Govy6E7XV6XtUd1UU75zI0h1EfUcimjFnN7hKITNLY40-ttM-YYlPJqTJUMrNSCgeJpe1mui2mhPtiM3x4DGvbX3cBxtKbLfFDCy8rJFXcORZnZC54P23d4a"
+    const val CONTENT_TYPE = "application/json"
+    const val TOPIC = "/topics/myTopic2"
 
     // fun snack bar show error and successful
     fun showErrorSnackBar(message : String, errorMessage : Boolean, context: Context, view : View){
@@ -108,14 +124,14 @@ object  Constants {
 
     // fun hide progress bar
     private lateinit var mProgressDialog : Dialog
-    fun showProgressDialog(text:String , context: Context){
-        mProgressDialog = Dialog(context)
-        mProgressDialog.setContentView(R.layout.dialog_progress)
-        mProgressDialog.textView5.text = text
-        mProgressDialog.setCancelable(false)
-        mProgressDialog.setCanceledOnTouchOutside(false)
-        mProgressDialog.show()
-    }
+//    fun showProgressDialog(text:String , context: Context){
+//        mProgressDialog = Dialog(context)
+//        mProgressDialog.setContentView(R.layout.dialog_progress)
+//        mProgressDialog.textView5.text = text
+//        mProgressDialog.setCancelable(false)
+//        mProgressDialog.setCanceledOnTouchOutside(false)
+//        mProgressDialog.show()
+//    }
 
     // fun hide progress bar
     fun hideProgressDialog() {

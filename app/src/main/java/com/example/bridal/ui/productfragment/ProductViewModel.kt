@@ -83,7 +83,7 @@ class ProductViewModel : ViewModel() {
         CoroutineScope(Dispatchers.IO).launch{
             val database = DatabaseModule.provideDatabase(context)
             CoroutineScope(Dispatchers.Main).launch{
-                val result = database.bridalDao().selectAll()
+                val result = database.bridalDao().readAll()
                 for (product in result){
                     if( product.pushKey == pushKey){
                         toggleButton.isChecked = true

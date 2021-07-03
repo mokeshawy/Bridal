@@ -82,7 +82,7 @@
     <string name="sv">حفظ</string>
 
     <string name="title_my_adds">اعلاناتى</string>
-    <string name="title_my_account">الملف الشخصي</string>
+    <string name="title_my_message">الرسائل</string>
 
     <string name="title_login">تسجيل الدخول</string>
     <string name="title_register">التسجيل</string>
@@ -179,5 +179,8 @@
     <string name="title_message_for_delete">اضغط على موافق لحذف هذا المنتج.</string>
 
     <string name="title_add_to_favorite">أضف الى المضلة</string>
+
+    <string name="title_no_favorite">لا يوجد عناصر مفضلة</string>
+    <string name="title_message_not_found">لا يوجد رسائل</string>
 
 </resources>

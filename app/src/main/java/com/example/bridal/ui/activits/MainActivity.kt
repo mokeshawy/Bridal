@@ -35,9 +35,9 @@ class MainActivity : AppCompatActivity(){
         // show title for fragment on actionbar.
         val appBarConfiguration = AppBarConfiguration(setOf(
             R.id.homeFragment,
-            R.id.dashBoardFragment,
+            R.id.favoriteFragment,
             R.id.myAddsFragment,
-            R.id.myAccountFragment,
+            R.id.messageFragment,
             R.id.loginFragment,
             R.id.registerFragment,
             R.id.forgetPasswordFragment,
@@ -54,6 +54,7 @@ class MainActivity : AppCompatActivity(){
             when(destination.id){
                 R.id.splashFragment             -> supportActionBar!!.hide()
                 R.id.viewFullImageFragment      -> supportActionBar!!.hide()
+                R.id.chatFragment               ->supportActionBar!!.hide()
                 else -> supportActionBar!!.show()
             }
         }
@@ -62,9 +63,9 @@ class MainActivity : AppCompatActivity(){
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when(destination.id){
                 R.id.homeFragment       -> binding.navigationBottom.visibility = View.VISIBLE
-                R.id.dashBoardFragment  -> binding.navigationBottom.visibility = View.VISIBLE
+                R.id.favoriteFragment   -> binding.navigationBottom.visibility = View.VISIBLE
                 R.id.myAddsFragment     -> binding.navigationBottom.visibility = View.VISIBLE
-                R.id.myAccountFragment  -> binding.navigationBottom.visibility = View.VISIBLE
+                R.id.messageFragment    -> binding.navigationBottom.visibility = View.VISIBLE
 
                 else -> binding.navigationBottom.visibility = View.GONE
             }

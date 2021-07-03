@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="chatFragment"
+            type="com.example.bridal.ui.chatfragment.ChatViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.chatfragment.ChatFragment"
+        android:background="@drawable/hom_items_background">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#9BECEAEA"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_message_chat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/back">
+
+
+                <TextView
+                    android:id="@+id/tv_user_name_chat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="26dp"
+                    android:text="user name"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp" />
+
+<!--                <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                    android:id="@+id/iv_profile_image_chat"-->
+<!--                    android:layout_width="45dp"-->
+<!--                    android:layout_height="45dp"/>-->
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_chats"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/relative_layout_bottom"
+                android:layout_below="@+id/toolbar_message_chat"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:stackFromEnd="true" />
+
+
+            <RelativeLayout
+                android:id="@+id/relative_layout_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="3dp"
+                android:background="@color/white"
+                android:padding="8dp">
+
+
+                <ImageView
+                    android:id="@+id/iv_attach_image_file_btn"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true" />
+
+                <EditText
+                    android:id="@+id/et_text_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="7dp"
+                    android:hint="write message here..."
+                    android:text="@={chatFragment.etSendMessage}"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/iv_send_message_btn"
+                    android:layout_toRightOf="@+id/iv_attach_image_file_btn"
+                    android:background="@drawable/et_send_message_background" />
+
+                <ImageView
+                    android:id="@+id/iv_send_message_btn"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/ic_vector_send_message" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

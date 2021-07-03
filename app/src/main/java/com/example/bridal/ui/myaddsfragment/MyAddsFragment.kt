@@ -1,5 +1,6 @@
 package com.example.bridal.ui.myaddsfragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -11,6 +12,7 @@ import com.example.bridal.adapter.ProductForUserAdapter
 import com.example.bridal.databinding.FragmentMyAddsBinding
 import com.example.bridal.interfaceforclickadapter.OnClickProductForUserAdapter
 import com.example.bridal.model.ProductModel
+import com.example.bridal.ui.activits.NotificationActivity
 import com.example.bridal.util.Constants
 
 class MyAddsFragment : Fragment() , OnClickProductForUserAdapter{
@@ -39,6 +41,10 @@ class MyAddsFragment : Fragment() , OnClickProductForUserAdapter{
             binding.rvUserProduct.adapter = ProductForUserAdapter(it,this)
         })
 
+        // go notification activity.
+        binding.btnFlotNotification.setOnClickListener {
+            startActivity(Intent(activity,NotificationActivity::class.java))
+        }
     }
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.addproductmenu,menu)
