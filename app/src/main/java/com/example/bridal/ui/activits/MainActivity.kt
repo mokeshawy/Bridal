@@ -45,7 +45,8 @@ class MainActivity : AppCompatActivity(){
             R.id.productFragment,
             R.id.completeProfileFragment,
             R.id.settingsAccountFragment,
-            R.id.productDetailsFragment))
+            R.id.productDetailsFragment,
+            R.id.viewPagerFragment))
        setupActionBarWithNavController(navController, appBarConfiguration)
 
 
@@ -55,6 +56,7 @@ class MainActivity : AppCompatActivity(){
                 R.id.splashFragment             -> supportActionBar!!.hide()
                 R.id.viewFullImageFragment      -> supportActionBar!!.hide()
                 R.id.chatFragment               ->supportActionBar!!.hide()
+                R.id.viewPagerFragment          ->supportActionBar!!.hide()
                 else -> supportActionBar!!.show()
             }
         }
