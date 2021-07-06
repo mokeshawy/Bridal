@@ -24,4 +24,7 @@ interface BridalDao {
 
     @Query("SELECT * FROM ProductModel")
     suspend fun readAll() : List<ProductModel>
+
+    @Query("SELECT * FROM ProductModel WHERE userId = :userId")
+    fun selectUserId(userId : String)  : List<ProductModel>
 }

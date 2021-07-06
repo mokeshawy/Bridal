@@ -90,7 +90,6 @@ class RegisterViewModel : ViewModel() {
             firebaseAuth.createUserWithEmailAndPassword(email , password).addOnCompleteListener{ task ->
 
                 if(task.isSuccessful){
-
                     // Send email verification
                     firebaseAuth.currentUser?.sendEmailVerification()
 

@@ -10,9 +10,7 @@ import com.example.bridal.adapter.FavoriteAdapter
 import com.example.bridal.databinding.FragmentFavoriteBinding
 import com.example.bridal.interfaceforclickadapter.OnClickFavoriteAdapter
 import com.example.bridal.model.ProductModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+
 
 class FavoriteFragment : Fragment() , OnClickFavoriteAdapter{
 
@@ -37,7 +35,9 @@ class FavoriteFragment : Fragment() , OnClickFavoriteAdapter{
         binding.rvFavoriteList.adapter = favoriteAdapter
         favoriteViewModel.selectFavorite(requireActivity()).observe(viewLifecycleOwner, Observer {
             binding.loadingView.visibility  = View.VISIBLE
+
             favoriteAdapter.update(it)
+
             if(it.isNotEmpty()){
                 binding.rvFavoriteList.visibility       = View.VISIBLE
                 binding.tvFavoriteNotFound.visibility   = View.GONE

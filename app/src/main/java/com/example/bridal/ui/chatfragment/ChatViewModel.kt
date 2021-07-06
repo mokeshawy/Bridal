@@ -1,13 +1,19 @@
 package com.example.bridal.ui.chatfragment
 
 import android.content.Context
+import android.util.Log
 import android.view.View
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.recyclerview.widget.RecyclerView
+import com.example.bridal.model.ChatListModel
 import com.example.bridal.model.ChatModel
+import com.example.bridal.model.UserModel
 import com.example.bridal.util.Constants
+import com.firebase.ui.auth.data.model.User
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -18,11 +24,18 @@ class ChatViewModel : ViewModel() {
 
    val etSendMessage = MutableLiveData<String>("")
 
-   var mGetMessageLiveList     = MutableLiveData<ArrayList<ChatModel>>()
-   var mGetMessageArrayList    = ArrayList<ChatModel>()
+   var mChatArrayListLive      = MutableLiveData<ArrayList<ChatModel>>()
+   var mChatArrayList          = ArrayList<ChatModel>()
 
-   private val firebaseDatabase    = FirebaseDatabase.getInstance()
-   private val chatReference       = firebaseDatabase.getReference(Constants.CHAT_REFERENCE)
+   var mUsersLiveData         = MutableLiveData<ArrayList<UserModel>>()
+   var mUsersArray            = ArrayList<UserModel>()
+   var mChatListArray         = ArrayList<ChatListModel>()
+
+   private val firebaseDatabase     = FirebaseDatabase.getInstance()
+   private var usersReference       = firebaseDatabase.getReference(Constants.USERS)
+   private val chatReference        = firebaseDatabase.getReference(Constants.CHAT_REFERENCE)
+   var chatListReference            = firebaseDatabase.getReference(Constants.CHAT_LIST_REFERENCE)
+   var chatsListReceiverRef         = firebaseDatabase.getReference(Constants.CHAT_LIST_REFERENCE)
 
    // fun send message
    fun sendMessage(receiveUserId : String, view : View, et_message : EditText){
@@ -30,39 +43,49 @@ class ChatViewModel : ViewModel() {
          Snackbar.make( view , "Message is Empty" , Snackbar.LENGTH_SHORT).show()
          et_message.setText("")
       }else{
+         val pushKey = chatReference.push().key.toString()
          val map = HashMap<String , Any>()
-
          map[Constants.CHAT_SENDER_ID]    = Constants.getCurrentUser()
          map[Constants.CHAT_RECEIVER_ID]  = receiveUserId
          map[Constants.CHAT_MESSAGE]      = etSendMessage.value!!.toString()
+         map[Constants.CHAT_PUSH_KEY]     = pushKey
 
-         chatReference.push().setValue(map)
+         chatReference.child(pushKey).setValue(map).addOnCompleteListener { task ->
+            if(task.isSuccessful){
+               chatListReference.child(Constants.getCurrentUser()).child(receiveUserId).child(Constants.CHAT_LIST_ID).setValue(receiveUserId)
+               chatsListReceiverRef.child(receiveUserId).child(Constants.getCurrentUser()).child(Constants.CHAT_LIST_ID).setValue(Constants.getCurrentUser())
+            }
+         }
          et_message.setText("")
 
       }
    }
 
-   // fun read message for firebase data base
-   fun readMessage(context : Context, receiverId : String){
 
-      mGetMessageArrayList = ArrayList()
+   // function retrieve message
+   fun retrieveMessage( context: Context,
+                        userSenderId : String,
+                        userReceiverId : String){
 
-      chatReference.addValueEventListener(object : ValueEventListener {
+      mChatArrayList = ArrayList()
+
+      chatReference.addValueEventListener( object : ValueEventListener{
          override fun onDataChange(snapshot: DataSnapshot) {
-            mGetMessageArrayList.clear()
-            for( ds in snapshot.children){
+            mChatArrayList.clear()
+            for ( ds in snapshot.children){
 
                var chat = ds.getValue(ChatModel::class.java)!!
-               if( chat.senderId == Constants.getCurrentUser() && chat.receiverId == receiverId ||
-                  chat.senderId == receiverId && chat.receiverId == Constants.getCurrentUser()){
 
-                  mGetMessageArrayList.add(chat)
+               if( chat.receiverId == userSenderId && chat.senderId == userReceiverId || chat.receiverId == userReceiverId && chat.senderId == userSenderId){
+
+                  mChatArrayList.add(chat)
                }
-               mGetMessageLiveList.value = mGetMessageArrayList
             }
+            mChatArrayListLive.value = mChatArrayList
          }
+
          override fun onCancelled(error: DatabaseError) {
-            Toast.makeText(context , error.message , Toast.LENGTH_SHORT).show()
+            Toast.makeText(context , error.message ,Toast.LENGTH_SHORT).show()
          }
       })
    }

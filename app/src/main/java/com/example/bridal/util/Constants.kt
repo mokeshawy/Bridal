@@ -44,7 +44,7 @@ object  Constants {
     const val PRODUCT_CHAT_OBJECT    = "productObject"
 
     // bundle user key.
-    const val USER_MODEL_KEY = ""
+    const val USER_MODEL_KEY = "usersBundle"
     // product reference
     const val PRODUCT_REFERENCE = "product"
 
@@ -73,6 +73,13 @@ object  Constants {
     const val CHAT_SENDER_ID     = "senderId"
     const val CHAT_RECEIVER_ID   = "receiverId"
     const val CHAT_MESSAGE       = "message"
+    const val CHAT_PUSH_KEY     = "chatKey"
+
+    // chat list reference
+    const val CHAT_LIST_REFERENCE   = "ChatList"
+
+    // Child ChatList reference
+    const val CHAT_LIST_ID = "id"
 
 
     // request number for image.
@@ -81,7 +88,7 @@ object  Constants {
     const val IMAGE_NUM_THREE_KEY   = 333
 
     // request number key.
-    const val VIDEO_KEY   = 444
+    const val VIDEO_KEY             = 444
 
 
     // const image in firebase.

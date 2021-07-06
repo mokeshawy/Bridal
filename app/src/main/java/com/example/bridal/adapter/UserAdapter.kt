@@ -33,14 +33,7 @@ class UserAdapter(private val dataSet: ArrayList<UserModel>,
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         viewHolder.binding.tvUserName.text = "${dataSet[position].firstName} ${dataSet[position].lastName}"
-
-        // when user not select image profile will show default image
-        if( dataSet[position].image == ""){
-            viewHolder.binding.ivUserImage.setImageResource(R.drawable.default_image_profile)
-        }else{
-            // when user select image profile will show image
-            glideLoader(viewHolder.itemView.context).loadUserPicture(dataSet[position].image,viewHolder.binding.ivUserImage)
-        }
+        glideLoader(viewHolder.itemView.context).loadUserPicture(dataSet[position].image, viewHolder.binding.ivUserImage)
 
         viewHolder.initialize( viewHolder , dataSet[position] , onClick)
     }
