@@ -14,6 +14,7 @@ import com.example.bridal.adapter.HomeAdapter
 import com.example.bridal.model.HomeListModel
 import com.example.bridal.model.ProductModel
 import com.example.bridal.util.Constants
+import java.text.FieldPosition
 
 class HomeViewModel : ViewModel() {
 
@@ -41,43 +42,43 @@ class HomeViewModel : ViewModel() {
         homeListAdapter.value = list
     }
 
-    fun entryToProduct( context: Context , view: View , homeListModel: HomeListModel){
-        if(homeListModel.title == context.resources.getString(R.string.beauty_center) ){
-            goProductPage(context, view , homeListModel)
-        }else if(homeListModel.title == context.resources.getString(R.string.buffet_services)){
-            goProductPage(context, view , homeListModel)
-        }else if(homeListModel.title == context.resources.getString(R.string.car_rental)){
-            goProductPage(context,view , homeListModel)
-        }else if(homeListModel.title == context.resources.getString(R.string.cosmetic_dentistry)){
-            goProductPage(context, view, homeListModel)
-        }else if(homeListModel.title == context.resources.getString(R.string.domestic_flights)){
-            goProductPage(context, view , homeListModel)
-        }else if(homeListModel.title == context.resources.getString(R.string.flowers)){
-            goProductPage(context, view , homeListModel)
-        }else if(homeListModel.title == context.resources.getString(R.string.gold_and_jewelry)){
-            goProductPage(context, view , homeListModel)
-        }else if(homeListModel.title == context.resources.getString(R.string.health_and_beauty)){
-            goProductPage(context, view , homeListModel)
-        }else if(homeListModel.title == context.resources.getString(R.string.honey_moon)){
-            goProductPage(context, view , homeListModel)
-        }else if(homeListModel.title == context.resources.getString(R.string.hotels)){
-            goProductPage(context, view , homeListModel)
-        }else if(homeListModel.title == context.resources.getString(R.string.watches_and_accessories)){
-            goProductPage(context, view , homeListModel)
-        }else if(homeListModel.title == context.resources.getString(R.string.wedding_group)){
-            goProductPage(context, view , homeListModel)
-        }else if(homeListModel.title == context.resources.getString(R.string.wedding_halls)){
-            goProductPage(context, view , homeListModel)
-        }else if(homeListModel.title == context.resources.getString(R.string.wedding_suit)){
-            goProductPage(context, view , homeListModel)
-        }else if(homeListModel.title == context.resources.getString(R.string.weeding_dresses)){
-            goProductPage(context, view , homeListModel)
+    fun entryToProduct( context: Context , view: View , position : Int){
+        if(position+1 == 1 ){
+            goProductPage(context, view , position)
+        }else if(position+1 == 2){
+            goProductPage(context, view , position)
+        }else if(position+1 == 3){
+            goProductPage(context,view , position)
+        }else if(position+1 == 4){
+            goProductPage(context, view, position)
+        }else if(position+1 == 5){
+            goProductPage(context, view , position)
+        }else if(position+1 == 6){
+            goProductPage(context, view , position)
+        }else if(position+1 == 7){
+            goProductPage(context, view , position)
+        }else if(position+1 == 8){
+            goProductPage(context, view , position)
+        }else if(position+1 == 9){
+            goProductPage(context, view , position)
+        }else if(position+1 == 10){
+            goProductPage(context, view , position)
+        }else if(position+1 == 11){
+            goProductPage(context, view , position)
+        }else if(position+1 == 12){
+            goProductPage(context, view , position)
+        }else if(position+1 == 13){
+            goProductPage(context, view , position)
+        }else if(position+1 == 14){
+            goProductPage(context, view , position)
+        }else if(position+1 == 15){
+            goProductPage(context, view , position)
         }
     }
 
     // fun for entry to product from category list.
-    private fun goProductPage( context: Context , view : View , homeListModel: HomeListModel){
-        var bundle = bundleOf( Constants.PRODUCT_ITEM_KEY to homeListModel.title)
+    private fun goProductPage( context: Context , view : View , position: Int){
+        val bundle = bundleOf( Constants.PRODUCT_ITEM_KEY to position)
         Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_productFragment,bundle)
     }
 }

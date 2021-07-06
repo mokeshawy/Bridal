@@ -35,6 +35,7 @@ class AddProductViewModel : ViewModel(){
     // fun add new product.
     fun addProductItem(context          : Context,
                        view             : View,
+                       categoryPosition : String,
                        categoryName     : String,
                        imageUriOne      : Uri,
                        imageUriTow      : Uri,
@@ -59,6 +60,7 @@ class AddProductViewModel : ViewModel(){
 
             map[Constants.PRODUCT_USER_ID]          = Constants.getCurrentUser()
             map[Constants.PRODUCT_USER_NAME]        = userName
+            map[Constants.PRODUCT_CATEGORY_POSITION] = categoryPosition
             map[Constants.PRODUCT_CATEGORY_NAME]    = categoryName
             map[Constants.PRODUCT_TITLE]            = etProductTitle.value!!
             map[Constants.PRODUCT_PRICE]            = etProductPrice.value!!
@@ -69,7 +71,7 @@ class AddProductViewModel : ViewModel(){
             map[Constants.PRODUCT_LATITUDE]         = ""
             map[Constants.PRODUCT_LONGITUDE]        = ""
             map[Constants.PRODUCT_PUSH_KEY]         = pushKey.toString()
-            map[Constants.PRODUCT_RATE]             = 1
+            map[Constants.PRODUCT_RATE]             = 0
             productReference.child(pushKey.toString()).setValue(map)
 
             // upload image num one.

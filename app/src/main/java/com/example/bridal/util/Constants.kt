@@ -52,7 +52,7 @@ object  Constants {
     // child of product.
     const val PRODUCT_USER_ID       = "userId"
     const val PRODUCT_USER_NAME     = "userName"
-    const val PRODUCT_ID            = "productId"
+    const val PRODUCT_CATEGORY_POSITION = "categoryPosition"
     const val PRODUCT_CATEGORY_NAME = "categoryName"
     const val PRODUCT_TITLE         = "productTitle"
     const val PRODUCT_PRICE         = "productPrice"

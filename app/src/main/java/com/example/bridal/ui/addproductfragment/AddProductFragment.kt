@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -73,16 +74,19 @@ class AddProductFragment : Fragment() {
 
         // select category.
         binding.spinnerCategory.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
-            override fun onItemSelected( adapterView : AdapterView<*>?, viewItem: View?, position: Int, id: Long ) {
+            override fun onItemSelected( adapterView : AdapterView<*>?, viewItem: View?, position : Int, id: Long ) {
 
-                //Toast.makeText(requireActivity(),adapterView?.getItemAtPosition(position).toString(),Toast.LENGTH_SHORT).show()
+                //Toast.makeText(requireActivity(),"${adapterView?.getItemAtPosition(position)}",Toast.LENGTH_SHORT).show()
+                //Toast.makeText(requireActivity(),"${position-1}",Toast.LENGTH_SHORT).show()
+
                 val categoryName = adapterView?.getItemAtPosition(position).toString()
                 binding.btnSaveProduct.setOnClickListener {
-                    if(position == 0){
+                    if(position-1 == -1){
                         Constants.showErrorSnackBar(resources.getString((R.string.err_validate_select_category)), true , requireActivity() , view)
                     }else{
                         addProductViewModel.addProductItem(requireActivity(),
                             view,
+                            position.toString(),
                             categoryName,
                             imageUriOne,
                             imageUriTow,

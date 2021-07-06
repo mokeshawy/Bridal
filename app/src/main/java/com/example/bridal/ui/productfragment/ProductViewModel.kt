@@ -26,15 +26,15 @@ class ProductViewModel : ViewModel() {
     var firebaseDatabase = FirebaseDatabase.getInstance()
     var productReference = firebaseDatabase.getReference(Constants.PRODUCT_REFERENCE)
     // fun read data for product from database.
-    fun readProduct(categoryName : String , tv_not_found : TextView , progressBar: ProgressBar){
+    fun readProduct(position : String , tv_not_found : TextView , progressBar: ProgressBar){
 
         productArrayList = ArrayList()
 
-        productReference.orderByChild(categoryName).addValueEventListener( object : ValueEventListener{
+        productReference.orderByChild(position).addValueEventListener( object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 for (ds in snapshot.children){
                     val product = ds.getValue(ProductModel::class.java)!!
-                    if(product.categoryName == categoryName){
+                    if(product.categoryPosition == position){
                         productArrayList.add(product)
                     }
                 }

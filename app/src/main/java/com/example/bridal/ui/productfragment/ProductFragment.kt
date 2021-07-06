@@ -35,10 +35,10 @@ class ProductFragment : Fragment() , OnClickProductAdapter{
         binding.productFragment = productViewModel
 
         // get category name using bundle from home fragment.
-        val categoryName = arguments?.getString(Constants.PRODUCT_ITEM_KEY)
+        val position = arguments?.getInt(Constants.PRODUCT_ITEM_KEY)
 
         // call read product function.
-        productViewModel.readProduct(categoryName.toString(),binding.tvProductNotFound,binding.loadingView)
+        productViewModel.readProduct(position.toString() ,binding.tvProductNotFound,binding.loadingView)
         productViewModel.productListLiveData.observe(viewLifecycleOwner, Observer {
             binding.loadingView.visibility  = View.VISIBLE
             binding.recyclerView.adapter    = ProductAdapter(it,this)

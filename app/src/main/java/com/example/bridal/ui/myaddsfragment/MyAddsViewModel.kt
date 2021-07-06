@@ -33,7 +33,7 @@ class MyAddsViewModel : ViewModel() {
                    progressBar.visibility = View.VISIBLE
 
                    val product = ds.getValue(ProductModel::class.java)!!
-                   product.productId = ds.key.toString()
+
                    if(Constants.getCurrentUser() == product.userId){
                        userProductArray.add(product)
                    }
@@ -55,12 +55,12 @@ class MyAddsViewModel : ViewModel() {
     }
 
     // fun for delete product.
-    fun deleteProduct( context: Context , productId : String){
+    fun deleteProduct( context: Context , pushKey : String){
         val alert = AlertDialog.Builder(context)
         alert.setTitle(context.resources.getString(R.string.title_delete))
         alert.setMessage(context.resources.getString(R.string.title_message_for_delete))
         alert.setPositiveButton(context.getString(R.string.title_dialog_yes)){dialog,which ->
-            productReference.child(productId).removeValue()
+            productReference.child(pushKey).removeValue()
         }
         alert.setNegativeButton(context.resources.getString(R.string.title_dialog_no),null)
         alert.create().show()

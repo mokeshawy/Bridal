@@ -67,7 +67,7 @@ class HomeFragment : Fragment() , OnClickHomeAdapter{
 
         // entry to product from category list.
         viewHolder.itemView.setOnClickListener {
-           homeViewModel.entryToProduct(requireActivity(),viewHolder.itemView,homeListModel)
+           homeViewModel.entryToProduct(requireActivity(),viewHolder.itemView,position)
         }
     }
 }

@@ -11,8 +11,8 @@ data class ProductModel(
     var userId              : String = "",
     @ColumnInfo( name = "userName")
     var userName            : String = "",
-    @ColumnInfo( name = "productId")
-    var productId           : String = "",
+    @ColumnInfo( name = "categoryPosition")
+    var categoryPosition    : String = "",
     @ColumnInfo( name = "categoryName")
     var categoryName        : String = "",
     @ColumnInfo( name = "productTitle")
@@ -36,7 +36,7 @@ data class ProductModel(
     @ColumnInfo(name = "pushKey")
     var pushKey             : String = "",
     @ColumnInfo(name = "rate")
-    var rate                :Int = 1
+    var rate                :Int = 0
 
 ) : Serializable
 {

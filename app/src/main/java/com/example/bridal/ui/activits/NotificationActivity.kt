@@ -4,6 +4,7 @@ package com.example.bridal.ui.activits
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.bridal.notification.NotificationData
 import com.example.bridal.retrofit.RetrofitInstance
@@ -47,9 +48,11 @@ class NotificationActivity : AppCompatActivity(){
         try {
             val response = RetrofitInstance.api.postNotification(notification)
             if(response.isSuccessful) {
-                Log.d(TAG, "Response: ${Gson().toJson(response)}")
+                Toast.makeText(this@NotificationActivity,"Push" , Toast.LENGTH_SHORT).show()
+                //Log.d(TAG, "Response: ${Gson().toJson(response)}")
             } else {
-                Log.e(TAG, response.errorBody().toString())
+                Toast.makeText(this@NotificationActivity,response.errorBody().toString() , Toast.LENGTH_SHORT).show()
+                //Log.e(TAG, response.errorBody().toString())
             }
         } catch(e: Exception) {
             Log.e(TAG, e.toString())
