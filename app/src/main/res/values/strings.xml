@@ -184,4 +184,29 @@
     <string name="title_no_favorite">No favorite</string>
     <string name="title_message_not_found">No message</string>
 
+    <!-- country array-->
+    <string-array name="country">
+        <item name="no_selected">Country</item>
+        <item name="country_egypt">Egypt</item>
+        <item name="country_sudan">Sudan</item>
+        <item name="country_saudi">Saudi Arabia</item>
+        <item name="country_tunisia">Tunisia</item>
+        <item name="country_somalia ">Somalia</item>
+        <item name="country_algeria">Algeria</item>
+        <item name="country_morocco">Morocco</item>
+        <item name="country_iraq">Iraq</item>
+        <item name="country_syria">Syria</item>
+        <item name="country_yemen">Yemen</item>
+        <item name="country_libya">Libya</item>
+        <item name="country_jordan">Jordan</item>
+        <item name="country_emirates">Emirates</item>
+        <item name="country_lebanon">Lebanon</item>
+        <item name="country_mauritania">Mauritania</item>
+        <item name="country_kuwait">Kuwait</item>
+        <item name="country_oman">Oman</item>
+        <item name="country_qatar">Qatar</item>
+        <item name="country_djibouti">Djibouti</item>
+    </string-array>
+
+
 </resources>

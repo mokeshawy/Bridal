@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -53,14 +54,30 @@ class CompleteProfileFragment : Fragment() {
         completeProfileViewModel.showDefaultData(requireActivity())
 
 
-        //btn save details for complete profile and edit profile.
-        binding.btnSubmitId.setOnClickListener {
-            completeProfileViewModel.completeAndEditProfile(requireActivity(),
-                view,
-                binding.loadingView,
-                profileUri,binding.rbMaleId)
-        }
+        // select category.
+        binding.spinnerCategory.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(adapterView : AdapterView<*>?, viewItem: View?, position: Int, id: Long ) {
 
+                //Toast.makeText(requireActivity(),adapterView?.getItemAtPosition(position).toString(),Toast.LENGTH_SHORT).show()
+                val countryName = adapterView?.getItemAtPosition(position).toString()
+                //btn save details for complete profile and edit profile.
+                binding.btnSubmitId.setOnClickListener {
+                    if(position == 0){
+                        Constants.showErrorSnackBar("Please select Country", true , requireActivity() , view)
+                    }else{
+                        completeProfileViewModel.completeAndEditProfile(requireActivity(),
+                            view,
+                            binding.loadingView,
+                            profileUri,
+                            countryName,
+                            binding.rbMaleId)
+                    }
+                }
+            }
+            override fun onNothingSelected(adapterView : AdapterView<*>?) {
+
+            }
+        }
         // select image.
         binding.ivUserPhotoId.setOnClickListener {
             pickProfileImage()
@@ -71,11 +88,13 @@ class CompleteProfileFragment : Fragment() {
 
         // when user not complete profile will go complete profile page
         if(completeProfile!! == 0){
+            //binding.llSelectCountry.visibility = View.GONE
             (requireActivity() as AppCompatActivity).supportActionBar?.title = resources.getString(R.string.title_complete_profile)
             binding.etFirstNameId.isEnabled = false
             binding.etLastNameId.isEnabled  = false
 
         }else{ // when user complete profile will go edit profile page.
+            //binding.llSelectCountry.visibility = View.VISIBLE
             (requireActivity() as AppCompatActivity).supportActionBar?.title = resources.getString(R.string.title_edit_profile)
             glideLoader(requireActivity()).loadUserPicture(myPreference!!.getString(Constants.USER_PROFILE_IMAGE,"").toString(),binding.ivUserPhotoId)
             binding.etFirstNameId.isEnabled = true

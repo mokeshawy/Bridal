@@ -139,9 +139,11 @@ class LoginViewModel : ViewModel() {
                         progressBar.visibility = View.GONE
                     }else{
                         Toast.makeText(context , "Please confirm your email" , Toast.LENGTH_SHORT).show()
+                        progressBar.visibility = View.GONE
                     }
                 }else{
                     Toast.makeText(context , it.exception!!.message.toString() , Toast.LENGTH_SHORT).show()
+                    progressBar.visibility = View.GONE
                 }
             }
         }

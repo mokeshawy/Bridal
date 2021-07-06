@@ -183,4 +183,29 @@
     <string name="title_no_favorite">لا يوجد عناصر مفضلة</string>
     <string name="title_message_not_found">لا يوجد رسائل</string>
 
+
+    <!-- country array-->
+    <string-array name="country">
+        <item name="no_selected">Country</item>
+        <item name="country_egypt">مصر</item>
+        <item name="country_sudan">السودان</item>
+        <item name="country_saudi">السعودية</item>
+        <item name="country_tunisia">تونس</item>
+        <item name="country_somalia ">الصومال</item>
+        <item name="country_algeria">الجزائر</item>
+        <item name="country_morocco">المغرب</item>
+        <item name="country_iraq">العراق</item>
+        <item name="country_syria">سوريا</item>
+        <item name="country_yemen">اليمن</item>
+        <item name="country_libya">ليبيا</item>
+        <item name="country_jordan">الاردن</item>
+        <item name="country_emirates">الامارات</item>
+        <item name="country_lebanon">لبنان</item>
+        <item name="country_mauritania">موريتانيا</item>
+        <item name="country_kuwait">الكويت</item>
+        <item name="country_oman">عمان</item>
+        <item name="country_qatar">قطر</item>
+        <item name="country_djibouti">جيبوتى</item>
+    </string-array>
+
 </resources>

@@ -50,7 +50,7 @@
                     android:layout_height="50dp"
                     android:layout_gravity="left"
                     android:entries="@array/category"
-                    android:theme="@style/mySpinnerItemStyle" />
+                    android:theme="@style/mySpinnerCategoryStyle" />
 
                 <LinearLayout
                     android:id="@+id/linearLayout"

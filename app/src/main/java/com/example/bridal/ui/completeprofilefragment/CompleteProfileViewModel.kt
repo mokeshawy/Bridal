@@ -37,6 +37,7 @@ class CompleteProfileViewModel : ViewModel() {
                                view : View,
                                progressBar: ProgressBar,
                                profileUri : Uri,
+                               countryName : String ,
                                radioButton : RadioButton){
         val myPreference = context.getSharedPreferences(Constants.USERS_SHARED_KEY,Context.MODE_PRIVATE)
         val completeProfile = myPreference!!.getInt(Constants.USER_COMPLETE_PROFILE,0)
@@ -67,7 +68,9 @@ class CompleteProfileViewModel : ViewModel() {
             map[Constants.USER_IMAGE_KEY] = Constants.SOURCE_IMAGE_PROFILE
         }
 
-        map[Constants.USER_COMPLETE_PROFILE] = 1
+        map[Constants.USER_COUNTRY_KEY]         = countryName
+        map[Constants.USER_COMPLETE_PROFILE]    = 1
+
 
         userReference.child(Constants.getCurrentUser()).updateChildren(map)
         progressBar.visibility = View.GONE

@@ -22,6 +22,7 @@ object  Constants {
     const val USER_EMAIL_KEY    : String    = "email"
     const val USER_IMAGE_KEY    : String    = "image"
     const val USER_MOBILE_KEY   : String    = "mobile"
+    const val USER_COUNTRY_KEY  : String    = "country"
     const val USER_GENDER_KEY   : String    = "gender"
     const val USER_COMPLETE_PROFILE : String = "profileCompleted"
     const val USER_PREMIUM_COMPLETE  = "userPremium"
