@@ -77,7 +77,7 @@ class AddProductFragment : Fragment() {
             override fun onItemSelected( adapterView : AdapterView<*>?, viewItem: View?, position : Int, id: Long ) {
 
                 //Toast.makeText(requireActivity(),"${adapterView?.getItemAtPosition(position)}",Toast.LENGTH_SHORT).show()
-                //Toast.makeText(requireActivity(),"${position-1}",Toast.LENGTH_SHORT).show()
+                ///Toast.makeText(requireActivity(),"${position-1}",Toast.LENGTH_SHORT).show()
 
                 val categoryName = adapterView?.getItemAtPosition(position).toString()
                 binding.btnSaveProduct.setOnClickListener {
@@ -86,7 +86,7 @@ class AddProductFragment : Fragment() {
                     }else{
                         addProductViewModel.addProductItem(requireActivity(),
                             view,
-                            position.toString(),
+                            "${position-1}",
                             categoryName,
                             imageUriOne,
                             imageUriTow,

@@ -68,17 +68,13 @@ class MessageViewModel : ViewModel() {
 
                 for ( ds in snapshot.children){
 
-                    val userId      = ds.child(Constants.USER_ID).value.toString()
-                    val firstName   = ds.child(Constants.FIRST_NAME_KEY).value.toString()
-                    val lastName    = ds.child(Constants.LAST_NAME_KEY).value.toString()
-                    val email       = ds.child(Constants.USER_EMAIL_KEY).value.toString()
-                    val image       = ds.child(Constants.USER_IMAGE_KEY).value.toString()
+                    val user = ds.getValue(UserModel::class.java)!!
 
                     for (chatList in mChatListArray){
 
-                        if(userId == chatList.id){
+                        if(user.userId == chatList.id){
 
-                            mUsersArray.add(UserModel(userId,firstName,lastName,email,image))
+                            mUsersArray.add(user)
                         }
                     }
                     mUsersLiveData.value = mUsersArray
