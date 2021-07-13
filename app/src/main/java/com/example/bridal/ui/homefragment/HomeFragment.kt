@@ -1,18 +1,16 @@
 package com.example.bridal.ui.homefragment
-import android.content.Context
 import android.os.Bundle
 import android.view.*
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.RecyclerView
 import com.example.bridal.R
 import com.example.bridal.adapter.HomeAdapter
 import com.example.bridal.databinding.FragmentHomeBinding
 import com.example.bridal.interfaceforclickadapter.OnClickHomeAdapter
 import com.example.bridal.model.HomeListModel
+import com.example.bridal.ui.glideLoader
 
 class HomeFragment : Fragment() , OnClickHomeAdapter{
 
@@ -33,6 +31,16 @@ class HomeFragment : Fragment() , OnClickHomeAdapter{
 
         // setup for menu on actionBar from fragment.
         setHasOptionsMenu(true)
+
+        // operation work for carouseView.
+        val image = intArrayOf(R.drawable.image_one,
+            R.drawable.image_tow,
+            R.drawable.image_three)
+        val cities = arrayOf("1","2","3")
+        binding.carouseView.setImageListener { position, imageView ->
+            glideLoader(requireActivity()).loadUserPicture(image[position],imageView)
+        }
+        binding.carouseView.pageCount = cities.size
 
         // call function home list for category.
         homeViewModel.homeListItem(requireActivity())
