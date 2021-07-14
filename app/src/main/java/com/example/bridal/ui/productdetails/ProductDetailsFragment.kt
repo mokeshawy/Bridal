@@ -1,11 +1,15 @@
 package com.example.bridal.ui.productdetails
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RatingBar
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.example.bridal.R
@@ -44,6 +48,9 @@ class ProductDetailsFragment : Fragment() {
                 tvCategoryName.text         = mMyAddProduct!!.categoryName
                 tvProductAdded.text         = mMyAddProduct!!.userName
                 tvProductDescription.text   = mMyAddProduct!!.productDescription
+
+                // hide rate bar.
+                ratingBar.visibility        = View.GONE
 
                 // hide chat button.
                 ivGoToChat.visibility = View.GONE
@@ -105,6 +112,21 @@ class ProductDetailsFragment : Fragment() {
                     }
                 }
             }
+            // call fun rating product.
+            ratingProduct()
+            val sharedPreference = requireActivity().getSharedPreferences( Constants.RATING_KEY, Context.MODE_PRIVATE)
+            val rating = sharedPreference.getFloat(Constants.RATING_KEY, 0f)
+            binding.ratingBar.rating = rating
+        }
+    }
+
+    // fun for operation rating product.
+    private fun ratingProduct(){
+        binding.ratingBar.setOnRatingBarChangeListener { ratingBar, rating, fromUser ->
+            val sharedPreference = requireActivity().getSharedPreferences(Constants.RATING_KEY, Context.MODE_PRIVATE)
+            val editor = sharedPreference.edit()
+            editor.putFloat(Constants.RATING_KEY, rating)
+            editor.apply()
         }
     }
 }

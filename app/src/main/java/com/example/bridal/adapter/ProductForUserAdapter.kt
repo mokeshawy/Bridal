@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.bridal.databinding.ProductForUserListBinding
 import com.example.bridal.interfaceforclickadapter.OnClickProductForUserAdapter
 import com.example.bridal.model.ProductModel
+import com.example.bridal.ui.glideLoader
 
 class ProductForUserAdapter (private var mProductList: ArrayList<ProductModel> ,
                              var onClickProductForUser : OnClickProductForUserAdapter) : RecyclerView.Adapter<ProductForUserAdapter.ViewHolder>() {
@@ -30,12 +31,14 @@ class ProductForUserAdapter (private var mProductList: ArrayList<ProductModel> ,
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
 
+       var product = mProductList[position]
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         viewHolder.binding.apply {
-            tvProductTitle.text          = mProductList[position].productTitle
-            tvProductPrice.text          = "$${mProductList[position].productPrice}"
-            tvCategoryProduct.text       = mProductList[position].categoryName
+            tvProductTitle.text          =product.productTitle
+            tvProductPrice.text          = "$${product.productPrice}"
+            tvCategoryProduct.text       = product.categoryName
+            glideLoader(viewHolder.itemView.context).loadUserPicture(product.productImageOne,ivIconProduct)
         }
 
 //        glideLoader(viewHolder.itemView.context).loadUserPicture(mHomeList[position].image,viewHolder.binding.icon)

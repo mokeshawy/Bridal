@@ -27,9 +27,10 @@ class NotificationActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_notification)
 
+        // hide action bar.
+        supportActionBar!!.hide()
 
         FirebaseMessaging.getInstance().subscribeToTopic(Constants.TOPIC)
-
         binding.btnSend.setOnClickListener {
             val title   = binding.etTitle.text.toString()
             val message = binding.etMessage.text.toString()

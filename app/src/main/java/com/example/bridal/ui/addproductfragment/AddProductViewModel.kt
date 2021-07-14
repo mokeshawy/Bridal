@@ -52,7 +52,7 @@ class AddProductViewModel : ViewModel(){
             Constants.showErrorSnackBar(context.resources.getString((R.string.err_validate_product_description)), true , context , view)
         }else{
             val myPreference = context.getSharedPreferences(Constants.USERS_SHARED_KEY,Context.MODE_PRIVATE)
-            val userName     =      "${myPreference!!.getString(Constants.FIRST_NAME_KEY,"")}"+
+            val userName     =      "${myPreference!!.getString(Constants.FIRST_NAME_KEY,"") }"+
                                     "${myPreference!!.getString(Constants.LAST_NAME_KEY,"")}"
             progressBar.visibility = View.VISIBLE
             val pushKey = productReference.push().key
