@@ -26,7 +26,13 @@
         android:id="@+id/favoriteFragment"
         android:name="com.example.bridal.ui.favoritefragment.FavoriteFragment"
         android:label="@string/lk"
-        tools:layout="@layout/fragment_favorite" />
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:popUpTo="@id/favoriteFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/myAddsFragment"

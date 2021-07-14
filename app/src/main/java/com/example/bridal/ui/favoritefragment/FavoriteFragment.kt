@@ -6,10 +6,13 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
+import com.example.bridal.R
 import com.example.bridal.adapter.FavoriteAdapter
 import com.example.bridal.databinding.FragmentFavoriteBinding
 import com.example.bridal.interfaceforclickadapter.OnClickFavoriteAdapter
 import com.example.bridal.model.ProductModel
+import com.example.bridal.util.Constants
 
 
 class FavoriteFragment : Fragment() , OnClickFavoriteAdapter{
@@ -55,23 +58,32 @@ class FavoriteFragment : Fragment() , OnClickFavoriteAdapter{
         productModel: ProductModel,
         position: Int ) {
 
+        // check select for item.
         favoriteViewModel.checkSelect(requireActivity(),productModel.pushKey , viewHolder.binding.btnFavoriteProduct)
-        val checkBoxArray = SparseBooleanArray()
-        viewHolder.binding.btnFavoriteProduct.isChecked = checkBoxArray.get( position , false)
 
         // add favorite and un favorite product.
         viewHolder.binding.btnFavoriteProduct.setOnClickListener {
-            if(!checkBoxArray.get( position , false)){
-                viewHolder.binding.btnFavoriteProduct.isChecked = true
-                checkBoxArray.put(position , true)
-                // call function for add job from database to favorite
-                favoriteViewModel.addProductToFavorite(requireActivity(),productModel)
-            }else{
-                viewHolder.binding.btnFavoriteProduct.isChecked = false
-                checkBoxArray.put(position , false)
-                // call function unFavorite from database.
-                favoriteViewModel.unFavoriteProduct(requireActivity(),productModel.pushKey)
-            }
+            favoriteViewModel.unFavoriteProduct(requireActivity(),productModel.pushKey)
+            favoriteViewModel.selectFavorite(requireActivity()).observe(viewLifecycleOwner, Observer {
+                binding.loadingView.visibility  = View.VISIBLE
+                favoriteAdapter.update(it)
+
+                if(it.isNotEmpty()){
+                    binding.rvFavoriteList.visibility       = View.VISIBLE
+                    binding.tvFavoriteNotFound.visibility   = View.GONE
+                }else{
+                    binding.rvFavoriteList.visibility       = View.GONE
+                    binding.tvFavoriteNotFound.visibility   = View.VISIBLE
+                }
+                binding.loadingView.visibility  = View.GONE
+            })
+        }
+
+        // go details fragment.
+        viewHolder.itemView.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putSerializable(Constants.PRODUCT_ITEM_KEY,productModel)
+            findNavController().navigate(R.id.action_favoriteFragment_to_productDetailsFragment,bundle)
         }
     }
 }

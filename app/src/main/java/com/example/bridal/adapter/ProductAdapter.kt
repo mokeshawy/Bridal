@@ -31,13 +31,15 @@ class ProductAdapter (private var mProductList: ArrayList<ProductModel>
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
 
+        val product = mProductList[position]
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-
         viewHolder.binding.apply {
-            tvProductTitle.text          = mProductList[position].productTitle
-            tvProductDescription.text    = mProductList[position].productDescription
-            tvProductPrice.text          = "$${mProductList[position].productPrice}"
+            tvProductTitle.text          = product.productTitle
+            tvProductDescription.text    = product.productDescription
+            tvProductPrice.text          = "$${product.productPrice}"
+            glideLoader(viewHolder.itemView.context).loadUserPicture(product.productImageOne,ivIconProduct)
+
         }
 
 //        glideLoader(viewHolder.itemView.context).loadUserPicture(mHomeList[position].image,viewHolder.binding.icon)
