@@ -1,22 +1,15 @@
 package com.example.bridal.ui.addproductfragment
 
-import android.app.ProgressDialog
 import android.content.Context
 import android.net.Uri
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.ProgressBar
-import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.bridal.R
-import com.example.bridal.model.ProductModel
-import com.example.bridal.model.UserModel
 import com.example.bridal.util.Constants
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 
@@ -40,6 +33,9 @@ class AddProductViewModel : ViewModel(){
                        imageUriOne      : Uri,
                        imageUriTow      : Uri,
                        imageUriThree    : Uri,
+                       imageUriFour     : Uri,
+                       imageUriFive     : Uri,
+                       imageUriSix      : Uri,
                        videoUri         : Uri,
                        progressBar      : ProgressBar){
 
@@ -96,12 +92,52 @@ class AddProductViewModel : ViewModel(){
                     }
                 }
             }
-            // upload imge num three.
+            // upload image num three.
             val storageThree : StorageReference = storageRef.child("Photo/"+System.currentTimeMillis()+"product_image.jpg")
             storageThree.putFile(imageUriThree).addOnCompleteListener { imageThree ->
                 if(imageThree.isSuccessful){
                     storageThree.downloadUrl.addOnSuccessListener { imageUrlThree ->
                         map[Constants.PRODUCT_IMAGE_THREE]  = imageUrlThree.toString()
+                        productReference.child(pushKey.toString()).updateChildren(map)
+                        progressBar.visibility = View.GONE
+                    }
+                }
+            }
+
+                                    // upload image for premium user //
+
+            // upload image four.
+            val storageFour : StorageReference = storageRef.child("Photo/"+System.currentTimeMillis()+"product_image.jpg")
+            storageFour.putFile(imageUriFour).addOnCompleteListener { imageFour ->
+                if(imageFour.isSuccessful){
+                    storageFour.downloadUrl.addOnSuccessListener { imageUriFour ->
+                        map[Constants.PRODUCT_IMAGE_FOUR] = imageUriFour.toString()
+                        productReference.child(pushKey.toString()).updateChildren(map)
+                        progressBar.visibility = View.GONE
+                    }
+                }
+            }
+
+
+            // upload image five.
+            val storageFive : StorageReference = storageRef.child("Photo/"+System.currentTimeMillis()+"product_image.jpg")
+            storageFive.putFile(imageUriFive).addOnCompleteListener { imageFour ->
+                if(imageFour.isSuccessful){
+                    storageFour.downloadUrl.addOnSuccessListener { imageUriFour ->
+                        map[Constants.PRODUCT_IMAGE_FIVE] = imageUriFour.toString()
+                        productReference.child(pushKey.toString()).updateChildren(map)
+                        progressBar.visibility = View.GONE
+                    }
+                }
+            }
+
+
+            // upload image six.
+            val storageSix : StorageReference = storageRef.child("Photo/"+System.currentTimeMillis()+"product_image.jpg")
+            storageSix.putFile(imageUriSix).addOnCompleteListener { imageFour ->
+                if(imageFour.isSuccessful){
+                    storageFour.downloadUrl.addOnSuccessListener { imageUriFour ->
+                        map[Constants.PRODUCT_IMAGE_SIX] = imageUriFour.toString()
                         productReference.child(pushKey.toString()).updateChildren(map)
                         progressBar.visibility = View.GONE
                     }

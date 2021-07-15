@@ -23,8 +23,14 @@ data class ProductModel(
     var productImageOne     : String = "",
     @ColumnInfo( name = "productImageTow")
     var productImageTow     : String = "",
-    @ColumnInfo( name = "ProductImageThree")
-    var ProductImageThree   : String = "",
+    @ColumnInfo( name = "productImageThree")
+    var productImageThree   : String = "",
+    @ColumnInfo( name = "productImageFour")
+    var productImageFour    : String = "",
+    @ColumnInfo( name = "productImageFive")
+    var productImageFive    : String = "",
+    @ColumnInfo( name = "productImageSix")
+    var productImageSix     : String = "",
     @ColumnInfo( name = "productVideo")
     var productVideo        : String = "",
     @ColumnInfo( name = "productDescription")

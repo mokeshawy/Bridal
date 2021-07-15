@@ -59,6 +59,9 @@ object  Constants {
     const val PRODUCT_IMAGE_ONE     = "productImageOne"
     const val PRODUCT_IMAGE_TOW     = "productImageTow"
     const val PRODUCT_IMAGE_THREE   = "productImageThree"
+    const val PRODUCT_IMAGE_FOUR    = "productImageFour"
+    const val PRODUCT_IMAGE_FIVE    = "productImageFive"
+    const val PRODUCT_IMAGE_SIX     = "productImageSix"
     const val PRODUCT_VIDEO         = "productVideo"
     const val PRODUCT_DESCRIPTION   = "productDescription"
     const val PRODUCT_LATITUDE      = "latitude"
@@ -87,6 +90,9 @@ object  Constants {
     const val IMAGE_NUM_ONE_KEY     = 111
     const val IMAGE_NUM_TOW_KEY     = 222
     const val IMAGE_NUM_THREE_KEY   = 333
+    const val IMAGE_NUM_FOUR_KEY    = 444
+    const val IMAGE_NUM_FIVE_KEY    = 555
+    const val IMAGE_NUM_SIX_KEY     = 666
 
     // request number key.
     const val VIDEO_KEY             = 444

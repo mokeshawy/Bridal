@@ -26,7 +26,12 @@ class AddProductFragment : Fragment() {
     lateinit var imageUriOne        : Uri
     lateinit var imageUriTow        : Uri
     lateinit var imageUriThree      : Uri
+    lateinit var imageUriFour       : Uri
+    lateinit var imageUriFive       : Uri
+    lateinit var imageUriSix        : Uri
     lateinit var videoUri           : Uri
+    lateinit var videoUriTow        : Uri
+    lateinit var videoUriThree      : Uri
 
     override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View? {
         // Inflate the layout for this fragment
@@ -45,6 +50,9 @@ class AddProductFragment : Fragment() {
         imageUriOne     = Constants.SOURCE_IMAGE_ONE.toUri()
         imageUriTow     = Constants.SOURCE_IMAGE_TOW.toUri()
         imageUriThree   = Constants.SOURCE_IMAGE_THREE.toUri()
+        imageUriFour    = Constants.SOURCE_IMAGE_ONE.toUri()
+        imageUriFive    = Constants.SOURCE_IMAGE_TOW.toUri()
+        imageUriSix     = Constants.SOURCE_IMAGE_THREE.toUri()
         videoUri        = Constants.SOURCE_IMAGE_THREE.toUri()
 
         binding.loadingView.visibility = View.GONE
@@ -62,6 +70,21 @@ class AddProductFragment : Fragment() {
         // select image three.
         binding.ivImageThree.setOnClickListener {
             pickImageNumThree()
+        }
+
+        // select image four.
+        binding.ivImagePremiumOne.setOnClickListener {
+            pickImageFour()
+        }
+
+        // select image five.
+        binding.ivImagePremiumTow.setOnClickListener {
+            pickImageFive()
+        }
+
+        // select image six.
+        binding.ivImagePremiumThree.setOnClickListener {
+            pickImageSix()
         }
 
         // select video.
@@ -91,6 +114,9 @@ class AddProductFragment : Fragment() {
                             imageUriOne,
                             imageUriTow,
                             imageUriThree,
+                            imageUriFour,
+                            imageUriFive,
+                            imageUriSix,
                             videoUri,
                             binding.loadingView)
                     }
@@ -135,6 +161,36 @@ class AddProductFragment : Fragment() {
         }
     }
 
+    // fun select image number four.
+    private fun pickImageFour(){
+        if(ContextCompat.checkSelfPermission(requireActivity(),android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(requireActivity(), arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE),1)
+        }else{
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.type = "image/*"
+            startActivityForResult(intent , Constants.IMAGE_NUM_FOUR_KEY)
+        }
+    }
+    // fun select image number five.
+    private fun pickImageFive(){
+        if(ContextCompat.checkSelfPermission(requireActivity(),android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(requireActivity(), arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE),1)
+        }else{
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.type = "image/*"
+            startActivityForResult(intent,Constants.IMAGE_NUM_FIVE_KEY)
+        }
+    }
+    // fun select image number six.
+    private fun pickImageSix(){
+        if(ContextCompat.checkSelfPermission(requireActivity(),android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(requireActivity(), arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE),1)
+        }else{
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.type = "image/*"
+            startActivityForResult(intent,Constants.IMAGE_NUM_SIX_KEY)
+        }
+    }
     // fun select video.
     private fun pickVideo(){
         if(ContextCompat.checkSelfPermission(requireActivity(),android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
@@ -162,6 +218,18 @@ class AddProductFragment : Fragment() {
         if(requestCode == Constants.IMAGE_NUM_THREE_KEY && resultCode == AppCompatActivity.RESULT_OK){
             imageUriThree = data?.data!!
             binding.ivImageThree.setImageURI(imageUriThree)
+        }
+        if (requestCode == Constants.IMAGE_NUM_FOUR_KEY && resultCode == AppCompatActivity.RESULT_OK){
+            imageUriFour = data?.data!!
+            binding.ivImagePremiumOne.setImageURI(imageUriFour)
+        }
+        if( requestCode == Constants.IMAGE_NUM_FIVE_KEY && resultCode == AppCompatActivity.RESULT_OK){
+            imageUriFive = data?.data!!
+            binding.ivImagePremiumTow.setImageURI(imageUriFive)
+        }
+        if( requestCode == Constants.IMAGE_NUM_SIX_KEY && resultCode == AppCompatActivity.RESULT_OK){
+            imageUriSix = data?.data!!
+            binding.ivImagePremiumThree.setImageURI(imageUriSix)
         }
         if( requestCode == Constants.VIDEO_KEY && resultCode == AppCompatActivity.RESULT_OK){
             videoUri = data?.data!!
