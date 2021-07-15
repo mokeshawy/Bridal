@@ -1,6 +1,7 @@
 package com.example.bridal.adapter
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -8,6 +9,7 @@ import com.example.bridal.databinding.ProductItemListBinding
 import com.example.bridal.interfaceforclickadapter.OnClickProductAdapter
 import com.example.bridal.model.ProductModel
 import com.example.bridal.ui.glideLoader
+import com.example.bridal.util.Constants
 
 class ProductAdapter (private var mProductList: ArrayList<ProductModel>
 , var onClickProduct: OnClickProductAdapter) : RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
@@ -39,7 +41,6 @@ class ProductAdapter (private var mProductList: ArrayList<ProductModel>
             tvProductDescription.text    = product.productDescription
             tvProductPrice.text          = "$${product.productPrice}"
             glideLoader(viewHolder.itemView.context).loadUserPicture(product.productImageOne,ivIconProduct)
-
         }
 
 //        glideLoader(viewHolder.itemView.context).loadUserPicture(mHomeList[position].image,viewHolder.binding.icon)

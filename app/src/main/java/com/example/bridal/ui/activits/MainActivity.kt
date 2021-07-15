@@ -1,25 +1,22 @@
 package com.example.bridal.ui.activits
 
-import android.content.Context
+
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
+import androidx.navigation.ui.*
 import com.example.bridal.R
 import com.example.bridal.databinding.ActivityMainBinding
-import com.example.bridal.util.Constants
 
 class MainActivity : AppCompatActivity(){
 
-    lateinit var binding : ActivityMainBinding
-    lateinit var navHostFragment    : NavHostFragment
-    lateinit var navController      : NavController
+    lateinit var binding                : ActivityMainBinding
+    lateinit var navHostFragment        : NavHostFragment
+    lateinit var navController          : NavController
+    lateinit var appBarConfiguration    : AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,11 +26,12 @@ class MainActivity : AppCompatActivity(){
         // operation work for fragment from navigation component.
         navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController   = navHostFragment.navController
+
         // setUp navigation bottom.
-        findViewById<BottomNavigationView>(R.id.navigation_bottom).setupWithNavController(navController)
+        binding.navigationBottom.setupWithNavController(navController)
 
         // show title for fragment on actionbar.
-        val appBarConfiguration = AppBarConfiguration(setOf(
+        appBarConfiguration = AppBarConfiguration(setOf(
             R.id.homeFragment,
             R.id.favoriteFragment,
             R.id.myAddsFragment,
@@ -47,7 +45,9 @@ class MainActivity : AppCompatActivity(){
             R.id.settingsAccountFragment,
             R.id.productDetailsFragment,
             R.id.viewPagerFragment))
-       setupActionBarWithNavController(navController, appBarConfiguration)
+
+        //binding.navigationView.setupWithNavController(navController)
+       setupActionBarWithNavController( navController, appBarConfiguration )
 
 
         // Operation work for hide and show actionbar on fragment.
@@ -72,7 +72,5 @@ class MainActivity : AppCompatActivity(){
                 else -> binding.navigationBottom.visibility = View.GONE
             }
         }
-        val sharedPreferences = getSharedPreferences(Constants.bridalpreference, Context.MODE_PRIVATE)
-        val username = sharedPreferences.getString(Constants.logged_username," ")!!
     }
 }
