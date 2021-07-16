@@ -8,8 +8,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.MediaController
 import android.widget.RatingBar
 import android.widget.Toast
+import androidx.core.net.toUri
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.example.bridal.R
@@ -88,6 +90,31 @@ class ProductDetailsFragment : Fragment() {
                 tvCategoryName.text         = mMyAddProduct!!.categoryName
                 tvProductAdded.text         = mMyAddProduct!!.userName
                 tvProductDescription.text   = mMyAddProduct!!.productDescription
+
+                // operation work fo video.
+                // video one.
+                val mediaControllerOne = MediaController(requireActivity())
+                mediaControllerOne.setAnchorView(viViewOne)
+                viViewOne.setMediaController(mediaControllerOne)
+                viViewOne.setVideoURI(mMyAddProduct!!.productVideo.toUri())
+                viViewOne.requestFocus()
+                viViewOne.start()
+
+                //video two
+                val mediaControllerTwo = MediaController(requireActivity())
+                mediaControllerTwo.setAnchorView(viViewTwo)
+                viViewTwo.setMediaController(mediaControllerTwo)
+                viViewTwo.setVideoURI(mMyAddProduct!!.productVideoTwo.toUri())
+                viViewTwo.requestFocus()
+                viViewTwo.start()
+
+                // video three
+                val mediaControllerThree = MediaController(requireActivity())
+                mediaControllerThree.setAnchorView(viViewThree)
+                viViewThree.setMediaController(mediaControllerThree)
+                viViewThree.setVideoURI(mMyAddProduct!!.productVideoThree.toUri())
+                viViewThree.requestFocus()
+                viViewThree.start()
 
                 // operation work for carouseView.
                 val image = arrayOf(mMyAddProduct!!.productImageOne,

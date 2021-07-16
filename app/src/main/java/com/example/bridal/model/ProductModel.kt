@@ -33,6 +33,10 @@ data class ProductModel(
     var productImageSix     : String = "",
     @ColumnInfo( name = "productVideo")
     var productVideo        : String = "",
+    @ColumnInfo( name = "productVideoTwo")
+    var productVideoTwo        : String = "",
+    @ColumnInfo( name = "productVideoThree")
+    var productVideoThree        : String = "",
     @ColumnInfo( name = "productDescription")
     var productDescription  : String = "",
     @ColumnInfo( name = "latitude")
