@@ -1,5 +1,6 @@
 package com.example.bridal.ui.addproductfragment
 
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -46,13 +47,17 @@ class AddProductFragment : Fragment() {
         binding.lifecycleOwner      = this
         binding.addProductFragment  = addProductViewModel
 
+        // get user premium from shared preference.
+        var sharedPreference = requireActivity().getSharedPreferences(Constants.USERS_SHARED_KEY, Context.MODE_PRIVATE)
+        var userPremium = sharedPreference!!.getInt(Constants.USER_PREMIUM_COMPLETE,0)
+
         // default image in firebase.
         imageUriOne     = Constants.SOURCE_IMAGE_ONE.toUri()
         imageUriTow     = Constants.SOURCE_IMAGE_TOW.toUri()
         imageUriThree   = Constants.SOURCE_IMAGE_THREE.toUri()
-        imageUriFour    = Constants.SOURCE_IMAGE_ONE.toUri()
-        imageUriFive    = Constants.SOURCE_IMAGE_TOW.toUri()
-        imageUriSix     = Constants.SOURCE_IMAGE_THREE.toUri()
+        imageUriFour    = Constants.SOURCE_IMAGE_FOUR.toUri()
+        imageUriFive    = Constants.SOURCE_IMAGE_FIVE.toUri()
+        imageUriSix     = Constants.SOURCE_IMAGE_SIX.toUri()
         videoUri        = Constants.SOURCE_IMAGE_THREE.toUri()
 
         binding.loadingView.visibility = View.GONE
@@ -92,6 +97,36 @@ class AddProductFragment : Fragment() {
             pickVideo()
         }
 
+        // select video two.
+        binding.btnUploadVideoTow.setOnClickListener {
+            if( userPremium == 0 ){
+                Toast.makeText(requireActivity(),"Please go to premium",Toast.LENGTH_SHORT).show()
+            }else{
+                pickVideoTwo()
+            }
+        }
+
+        // select video three.
+        binding.btnUploadVideoThree.setOnClickListener {
+            if( userPremium == 0 ){
+                Toast.makeText(requireActivity(),"Please go to premium",Toast.LENGTH_SHORT).show()
+            }else{
+                pickVideoThree()
+            }
+        }
+
+        binding.ivImagePremiumOneRequire.setOnClickListener {
+            Toast.makeText(requireActivity(),"Please go to premium",Toast.LENGTH_SHORT).show()
+        }
+
+        binding.ivImagePremiumTowRequire.setOnClickListener {
+            Toast.makeText(requireActivity(),"Please go to premium",Toast.LENGTH_SHORT).show()
+        }
+
+        binding.ivImagePremiumThreeRequire.setOnClickListener {
+            Toast.makeText(requireActivity(),"Please go to premium",Toast.LENGTH_SHORT).show()
+        }
+
         // call fun show select more image. when go user update profile to premium option will go unlock select more image.
         addProductViewModel.addShowMoreImageAndVideo(requireActivity(),binding.llUserPremiumRequire,binding.llUserPremiumDone)
 
@@ -118,6 +153,8 @@ class AddProductFragment : Fragment() {
                             imageUriFive,
                             imageUriSix,
                             videoUri,
+                            videoUriTow,
+                            videoUriThree,
                             binding.loadingView)
                     }
                 }
@@ -202,6 +239,28 @@ class AddProductFragment : Fragment() {
         }
     }
 
+    // fun select video.
+    private fun pickVideoTwo(){
+        if(ContextCompat.checkSelfPermission(requireActivity(),android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(requireActivity(), arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE),1)
+        }else{
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.type = "video/*"
+            startActivityForResult(intent,Constants.VIDEO_TWO_KEY)
+        }
+    }
+
+    // fun select video.
+    private fun pickVideoThree(){
+        if(ContextCompat.checkSelfPermission(requireActivity(),android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(requireActivity(), arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE),1)
+        }else{
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.type = "video/*"
+            startActivityForResult(intent,Constants.VIDEO_THREE_KEY)
+        }
+    }
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -233,6 +292,12 @@ class AddProductFragment : Fragment() {
         }
         if( requestCode == Constants.VIDEO_KEY && resultCode == AppCompatActivity.RESULT_OK){
             videoUri = data?.data!!
+        }
+        if( requestCode == Constants.VIDEO_TWO_KEY && resultCode == AppCompatActivity.RESULT_OK){
+            videoUriTow = data?.data!!
+        }
+        if( requestCode == Constants.VIDEO_THREE_KEY && resultCode == AppCompatActivity.RESULT_OK){
+            videoUriThree = data?.data!!
         }
     }
 }

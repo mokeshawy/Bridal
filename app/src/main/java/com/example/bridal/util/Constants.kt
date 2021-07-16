@@ -63,6 +63,8 @@ object  Constants {
     const val PRODUCT_IMAGE_FIVE    = "productImageFive"
     const val PRODUCT_IMAGE_SIX     = "productImageSix"
     const val PRODUCT_VIDEO         = "productVideo"
+    const val PRODUCT_VIDEO_TWO     = "productVideoTwo"
+    const val PRODUCT_VIDEO_THREE   = "productVideoThree"
     const val PRODUCT_DESCRIPTION   = "productDescription"
     const val PRODUCT_LATITUDE      = "latitude"
     const val PRODUCT_LONGITUDE     = "longitude"
@@ -95,13 +97,18 @@ object  Constants {
     const val IMAGE_NUM_SIX_KEY     = 666
 
     // request number key.
-    const val VIDEO_KEY             = 444
+    const val VIDEO_KEY             = 777
+    const val VIDEO_TWO_KEY         = 888
+    const val VIDEO_THREE_KEY       = 999
 
 
     // const image in firebase.
     const val SOURCE_IMAGE_ONE      = "https://firebasestorage.googleapis.com/v0/b/bridal-f3ec8.appspot.com/o/Photo%2Fimage_one.png?alt=media&token=ad4aa617-3021-4c6d-9344-7c7bd3f1e6ac"
     const val SOURCE_IMAGE_TOW      = "https://firebasestorage.googleapis.com/v0/b/bridal-f3ec8.appspot.com/o/Photo%2Fimage_three.png?alt=media&token=fd9132db-656a-44de-aa05-91fa196b157e"
     const val SOURCE_IMAGE_THREE    = "https://firebasestorage.googleapis.com/v0/b/bridal-f3ec8.appspot.com/o/Photo%2Fimage_tow.png?alt=media&token=9bf21e65-a19c-42be-9cc1-f6ad694875db"
+    const val SOURCE_IMAGE_FOUR     = "https://firebasestorage.googleapis.com/v0/b/bridal-f3ec8.appspot.com/o/Photo%2Fimage_four.png?alt=media&token=e302610f-9f11-4e5f-b2eb-6eefdaab72fe"
+    const val SOURCE_IMAGE_FIVE     = "https://firebasestorage.googleapis.com/v0/b/bridal-f3ec8.appspot.com/o/Photo%2Fimage_five.png?alt=media&token=447ee289-3df5-4fa3-9689-7bf958013c7f"
+    const val SOURCE_IMAGE_SIX      = "https://firebasestorage.googleapis.com/v0/b/bridal-f3ec8.appspot.com/o/Photo%2Fimage_six.png?alt=media&token=90db76a7-829f-4f5d-bad8-77bdbc601689"
     const val SOURCE_IMAGE_PROFILE  = "https://firebasestorage.googleapis.com/v0/b/bridal-f3ec8.appspot.com/o/Photo%2Fdefualt_image_profile.png?alt=media&token=a7e4096c-775a-456d-9e54-2ab470b7cac0"
 
     // user complete profile.

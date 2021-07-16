@@ -44,9 +44,9 @@ class MainActivity : AppCompatActivity(){
             R.id.completeProfileFragment,
             R.id.settingsAccountFragment,
             R.id.productDetailsFragment,
-            R.id.viewPagerFragment))
+            R.id.viewPagerFragment),binding.drawerLayout)
 
-        //binding.navigationView.setupWithNavController(navController)
+        binding.navigationView.setupWithNavController(navController)
        setupActionBarWithNavController( navController, appBarConfiguration )
 
 
@@ -54,9 +54,13 @@ class MainActivity : AppCompatActivity(){
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when(destination.id){
                 R.id.splashFragment             -> supportActionBar!!.hide()
+                R.id.loginFragment              ->supportActionBar!!.hide()
+                R.id.registerFragment           ->supportActionBar!!.hide()
+                R.id.forgetPasswordFragment     ->supportActionBar!!.hide()
                 R.id.viewFullImageFragment      -> supportActionBar!!.hide()
                 R.id.chatFragment               ->supportActionBar!!.hide()
                 R.id.viewPagerFragment          ->supportActionBar!!.hide()
+
                 else -> supportActionBar!!.show()
             }
         }
@@ -72,5 +76,20 @@ class MainActivity : AppCompatActivity(){
                 else -> binding.navigationBottom.visibility = View.GONE
             }
         }
+
+        // operation show and hide drawer.
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when(destination.id){
+                R.id.loginFragment          -> binding.navigationView.visibility = View.GONE
+                R.id.splashFragment         -> binding.navigationView.visibility = View.GONE
+                R.id.viewPagerFragment      -> binding.navigationView.visibility = View.GONE
+                R.id.viewFullImageFragment  -> binding.navigationView.visibility = View.GONE
+                else -> binding.navigationView.visibility = View.VISIBLE
+            }
+        }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return  navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }

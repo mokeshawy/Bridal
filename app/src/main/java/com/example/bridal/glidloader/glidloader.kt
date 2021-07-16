@@ -20,7 +20,7 @@ class glideLoader(val context: Context) {
                     .with(context)
                     .load(image) // Uri or URL of the image
                     .centerCrop() // Scale type of the image.
-                    .placeholder(R.drawable.ic_user_placeholder) // A default place holder if image is failed to load.
+                    .placeholder(R.drawable.defult_cover_image) // A default place holder if image is failed to load.
                     .into(imageView) // the view in which the image will be loaded.
         } catch (e: IOException) {
             e.printStackTrace()

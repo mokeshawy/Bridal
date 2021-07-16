@@ -15,7 +15,7 @@
     <string name="tm">تم التسجيل بنجاح الرقم السري</string>
     <string name="plswt">من فضلك انتظر</string>
     <string name="logsucc">تم تسجيل الدخول بنجاح </string>
-   <string name="frgno">أدخل اسم المستخدم والبريد الإلكتروني الخاصين بك وسنرسل لك بريدًا إلكترونيًا لإعادة تعيين كلمة المرور الخاصة بك</string>
+   <string name="frgno">أدخل البريد الإلكتروني الخاص بك وسيتم ارسال لك بريدًا إلكترونيا لإعادة تعيين كلمة المرور الخاصة بك</string>
     <string name="sub">إرسال</string>
 
     <string name="emailsnt">تم ارسال الايميل بنجاح</string>
@@ -51,9 +51,9 @@
 
 
 
-    <string name="signupher">سجل دخولك</string>
-    <string name="login">التسجيل</string>
-    <string name="donot">ليس عندك حساب؟</string>
+    <string name="signupher">تسجيل مستخدم جديد</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="donot">ليس لديك حساب؟</string>
     <string name="signup">Sign Up</string>
     <string name="authface">التسجيل من حساب فيسبوك </string>
     <string name="authgoo">التسجيل من حساب جوجل</string>

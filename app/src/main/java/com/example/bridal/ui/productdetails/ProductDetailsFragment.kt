@@ -58,8 +58,12 @@ class ProductDetailsFragment : Fragment() {
                 // operation work for carouseView.
                 val image = arrayOf(mMyAddProduct!!.productImageOne,
                     mMyAddProduct!!.productImageTow,
-                    mMyAddProduct!!.productImageThree)
-                val cities = arrayOf("1","2","3")
+                    mMyAddProduct!!.productImageThree,
+                    mMyAddProduct!!.productImageFour,
+                    mMyAddProduct!!.productImageFive,
+                    mMyAddProduct!!.productImageSix)
+
+                val cities = arrayOf("1","2","3","4","5","6")
                 carouseView.setImageListener { position, imageView ->
                     glideLoader(requireActivity()).loadUserPicture(image[position],imageView)
                     loadingView.visibility = View.GONE
@@ -88,8 +92,11 @@ class ProductDetailsFragment : Fragment() {
                 // operation work for carouseView.
                 val image = arrayOf(mMyAddProduct!!.productImageOne,
                     mMyAddProduct!!.productImageTow,
-                    mMyAddProduct!!.productImageThree)
-                val cities = arrayOf("1","2","3")
+                    mMyAddProduct!!.productImageThree,
+                    mMyAddProduct!!.productImageFour,
+                    mMyAddProduct!!.productImageFive,
+                    mMyAddProduct!!.productImageSix)
+                val cities = arrayOf("1","2","3","4","5","6")
                 carouseView.setImageListener { position, imageView ->
                     glideLoader(requireActivity()).loadUserPicture(image[position],imageView)
                     loadingView.visibility = View.GONE

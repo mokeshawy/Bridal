@@ -37,6 +37,8 @@ class AddProductViewModel : ViewModel(){
                        imageUriFive     : Uri,
                        imageUriSix      : Uri,
                        videoUri         : Uri,
+                       videoUriTwo      : Uri,
+                       videoUriThree    : Uri,
                        progressBar      : ProgressBar){
 
 
@@ -63,6 +65,9 @@ class AddProductViewModel : ViewModel(){
             map[Constants.PRODUCT_IMAGE_ONE]        = Constants.SOURCE_IMAGE_ONE
             map[Constants.PRODUCT_IMAGE_TOW]        = Constants.SOURCE_IMAGE_TOW
             map[Constants.PRODUCT_IMAGE_THREE]      = Constants.SOURCE_IMAGE_THREE
+            map[Constants.PRODUCT_IMAGE_FOUR]       = Constants.SOURCE_IMAGE_FOUR
+            map[Constants.PRODUCT_IMAGE_FIVE]       = Constants.SOURCE_IMAGE_FIVE
+            map[Constants.PRODUCT_IMAGE_SIX]        = Constants.SOURCE_IMAGE_SIX
             map[Constants.PRODUCT_DESCRIPTION]      = etProductDescription.value!!
             map[Constants.PRODUCT_LATITUDE]         = ""
             map[Constants.PRODUCT_LONGITUDE]        = ""
@@ -121,10 +126,10 @@ class AddProductViewModel : ViewModel(){
 
             // upload image five.
             val storageFive : StorageReference = storageRef.child("Photo/"+System.currentTimeMillis()+"product_image.jpg")
-            storageFive.putFile(imageUriFive).addOnCompleteListener { imageFour ->
-                if(imageFour.isSuccessful){
-                    storageFour.downloadUrl.addOnSuccessListener { imageUriFour ->
-                        map[Constants.PRODUCT_IMAGE_FIVE] = imageUriFour.toString()
+            storageFive.putFile(imageUriFive).addOnCompleteListener { imageFive ->
+                if(imageFive.isSuccessful){
+                    storageFive.downloadUrl.addOnSuccessListener { imageUriFive ->
+                        map[Constants.PRODUCT_IMAGE_FIVE] = imageUriFive.toString()
                         productReference.child(pushKey.toString()).updateChildren(map)
                         progressBar.visibility = View.GONE
                     }
@@ -134,10 +139,10 @@ class AddProductViewModel : ViewModel(){
 
             // upload image six.
             val storageSix : StorageReference = storageRef.child("Photo/"+System.currentTimeMillis()+"product_image.jpg")
-            storageSix.putFile(imageUriSix).addOnCompleteListener { imageFour ->
-                if(imageFour.isSuccessful){
-                    storageFour.downloadUrl.addOnSuccessListener { imageUriFour ->
-                        map[Constants.PRODUCT_IMAGE_SIX] = imageUriFour.toString()
+            storageSix.putFile(imageUriSix).addOnCompleteListener { imageSix ->
+                if(imageSix.isSuccessful){
+                    storageSix.downloadUrl.addOnSuccessListener { imageUriSix ->
+                        map[Constants.PRODUCT_IMAGE_SIX] = imageUriSix.toString()
                         productReference.child(pushKey.toString()).updateChildren(map)
                         progressBar.visibility = View.GONE
                     }
@@ -149,6 +154,30 @@ class AddProductViewModel : ViewModel(){
                 if(video.isSuccessful){
                     videoStorage.downloadUrl.addOnSuccessListener { videoUrl ->
                         map[Constants.PRODUCT_VIDEO] = videoUrl.toString()
+                        productReference.child(pushKey.toString()).updateChildren(map)
+                        progressBar.visibility = View.GONE
+                    }
+                }
+            }
+
+            // upload videoTwo.
+            val videoTwoStorage : StorageReference = storageRef.child("Video/"+System.currentTimeMillis())
+            videoTwoStorage.putFile(videoUriTwo).addOnCompleteListener { videoTwo ->
+                if(videoTwo.isSuccessful){
+                    videoTwoStorage.downloadUrl.addOnSuccessListener { videoTwoUrl ->
+                        map[Constants.PRODUCT_VIDEO_TWO] = videoTwoUrl.toString()
+                        productReference.child(pushKey.toString()).updateChildren(map)
+                        progressBar.visibility = View.GONE
+                    }
+                }
+            }
+
+            // upload videoThree.
+            val videoThreeStorage : StorageReference = storageRef.child("Video/"+System.currentTimeMillis())
+            videoThreeStorage.putFile(videoUriThree).addOnCompleteListener { videoThree ->
+                if(videoThree.isSuccessful){
+                    videoThreeStorage.downloadUrl.addOnSuccessListener { videoUrlThree ->
+                        map[Constants.PRODUCT_VIDEO_THREE] = videoUrlThree.toString()
                         productReference.child(pushKey.toString()).updateChildren(map)
                         progressBar.visibility = View.GONE
                     }
