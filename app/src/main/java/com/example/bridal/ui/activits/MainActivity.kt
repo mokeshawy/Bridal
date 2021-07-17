@@ -76,20 +76,11 @@ class MainActivity : AppCompatActivity(){
                 else -> binding.navigationBottom.visibility = View.GONE
             }
         }
-
-        // operation show and hide drawer.
-        navController.addOnDestinationChangedListener { _, destination, _ ->
-            when(destination.id){
-                R.id.loginFragment          -> binding.navigationView.visibility = View.GONE
-                R.id.splashFragment         -> binding.navigationView.visibility = View.GONE
-                R.id.viewPagerFragment      -> binding.navigationView.visibility = View.GONE
-                R.id.viewFullImageFragment  -> binding.navigationView.visibility = View.GONE
-                else -> binding.navigationView.visibility = View.VISIBLE
-            }
-        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
         return  navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
+
 }

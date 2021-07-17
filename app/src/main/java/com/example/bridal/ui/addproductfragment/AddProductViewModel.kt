@@ -51,7 +51,7 @@ class AddProductViewModel : ViewModel(){
         }else{
             val myPreference = context.getSharedPreferences(Constants.USERS_SHARED_KEY,Context.MODE_PRIVATE)
             val userName     =      "${myPreference!!.getString(Constants.FIRST_NAME_KEY,"") }"+
-                                    "${myPreference!!.getString(Constants.LAST_NAME_KEY,"")}"
+                                    " ${myPreference!!.getString(Constants.LAST_NAME_KEY,"")}"
             progressBar.visibility = View.VISIBLE
             val pushKey = productReference.push().key
             val map = HashMap<String , Any>()
@@ -68,6 +68,9 @@ class AddProductViewModel : ViewModel(){
             map[Constants.PRODUCT_IMAGE_FOUR]       = Constants.SOURCE_IMAGE_FOUR
             map[Constants.PRODUCT_IMAGE_FIVE]       = Constants.SOURCE_IMAGE_FIVE
             map[Constants.PRODUCT_IMAGE_SIX]        = Constants.SOURCE_IMAGE_SIX
+            map[Constants.PRODUCT_VIDEO]            = Constants.SOURCE_VIDEO
+            map[Constants.PRODUCT_VIDEO_TWO]        = Constants.SOURCE_VIDEO
+            map[Constants.PRODUCT_VIDEO_THREE]      = Constants.SOURCE_VIDEO
             map[Constants.PRODUCT_DESCRIPTION]      = etProductDescription.value!!
             map[Constants.PRODUCT_LATITUDE]         = ""
             map[Constants.PRODUCT_LONGITUDE]        = ""

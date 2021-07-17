@@ -35,7 +35,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="start"
                 android:background="@color/page"
-                app:menu="@menu/drawer_menu" />
+                app:menu="@menu/drawer_menu"/>
         </androidx.drawerlayout.widget.DrawerLayout>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView

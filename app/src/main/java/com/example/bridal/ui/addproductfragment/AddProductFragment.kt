@@ -48,17 +48,19 @@ class AddProductFragment : Fragment() {
         binding.addProductFragment  = addProductViewModel
 
         // get user premium from shared preference.
-        var sharedPreference = requireActivity().getSharedPreferences(Constants.USERS_SHARED_KEY, Context.MODE_PRIVATE)
-        var userPremium = sharedPreference!!.getInt(Constants.USER_PREMIUM_COMPLETE,0)
+        val sharedPreference = requireActivity().getSharedPreferences(Constants.USERS_SHARED_KEY, Context.MODE_PRIVATE)
+        val userPremium = sharedPreference!!.getInt(Constants.USER_PREMIUM_COMPLETE,0)
 
-        // default image in firebase.
+        // default image and video in firebase.
         imageUriOne     = Constants.SOURCE_IMAGE_ONE.toUri()
         imageUriTow     = Constants.SOURCE_IMAGE_TOW.toUri()
         imageUriThree   = Constants.SOURCE_IMAGE_THREE.toUri()
         imageUriFour    = Constants.SOURCE_IMAGE_FOUR.toUri()
         imageUriFive    = Constants.SOURCE_IMAGE_FIVE.toUri()
         imageUriSix     = Constants.SOURCE_IMAGE_SIX.toUri()
-        videoUri        = Constants.SOURCE_IMAGE_THREE.toUri()
+        videoUri        = Constants.SOURCE_VIDEO.toUri()
+        videoUriTow     = Constants.SOURCE_VIDEO.toUri()
+        videoUriThree   = Constants.SOURCE_VIDEO.toUri()
 
         binding.loadingView.visibility = View.GONE
 
@@ -158,6 +160,7 @@ class AddProductFragment : Fragment() {
                             binding.loadingView)
                     }
                 }
+                binding.loadingView.visibility = View.GONE
             }
             override fun onNothingSelected(adapterView : AdapterView<*>?) {
                 

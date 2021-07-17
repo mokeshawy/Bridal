@@ -211,7 +211,7 @@
         tools:layout="@layout/fragment_first_screen" />
     <fragment
         android:id="@+id/secondScreenFragment"
-        android:name="com.example.bridal.SeconScreenFragment"
+        android:name="com.example.bridal.ui.secondscreenfragment.SecondScreenFragment"
         android:label="fragment_second_screen"
         tools:layout="@layout/fragment_second_screen" />
     <fragment

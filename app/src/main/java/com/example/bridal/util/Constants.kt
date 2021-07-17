@@ -110,6 +110,7 @@ object  Constants {
     const val SOURCE_IMAGE_FIVE     = "https://firebasestorage.googleapis.com/v0/b/bridal-f3ec8.appspot.com/o/Photo%2Fimage_five.png?alt=media&token=447ee289-3df5-4fa3-9689-7bf958013c7f"
     const val SOURCE_IMAGE_SIX      = "https://firebasestorage.googleapis.com/v0/b/bridal-f3ec8.appspot.com/o/Photo%2Fimage_six.png?alt=media&token=90db76a7-829f-4f5d-bad8-77bdbc601689"
     const val SOURCE_IMAGE_PROFILE  = "https://firebasestorage.googleapis.com/v0/b/bridal-f3ec8.appspot.com/o/Photo%2Fdefualt_image_profile.png?alt=media&token=a7e4096c-775a-456d-9e54-2ab470b7cac0"
+    const val SOURCE_VIDEO          = "https://firebasestorage.googleapis.com/v0/b/bridal-f3ec8.appspot.com/o/Video%2Fdefault_bridal_video.mp4?alt=media&token=1dd4d860-65d3-4d7b-8ccc-034e58d2fcae"
 
     // user complete profile.
     const val USER_COMPLETE_PROFILE_IMAGE = "profile_image"

@@ -31,7 +31,6 @@ class ProductDetailsFragment : Fragment() {
         return binding.root
     }
 
-
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -64,6 +63,29 @@ class ProductDetailsFragment : Fragment() {
                     mMyAddProduct!!.productImageFour,
                     mMyAddProduct!!.productImageFive,
                     mMyAddProduct!!.productImageSix)
+
+                // operation work fo video.
+                // video one.
+                val mediaControllerOne = MediaController(requireActivity())
+                mediaControllerOne.setAnchorView(viViewOne)
+                viViewOne.setMediaController(mediaControllerOne)
+                viViewOne.setVideoURI(mMyAddProduct!!.productVideo.toUri())
+                viViewOne.requestFocus()
+
+
+                //video two
+                val mediaControllerTwo = MediaController(requireActivity())
+                mediaControllerTwo.setAnchorView(viViewTwo)
+                viViewTwo.setMediaController(mediaControllerTwo)
+                viViewTwo.setVideoURI(mMyAddProduct!!.productVideoTwo.toUri())
+                viViewTwo.requestFocus()
+
+                // video three
+                val mediaControllerThree = MediaController(requireActivity())
+                mediaControllerThree.setAnchorView(viViewThree)
+                viViewThree.setMediaController(mediaControllerThree)
+                viViewThree.setVideoURI(mMyAddProduct!!.productVideoThree.toUri())
+                viViewThree.requestFocus()
 
                 val cities = arrayOf("1","2","3","4","5","6")
                 carouseView.setImageListener { position, imageView ->
@@ -98,7 +120,7 @@ class ProductDetailsFragment : Fragment() {
                 viViewOne.setMediaController(mediaControllerOne)
                 viViewOne.setVideoURI(mMyAddProduct!!.productVideo.toUri())
                 viViewOne.requestFocus()
-                viViewOne.start()
+
 
                 //video two
                 val mediaControllerTwo = MediaController(requireActivity())
@@ -106,7 +128,6 @@ class ProductDetailsFragment : Fragment() {
                 viViewTwo.setMediaController(mediaControllerTwo)
                 viViewTwo.setVideoURI(mMyAddProduct!!.productVideoTwo.toUri())
                 viViewTwo.requestFocus()
-                viViewTwo.start()
 
                 // video three
                 val mediaControllerThree = MediaController(requireActivity())
@@ -114,7 +135,6 @@ class ProductDetailsFragment : Fragment() {
                 viViewThree.setMediaController(mediaControllerThree)
                 viViewThree.setVideoURI(mMyAddProduct!!.productVideoThree.toUri())
                 viViewThree.requestFocus()
-                viViewThree.start()
 
                 // operation work for carouseView.
                 val image = arrayOf(mMyAddProduct!!.productImageOne,

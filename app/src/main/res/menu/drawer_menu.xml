@@ -3,8 +3,17 @@
 
 
     <group android:checkableBehavior="single" >
-        <item android:title="Login"
-            android:id="@+id/loginFragment" />
-        <item android:title="Item" />
+        <item android:title="Account"
+            android:id="@+id/settingsAccountFragment"
+            android:icon="@drawable/ic_vector_person"/>
+
+        <item android:title="Message"
+            android:id="@+id/messageFragment"
+            android:icon="@drawable/ic_vector_message"/>
+
+        <item
+            android:id="@+id/loginFragment"
+            android:title="Logout"
+            android:icon="@drawable/ic_vector_logout"/>
     </group>
 </menu>
