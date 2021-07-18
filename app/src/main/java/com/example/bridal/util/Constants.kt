@@ -76,10 +76,10 @@ object  Constants {
     const val CHAT_REFERENCE = "Chat"
 
     // Child chat reference
-    const val CHAT_SENDER_ID     = "senderId"
-    const val CHAT_RECEIVER_ID   = "receiverId"
-    const val CHAT_MESSAGE       = "message"
-    const val CHAT_PUSH_KEY     = "chatKey"
+    const val CHAT_SENDER_ID        = "senderId"
+    const val CHAT_RECEIVER_ID      = "receiverId"
+    const val CHAT_MESSAGE          = "message"
+    const val CHAT_PUSH_KEY         = "chatKey"
 
     // chat list reference
     const val CHAT_LIST_REFERENCE   = "ChatList"
